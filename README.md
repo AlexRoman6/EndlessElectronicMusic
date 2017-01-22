@@ -10,6 +10,7 @@ Las entidades que se pueden distinguir en nuestra web son las siguientes:
 - **Mejor valoradas**: Lista con las canciones que más votos positivos obtienen.
 - **Eventos**: Distintas actuaciones en conciertos o festivales.
 - **Foro**: Los usuarios podran discutir sobre distintos temas.
+
 Los desarrolladores de esta web somos:
 - David García Herrero. Correo URJC: d.garciaherr@alumnos.urjc.es. Cuenta en Github: Davidgh96.
 - Alejandro Román Matellanes. Correo URJC: a.romanma@alumnos.urjc.es. Cuenta en Github: AlexRoman6.
