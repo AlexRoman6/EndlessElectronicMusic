@@ -1,7 +1,7 @@
 # Endless Electronic Music #
-Esta aplicación tratará sobre el mundo de la música electrónica, un lugar donde poder conocer a los mejores artistas y las mejores canciones de cada uno de los estilos, además de ver los mejores valorados por los usuarios y seguir los grandes festivales. 
+Esta aplicación tratará sobre el mundo de la música electrónica. Será un lugar donde poder conocer a los artistas más destacados y las mejores canciones de cada uno de los estilos, además de ver los temas mejor valorados por los usuarios y seguir los grandes festivales. 
 - **Parte pública**: el usuario va a poder navegar por cada una de las entidades que describiremos más tarde. 
-- **Parte privada**: el usuario deberá loguearse para tratar diferentes temas con otros usuarios y para poder votar positiva o negativamente las canciones.
+- **Parte privada**: el usuario deberá loguearse para tratar diferentes temas con otros usuarios y para poder votar positiva o negativamente las canciones. Igualmente, implementaremos un servicio de correo electrónico que enviará a los usuarios registrados, cada cierto periodo de tiempo, la lista de las canciones con mejor valoración.
 
 Las entidades que se pueden distinguir en nuestra web son las siguientes:
 - **Artistas**: Aquí aparecerán los diferentes músicos que aparecerán en nuestra web.
