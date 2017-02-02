@@ -10,9 +10,9 @@ public class GreetingController {
 	@RequestMapping("/greeting")
 	public String greeting(Model model) {
 
-		model.addAttribute("name", "Pepeee");
+		model.addAttribute("banner", "Esto lo está editando el programa");
 
-		return "greeting_template";
+		return "index";
 	}
 
 }
