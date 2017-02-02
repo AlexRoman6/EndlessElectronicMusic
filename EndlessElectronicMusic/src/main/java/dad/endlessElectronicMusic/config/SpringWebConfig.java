@@ -10,6 +10,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 //import org.springframework.web.servlet.view.script.ScriptTemplateConfigurer;
 //import org.springframework.web.servlet.view.script.ScriptTemplateViewResolver;
 
+
+
 @EnableWebMvc
 @Configuration
 @ComponentScan({ "com.mkyong.web.controller" })
