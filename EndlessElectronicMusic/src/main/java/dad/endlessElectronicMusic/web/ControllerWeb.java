@@ -13,7 +13,6 @@ public class ControllerWeb {
 
 	@RequestMapping("/greeting")
 	public String greeting(Model model) {
-
 		model.addAttribute("name", "World");
 
 		return "greeting_template";
