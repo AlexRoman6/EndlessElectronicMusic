@@ -74,7 +74,7 @@ _________________________________________________________ -->
 
                             <div class="login">
                                 <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Iniciar Sesión</span></a>
-                                <a href="customer-register.html"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Registrarse</span></a>
+                                <a href="user-register.html"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Registrarse</span></a>
                             </div>
 
                         </div>
@@ -95,8 +95,8 @@ _________________________________________________________ -->
                         <div class="navbar-header">
 
                             <a class="navbar-brand home" href="index.html">
-                                <img src="img/logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
-                                <img src="img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>
+                                <img src="{{{resources}}}/core/img/logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
+                                <img src="{{{resources}}}/core/img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - Inicio</span>
                             </a>
                             <div class="navbar-buttons">
                                 <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -110,60 +110,45 @@ _________________________________________________________ -->
                         <div class="navbar-collapse collapse" id="navigation">
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown active">
-                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                               <li class="dropdown active">
+                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Inicio <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="index.html">Option 1: Default Page</a>
+                                        <li><a href="#sobre">Sobre el projecto</a>
                                         </li>
-                                        <li><a href="index2.html">Option 2: Application</a>
+                                        <li><a href="#last">Últimas canciones</a>
                                         </li>
-                                        <li><a href="index3.html">Option 3: Startup</a>
-                                        </li>
-                                        <li><a href="index4.html">Option 4: Agency</a>
-                                        </li>
-                                        <li><a href="index5.html">Option 5: Portfolio</a>
+                                        <li><a href="#blog">Entradas recientes</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown use-yamm yamm-fw">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Canciones<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="yamm-content">
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                        <img src="img/template-easy-customize.png" class="img-responsive hidden-xs" alt="">
+                                                        <img src="{{{resources}}}/core/img/template-easy-customize.png" class="img-responsive hidden-xs" alt="">
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <h5>Shortcodes</h5>
+                                                        <h5>Buscar por:</h5>
                                                         <ul>
-                                                            <li><a href="template-accordions.html">Accordions</a>
+                                                            <li><a href="songs-category.html?filter=genero">Género</a>
                                                             </li>
-                                                            <li><a href="template-alerts.html">Alerts</a>
+                                                            <li><a href="songs-category.html?filter=autor">Autor</a>
                                                             </li>
-                                                            <li><a href="template-buttons.html">Buttons</a>
+                                                            <li><a href="songs-category.html?filter=anio">Año</a>
                                                             </li>
-                                                            <li><a href="template-content-boxes.html">Content boxes</a>
-                                                            </li>
-                                                            <li><a href="template-blocks.html">Horizontal blocks</a>
-                                                            </li>
-                                                            <li><a href="template-pagination.html">Pagination</a>
-                                                            </li>
-                                                            <li><a href="template-tabs.html">Tabs</a>
-                                                            </li>
-                                                            <li><a href="template-typography.html">Typography</a>
+                                                            <li><a href="songs-category.html?filter=addSong">Fecha de inclusión</a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <h5>Header variations</h5>
+                                                        <h5>Ordenar por:</h5>
                                                         <ul>
-                                                            <li><a href="template-header-default.html">Default sticky header</a>
+                                                            <li><a href="songs-category.html?order=valoracion">Valoración</a>
                                                             </li>
-                                                            <li><a href="template-header-nosticky.html">No sticky header</a>
-                                                            </li>
-                                                            <li><a href="template-header-light.html">Light header</a>
-                                                            </li>
+                                                            <li><a href="songs-category.html?order=duracion">Duración</a>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -172,50 +157,18 @@ _________________________________________________________ -->
                                     </ul>
                                 </li>
                                 <li class="dropdown use-yamm yamm-fw">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Eventos <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="yamm-content">
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                        <img src="img/template-homepage.png" class="img-responsive hidden-xs" alt="">
+                                                        <img src="{{{resources}}}/core/img/template-homepage.png" class="img-responsive hidden-xs" alt="">
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <h5>Portfolio</h5>
+                                                        <h5>Eventos</h5>
                                                         <ul>
-                                                            <li><a href="portfolio-2.html">2 columns</a>
-                                                            </li>
-                                                            <li><a href="portfolio-no-space-2.html">2 columns with negative space</a>
-                                                            </li>
-                                                            <li><a href="portfolio-3.html">3 columns</a>
-                                                            </li>
-                                                            <li><a href="portfolio-no-space-3.html">3 columns with negative space</a>
-                                                            </li>
-                                                            <li><a href="portfolio-4.html">4 columns</a>
-                                                            </li>
-                                                            <li><a href="portfolio-no-space-4.html">4 columns with negative space</a>
-                                                            </li>
-                                                            <li><a href="portfolio-detail.html">Portfolio - detail</a>
-                                                            </li>
-                                                            <li><a href="portfolio-detail-2.html">Portfolio - detail 2</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <h5>About</h5>
-                                                        <ul>
-                                                            <li><a href="about.html">About us</a>
-                                                            </li>
-                                                            <li><a href="team.html">Our team</a>
-                                                            </li>
-                                                            <li><a href="team-member.html">Team member</a>
-                                                            </li>
-                                                            <li><a href="services.html">Services</a>
-                                                            </li>
-                                                        </ul>
-                                                        <h5>Marketing</h5>
-                                                        <ul>
-                                                            <li><a href="packages.html">Packages</a>
+                                                            <li><a href="blog.html?type=eventos">Eventos de interes</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -224,155 +177,35 @@ _________________________________________________________ -->
                                         </li>
                                     </ul>
                                 </li>
-                                <!-- ========== FULL WIDTH MEGAMENU ================== -->
+                                
                                 <li class="dropdown use-yamm yamm-fw">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">All Pages <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="yamm-content">
                                                 <div class="row">
-                                                    <div class="col-sm-3">
-                                                        <h5>Home</h5>
-                                                        <ul>
-                                                            <li><a href="index.html">Option 1: Default Page</a>
-                                                            </li>
-                                                            <li><a href="index2.html">Option 2: Application</a>
-                                                            </li>
-                                                            <li><a href="index3.html">Option 3: Startup</a>
-                                                            </li>
-                                                            <li><a href="index4.html">Option 4: Agency</a>
-                                                            </li>
-                                                            <li><a href="index5.html">Option 5: Portfolio</a>
-                                                            </li>
-                                                        </ul>
-                                                        <h5>About</h5>
-                                                        <ul>
-                                                            <li><a href="about.html">About us</a>
-                                                            </li>
-                                                            <li><a href="team.html">Our team</a>
-                                                            </li>
-                                                            <li><a href="team-member.html">Team member</a>
-                                                            </li>
-                                                            <li><a href="services.html">Services</a>
-                                                            </li>
-                                                        </ul>
-                                                        <h5>Marketing</h5>
-                                                        <ul>
-                                                            <li><a href="packages.html">Packages</a>
-                                                            </li>
-                                                        </ul>
+                                                    <div class="col-sm-6">
+                                                        <img src="{{{resources}}}/core/img/template-homepage.png" class="img-responsive hidden-xs" alt="">
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <h5>Portfolio</h5>
+                                                        <h5>Blogs</h5>
                                                         <ul>
-                                                            <li><a href="portfolio-2.html">2 columns</a>
-                                                            </li>
-                                                            <li><a href="portfolio-no-space-2.html">2 columns with negative space</a>
-                                                            </li>
-                                                            <li><a href="portfolio-3.html">3 columns</a>
-                                                            </li>
-                                                            <li><a href="portfolio-no-space-3.html">3 columns with negative space</a>
-                                                            </li>
-                                                            <li><a href="portfolio-4.html">4 columns</a>
-                                                            </li>
-                                                            <li><a href="portfolio-no-space-4.html">4 columns with negative space</a>
-                                                            </li>
-                                                            <li><a href="portfolio-detail.html">Portfolio - detail</a>
-                                                            </li>
-                                                            <li><a href="portfolio-detail-2.html">Portfolio - detail 2</a>
-                                                            </li>
-                                                        </ul>
-                                                        <h5>User pages</h5>
-                                                        <ul>
-                                                            <li><a href="customer-register.html">Register / login</a>
-                                                            </li>
-                                                            <li><a href="customer-orders.html">Orders history</a>
-                                                            </li>
-                                                            <li><a href="customer-order.html">Order history detail</a>
-                                                            </li>
-                                                            <li><a href="customer-wishlist.html">Wishlist</a>
-                                                            </li>
-                                                            <li><a href="customer-account.html">Customer account / change password</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <h5>Shop</h5>
-                                                        <ul>
-                                                            <li><a href="shop-category.html">Category - sidebar right</a>
-                                                            </li>
-                                                            <li><a href="shop-category-left.html">Category - sidebar left</a>
-                                                            </li>
-                                                            <li><a href="shop-category-full.html">Category - full width</a>
-                                                            </li>
-                                                            <li><a href="shop-detail.html">Product detail</a>
-                                                            </li>
-                                                        </ul>
-                                                        <h5>Shop - order process</h5>
-                                                        <ul>
-                                                            <li><a href="shop-basket.html">Shopping cart</a>
-                                                            </li>
-                                                            <li><a href="shop-checkout1.html">Checkout - step 1</a>
-                                                            </li>
-                                                            <li><a href="shop-checkout2.html">Checkout - step 2</a>
-                                                            </li>
-                                                            <li><a href="shop-checkout3.html">Checkout - step 3</a>
-                                                            </li>
-                                                            <li><a href="shop-checkout4.html">Checkout - step 4</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <h5>Contact</h5>
-                                                        <ul>
-                                                            <li><a href="contact.html">Contact</a>
-                                                            </li>
-                                                            <li><a href="contact2.html">Contact - version 2</a>
-                                                            </li>
-                                                            <li><a href="contact3.html">Contact - version 3</a>
-                                                            </li>
-                                                        </ul>
-                                                        <h5>Pages</h5>
-                                                        <ul>
-                                                            <li><a href="text.html">Text page</a>
-                                                            </li>
-                                                            <li><a href="text-left.html">Text page - left sidebar</a>
-                                                            </li>
-                                                            <li><a href="text-full.html">Text page - full width</a>
-                                                            </li>
-                                                            <li><a href="faq.html">FAQ</a>
-                                                            </li>
-                                                            <li><a href="404.html">404 page</a>
-                                                            </li>
-                                                        </ul>
-                                                        <h5>Blog</h5>
-                                                        <ul>
-                                                            <li><a href="blog.html">Blog listing big</a>
-                                                            </li>
-                                                            <li><a href="blog-medium.html">Blog listing medium</a>
-                                                            </li>
-                                                            <li><a href="blog-small.html">Blog listing small</a>
-                                                            </li>
-                                                            <li><a href="blog-post.html">Blog Post</a>
+                                                            <li><a href="blog.html?type=blog">Top canciones</a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- /.yamm-content -->
                                         </li>
                                     </ul>
                                 </li>
-                                <!-- ========== FULL WIDTH MEGAMENU END ================== -->
-
+                                
                                 <li class="dropdown">
-                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Contacto <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="contact.html">Contact option 1</a>
+                                        <li><a href="team.html">Staff</a>
                                         </li>
-                                        <li><a href="contact2.html">Contact option 2</a>
-                                        </li>
-                                        <li><a href="contact3.html">Contact option 3</a>
+                                        <li><a href="contact.html">Contacto</a>
                                         </li>
 
                                     </ul>
@@ -421,10 +254,10 @@ _________________________________________________________ -->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Customer login</h4>
+                        <h4 class="modal-title" id="Login">Inicio de sesión</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
+                        <form action="user-account.html" method="post">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="email_modal" placeholder="email">
                             </div>
@@ -433,13 +266,13 @@ _________________________________________________________ -->
                             </div>
 
                             <p class="text-center">
-                                <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
+                                <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Login</button>
                             </p>
 
                         </form>
 
-                        <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="customer-register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                        <p class="text-center text-muted">¿No te has registrado aun?</p>
+                        <p class="text-center text-muted"><a href="user-register.html"><strong>Registrate ahora</strong></a>! Es muy facil, en 1&nbsp;minuto podras dejar tu opinión sobre las canciones, puntuarlas y muchas cosas más!</p>
 
                     </div>
                 </div>
@@ -458,70 +291,24 @@ _________________________________________________________ -->
 
                 <div class="container">
                     <div class="homepage owl-carousel">
+                     <!-- *** aqui empieza la lista de items, hacerlo recursivo ***
+ _________________________________________________________ -->
                         <div class="item">
                             <div class="row">
                                 <div class="col-sm-5 right">
                                     <p>
-                                        <img src="img/logo.png" alt="">
+                                        <img src="{{{resources}}}/core/img/logo.png" alt="">
                                     </p>
                                     <h1>Multipurpose responsive theme</h1>
                                     <p>Business. Corporate. Agency.
                                         <br />Portfolio. Blog. E-commerce.</p>
                                 </div>
                                 <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/template-homepage.png" alt="">
+                                    <img class="img-responsive" src="{{{resources}}}/core/img/template-homepage.png" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="row">
-
-                                <div class="col-sm-7 text-center">
-                                    <img class="img-responsive" src="img/template-mac.png" alt="">
-                                </div>
-
-                                <div class="col-sm-5">
-                                    <h2>46 HTML pages full of features</h2>
-                                    <ul class="list-style-none">
-                                        <li>Sliders and carousels</li>
-                                        <li>4 Header variations</li>
-                                        <li>Google maps, Forms, Megamenu, CSS3 Animations and much more</li>
-                                        <li>+ 11 extra pages showing template features</li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-5 right">
-                                    <h1>Design</h1>
-                                    <ul class="list-style-none">
-                                        <li>Clean and elegant design</li>
-                                        <li>Full width and boxed mode</li>
-                                        <li>Easily readable Roboto font and awesome icons</li>
-                                        <li>7 preprepared colour variations</li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/template-easy-customize.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/template-easy-code.png" alt="">
-                                </div>
-                                <div class="col-sm-5">
-                                    <h1>Easy to customize</h1>
-                                    <ul class="list-style-none">
-                                        <li>7 preprepared colour variations.</li>
-                                        <li>Easily to change fonts</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Aqui termina el item -->
                     </div>
                     <!-- /.project owl-slider -->
                 </div>
@@ -536,49 +323,48 @@ _________________________________________________________ -->
                     <div class="col-md-12">
 
                         <div class="heading text-center">
-                            <h2>Featured project</h2>
+                            <h2>Datos sobre el proyecto</h2>
                         </div>
 
                         <div class="row">
                             <div class="portfolio-showcase clearfix">
                                 <div class="col-sm-6">
                                     <div class="image">
-                                        <img src="img/portfolio-4.jpg" alt="" class="img-responsive">
+                                        <img src="{{{resources}}}/core/img/portfolio-4.jpg" alt="" class="img-responsive">
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <h3><a href="portfolio-detail.html">Portfolio item</a></h3>
-                                    <p class="lead">This is the lead paragraph of the article. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.</p>
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
-                                        Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                                    <h3>Información</h3>
+                                    <p class="lead">La presente página web pretende ofrecer una fuente de información actualizada con los exitos de la música. Para ello, representamos las canciones en ranking con las más votadas y populares de la semana. Podras escuchar y compartir con tus amigos las canciones que más te gusten</p>
                                     <p class="buttons">
-                                        <a href="portfolio-detail.html" class="btn btn-template-main">View</a>
-                                        <a href="#" class="btn btn-template-main">Visit website</a>
+                                        <a href="songs-category.html?order=valoracion" class="btn btn-template-main">Rankings</a>
+                                        <a href="blog.html?type=blog" class="btn btn-template-main">Blogs</a>
+                                        <a name="last" id="a"></a>
                                     </p>
                                 </div>
                             </div>
                         </div>
-
                         <div class="heading text-center">
-                            <h3>Latest from our workshop</h3>
+                            <h3>Últimas canciones añadidas</h3>
+                            
                         </div>
 
                         <div class="row portfolio no-space">
+                         <!-- *** Items de las ultimas canciones *** -->
                             <div class="col-sm-4">
                                 <div class="box-image">
                                     <div class="image">
-                                        <img src="img/portfolio-1.jpg" alt="" class="img-responsive">
+                                        <img src="{{{resources}}}/core/img/portfolio-1.jpg" alt="" class="img-responsive">
                                     </div>
                                     <div class="bg"></div>
                                     <div class="name">
-                                        <h3><a href="portfolio-detail.html">Portfolio box-image</a></h3> 
+                                        <h3><a href="portfolio-detail.html">Titulo de la cancion</a></h3> 
                                     </div>
                                     <div class="text">
-                                        <p class="hidden-sm">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                                        <p class="hidden-sm">Info basica de la canción</p>
                                         <p class="buttons">
-                                            <a href="portfolio-detail.html" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
+                                            <a href="portfolio-detail.html" class="btn btn-template-transparent-primary">Escuchar</a>
                                         </p>
                                     </div>
                                 </div>
@@ -586,169 +372,11 @@ _________________________________________________________ -->
 
                             </div>
 
-                            <div class="col-sm-4">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-2.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="portfolio-detail.html">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="portfolio-detail.html" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-3.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="portfolio-detail.html">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="portfolio-detail.html" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-4.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="portfolio-detail.html">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="portfolio-detail.html" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-5.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="portfolio-detail.html">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="portfolio-detail.html" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-6.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="portfolio-detail.html">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="portfolio-detail.html" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-7.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="portfolio-detail.html">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="portfolio-detail.html" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-9.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="portfolio-detail.html">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="portfolio-detail.html" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-8.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="portfolio-detail.html">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="portfolio-detail.html" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
+                             <!-- *** fin de un item *** -->
                         </div>
 
                         <div class="see-more">
-                            <a href="portfolio-4.html" class="btn btn-template-main">See more of our work</a>
+                            <a href="songs-category.html?filter=addSong" class="btn btn-template-main">Ver todas las canciones</a>
                         </div>
 
                     </div>
@@ -760,13 +388,14 @@ _________________________________________________________ -->
         <section class="bar background-pentagon no-mb">
             <div class="container">
                 <div class="row showcase">
+                <!-- *** datos sobre la página añadir automaticamente *** -->
                     <div class="col-md-3 col-sm-6">
                         <div class="item">
                             <div class="icon"><i class="fa fa-align-justify"></i>
                             </div>
                             <h4><span class="counter">580</span><br>
 
-		Websites</h4>
+		Canciones</h4>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -775,7 +404,7 @@ _________________________________________________________ -->
                             </div>
                             <h4><span class="counter">100</span><br>
 
-		Satisfied Clients</h4>
+		Usuarios</h4>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -784,7 +413,7 @@ _________________________________________________________ -->
                             </div>
                             <h4><span class="counter">320</span><br>
 
-		Projects</h4>
+		Entradas del blog</h4>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -793,7 +422,7 @@ _________________________________________________________ -->
                             </div>
                             <h4><span class="counter">923</span><br> 
 
-		Magazines and Brochures</h4>
+		Eventos</h4>
                         </div>
                     </div>
                 </div>
@@ -802,127 +431,52 @@ _________________________________________________________ -->
             <!-- /.container -->
         </section>
         <!-- /.bar -->
+        <a name="blog" id="a"></a>
 
         <section class="bar background-white no-mb">
             <div class="container">
 
                 <div class="col-md-12">
                     <div class="heading text-center">
-                        <h2>From our blog</h2>
+                        <h2>Entradas en el blog</h2>
+                        
                     </div>
 
-                    <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies
-                        mi vitae est. Mauris placerat eleifend leo. <span class="accent">Check our blog!</span>
+                    <p class="lead">Si quieres estar al tanto de noticias, rankings y eventos. <span class="accent">No dejes de echar un vistazo a nuestros post!</span>
                     </p>
 
                     <!-- *** BLOG HOMEPAGE ***
 _________________________________________________________ -->
 
                     <div class="row">
+                    <!-- *** Ultimas entradas en el blog *** -->
+                          <!-- *** inicio de un item *** -->
                         <div class="col-md-3 col-sm-6">
                             <div class="box-image-text blog">
                                 <div class="top">
                                     <div class="image">
-                                        <img src="img/portfolio-4.jpg" alt="" class="img-responsive">
+                                        <img src="{{{resources}}}/core/img/portfolio-4.jpg" alt="" class="img-responsive">
                                     </div>
                                     <div class="bg"></div>
                                     <div class="text">
                                         <p class="buttons">
-                                            <a href="blog-post.html" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+                                            <a href="blog-post.html?id=1" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Leer</a>
                                         </p>
                                     </div>
                                 </div>
                                 <div class="content">
-                                    <h4><a href="blog-post.html">Fashion now</a></h4>
-                                    <p class="author-category">By <a href="#">John Snow</a> in <a href="blog.html">Webdesign</a>
+                                    <h4><a href="blog-post.html">Titulo post</a></h4>
+                                    <p class="author-category">By <a href="team-member.html?id=autor">AUTOR</a>
                                     </p>
-                                    <p class="intro">Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
-                                    <p class="read-more"><a href="blog-post.html" class="btn btn-template-main">Continue reading</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- /.box-image-text -->
-
-                        </div>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="box-image-text blog">
-                                <div class="top">
-                                    <div class="image">
-                                        <img src="img/portfolio-3.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="text">
-                                        <p class="buttons">
-                                            <a href="blog-post.html" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <h4><a href="blog-post.html">Fashion now</a></h4>
-                                    <p class="author-category">By <a href="#">John Snow</a> in <a href="blog.html">Webdesign</a>
-                                    </p>
-                                    <p class="intro">Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
-                                    <p class="read-more"><a href="blog-post.html" class="btn btn-template-main">Continue reading</a>
+                                    <p class="intro">Breve descripción</p>
+                                    <p class="read-more"><a href="blog-post.html?id=1" class="btn btn-template-main">Seguir leyendo</a>
                                     </p>
                                 </div>
                             </div>
+                          </div>
                             <!-- /.box-image-text -->
-
-                        </div>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="box-image-text blog">
-                                <div class="top">
-                                    <div class="image">
-                                        <img src="img/portfolio-5.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="text">
-                                        <p class="buttons">
-                                            <a href="blog-post.html" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <h4><a href="blog-post.html">What to do</a></h4>
-                                    <p class="author-category">By <a href="#">John Snow</a> in <a href="blog.html">Webdesign</a>
-                                    </p>
-                                    <p class="intro">Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
-                                    <p class="read-more"><a href="blog-post.html" class="btn btn-template-main">Continue reading</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- /.box-image-text -->
-
-                        </div>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="box-image-text blog">
-                                <div class="top">
-                                    <div class="image">
-                                        <img src="img/portfolio-6.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="text">
-                                        <p class="buttons">
-                                            <a href="blog-post.html" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <h4><a href="blog-post.html">5 ways to look awesome</a></h4>
-                                    <p class="author-category">By <a href="#">John Snow</a> in <a href="blog.html">Webdesign</a>
-                                    </p>
-                                    <p class="intro">Am terminated it excellence invitation projection as. She graceful shy believed distance use nay. Lively is people.</p>
-                                    <p class="read-more"><a href="blog-post.html" class="btn btn-template-main">Continue reading</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- /.box-image-text -->
-
-                        </div>
-
+                            
+							 <!-- *** fin item *** -->
                     </div>
                     <!-- /.row -->
 
@@ -935,54 +489,6 @@ _________________________________________________________ -->
         </section>
         <!-- /.bar -->
 
-        <section class="bar background-gray no-mb">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="owl-carousel customers">
-                            <li class="item">
-                                <img src="img/customer-1.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-2.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-3.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-4.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-5.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-6.png" alt="" class="img-responsive">
-                            </li>
-                        </ul>
-                        <!-- /.owl-carousel -->
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- *** GET IT ***
-_________________________________________________________ -->
-
-        <div id="get-it">
-            <div class="container">
-                <div class="col-md-8 col-sm-12">
-                    <h3>Do you want cool website like this one?</h3>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <a href="#" class="btn btn-template-transparent-primary">Buy this template now</a>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- *** GET IT END *** -->
-
 
         <!-- *** FOOTER ***
 _________________________________________________________ -->
@@ -990,13 +496,13 @@ _________________________________________________________ -->
         <footer id="footer">
             <div class="container">
                 <div class="col-md-3 col-sm-6">
-                    <h4>About us</h4>
+                    <h4>Sobre nosotros</h4>
 
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    <p>Estudiantes de la URJC en la asignatura de DAD</p>
 
                     <hr>
 
-                    <h4>Join our monthly newsletter</h4>
+                    <h4>Únete a nuestro newsletter</h4>
 
                     <form>
                         <div class="input-group">
@@ -1016,113 +522,25 @@ _________________________________________________________ -->
                     <hr class="hidden-md hidden-lg hidden-sm">
 
                 </div>
-                <!-- /.col-md-3 -->
+
 
                 <div class="col-md-3 col-sm-6">
 
-                    <h4>Blog</h4>
+                    <h4>Contacto</h4>
 
-                    <div class="blog-entries">
-                        <div class="item same-height-row clearfix">
-                            <div class="image same-height-always">
-                                <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="name same-height-always">
-                                <h5><a href="#">Blog post name</a></h5>
-                            </div>
-                        </div>
-
-                        <div class="item same-height-row clearfix">
-                            <div class="image same-height-always">
-                                <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="name same-height-always">
-                                <h5><a href="#">Blog post name</a></h5>
-                            </div>
-                        </div>
-
-                        <div class="item same-height-row clearfix">
-                            <div class="image same-height-always">
-                                <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="name same-height-always">
-                                <h5><a href="#">Very very long blog post name</a></h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="hidden-md hidden-lg">
-
-                </div>
-                <!-- /.col-md-3 -->
-
-                <div class="col-md-3 col-sm-6">
-
-                    <h4>Contact</h4>
-
-                    <p><strong>Universal Ltd.</strong>
-                        <br>13/25 New Avenue
-                        <br>Newtown upon River
-                        <br>45Y 73J
-                        <br>England
+                    <p><strong>Endless Electronic Music</strong>
+                        <br>URJC - Mos
                         <br>
-                        <strong>Great Britain</strong>
+                        <strong>Madrid</strong>
                     </p>
 
-                    <a href="contact.html" class="btn btn-small btn-template-main">Go to contact page</a>
+                    <a href="contact.html" class="btn btn-small btn-template-main">Página de contacto</a>
 
                     <hr class="hidden-md hidden-lg hidden-sm">
 
                 </div>
                 <!-- /.col-md-3 -->
 
-
-
-                <div class="col-md-3 col-sm-6">
-
-                    <h4>Photostream</h4>
-
-                    <div class="photostream">
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare2.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare3.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare3.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare2.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.col-md-3 -->
             </div>
             <!-- /.container -->
         </footer>
@@ -1136,7 +554,7 @@ _________________________________________________________ -->
         <div id="copyright">
             <div class="container">
                 <div class="col-md-12">
-                    <p class="pull-left">&copy; 2015. Your company / name goes here</p>
+                    <p class="pull-left">&copy; 2017. URJC / DAD</p>
                     <p class="pull-right">Template by <a href="https://bootstrapious.com/free-templates">Bootstrapious</a> 
                          <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                     </p>
@@ -1157,20 +575,20 @@ _________________________________________________________ -->
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
-        window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+        window.jQuery || document.write('<script src="{{{resources}}}/core/js/jquery-1.11.0.min.js"><\/script>')
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery.parallax-1.1.3.js"></script>
-    <script src="js/front.js"></script>
+    <script src="{{{resources}}}/core/js/jquery.cookie.js"></script>
+    <script src="{{{resources}}}/core/js/waypoints.min.js"></script>
+    <script src="{{{resources}}}/core/js/jquery.counterup.min.js"></script>
+    <script src="{{{resources}}}/core/js/jquery.parallax-1.1.3.js"></script>
+    <script src="{{{resources}}}/core/js/front.js"></script>
 
     
 
     <!-- owl carousel -->
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="{{{resources}}}/core/js/owl.carousel.min.js"></script>
 
 
 

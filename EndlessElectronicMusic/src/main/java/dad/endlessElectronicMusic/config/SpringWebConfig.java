@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @EnableWebMvc
 @Configuration
-@ComponentScan({ "com.mkyong.web.controller" })
+@ComponentScan({ "dad.endlessElectronicMusic.web" })
 public class SpringWebConfig extends WebMvcConfigurerAdapter {
 
 	/*
