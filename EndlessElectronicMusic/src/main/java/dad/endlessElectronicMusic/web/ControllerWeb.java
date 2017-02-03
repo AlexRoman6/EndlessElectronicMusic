@@ -28,6 +28,89 @@ public class ControllerWeb {
 		
 	}
 	
+	@RequestMapping("/blog")
+	public ModelAndView printBlog(HttpServletRequest request) {
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		return result;
+		
+	}
+	@RequestMapping("/blog-post")
+	public ModelAndView printPost(HttpServletRequest request) {
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		return result;
+		
+	}
+	@RequestMapping("/contact")
+	public ModelAndView printContact(HttpServletRequest request) {
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		return result;
+		
+	}
+
+	@RequestMapping("/songs-category")
+	public ModelAndView printSongCategory(HttpServletRequest request) {
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		return result;
+		
+	}
+	@RequestMapping("/songs-detail")
+	public ModelAndView printSongDetail(HttpServletRequest request) {
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		return result;
+		
+	}
+	@RequestMapping("/team")
+	public ModelAndView printTeam(HttpServletRequest request) {
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		return result;
+		
+	}
+	@RequestMapping("/team-member")
+	public ModelAndView printTeamMember(HttpServletRequest request) {
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		return result;
+		
+	}
+	@RequestMapping("/user-account")
+	public ModelAndView printUserAccount(HttpServletRequest request) {
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		return result;
+		
+	}
+	@RequestMapping("/user-register")
+	public ModelAndView printUserRegister(HttpServletRequest request) {
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		return result;
+		
+	}
+	@RequestMapping("/user-wishlist")
+	public ModelAndView printUserWishlist(HttpServletRequest request) {
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		return result;
+		
+	}
+	
+	
 //	public String index(Model model){
 //		
 //		model.addAttribute("resurces", m)
