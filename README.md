@@ -17,6 +17,6 @@ Los desarrolladores de esta web somos:
 - Francisco Moreno Tejeda. Correo URJC: f.morenot.2016@alumnos.urjc.es. Cuenta en Github: framortej.
 
 ## Fase 2 ##
-En esta fase hemos planificado cómo va a ser nuestra aplicación. En el siguiente diagrama de navegación se puede ver cómo movernos entre las distintas pantallas de la web. Las entidades privadas son el blog y las mejor valoradas,mientras que el resto son todas públicas.
+En esta fase hemos planificado cómo va a ser nuestra aplicación. En el siguiente diagrama de navegación se puede ver cómo movernos entre las distintas pantallas de la web. Las entidades privadas son el blog y las mejor valoradas, mientras que el resto son todas públicas.
 
-![Diagrama](http://i.imgur.com/M8Fs3p8.jpg "De navegacion")
+![Diagrama](http://i.imgur.com/qkeVLRU.png "De navegacion")
