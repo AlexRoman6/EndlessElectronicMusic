@@ -23,7 +23,7 @@ public class ControllerWeb {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
 		
-		return result;
+		return result ;
 		
 	}
 	
