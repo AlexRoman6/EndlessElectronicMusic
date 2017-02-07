@@ -1,8 +1,11 @@
+*Fran*
 Usuarios -> id, user, email, pass, auth, level
 Canciones -> id, name, artista, genero, año, fechaAdd, valoracion, imagePath, url
 
+*Alex*
 Eventos -> id, titulo, lugar, fecha, text, comentarios
 Post -> id, titulo, fecha, text, idcomentario
 
+*David*
 Comentario -> id, user, text, idType
 Artistas -> id, nombre, nacionalidad, estilos, 
