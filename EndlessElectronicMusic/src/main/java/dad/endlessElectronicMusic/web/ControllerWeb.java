@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ControllerWeb {
 
-	@RequestMapping("/greeting")
+	@RequestMapping("/greeting" )
 	public String greeting(Model model) {
 		model.addAttribute("name", "World");
 
