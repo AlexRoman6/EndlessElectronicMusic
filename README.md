@@ -9,7 +9,7 @@ Las entidades que se pueden distinguir en nuestra web son las siguientes:
 - **Estilos**: Diferentes estilos que engloba la música electrónica.
 - **Mejor valoradas**: Lista con las canciones que más votos positivos obtienen.
 - **Eventos**: Distintas actuaciones en conciertos o festivales.
-- **Blog**: Los usuarios podrán crear entradas y comentar en ellas.
+- **Blog**: Los usuarios podrán comentar las entradas.
 
 Los desarrolladores de esta web somos:
 - David García Herrero. Correo URJC: d.garciaherr@alumnos.urjc.es. Cuenta en Github: Davidgh96.
