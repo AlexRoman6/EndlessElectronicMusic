@@ -92,5 +92,13 @@ public class Usuario {
 	public void setComentario(List<Comentario> comentario) {
 		this.comentario = comentario;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", usuario=" + usuario + ", email=" + email + ", contraseña=" + contraseña
+				+ ", autentificacion=" + autentificacion + ", prioridad=" + prioridad + ", comentario=" + comentario
+				+ "]";
+	}
+	
 	
 }
