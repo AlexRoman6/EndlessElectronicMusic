@@ -23,7 +23,7 @@ public class Post {
 	
 	private String texto;
 	
-	@OneToMany
+	@OneToMany (mappedBy="comentario")
 	private List<Comentario> comentarios = new ArrayList<>();
 	
 	protected Post() {

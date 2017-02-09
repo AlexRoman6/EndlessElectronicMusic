@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 public class Cancion {
 	
@@ -13,7 +14,8 @@ public class Cancion {
 	private long id;
 
 	private String nombre;
-	private String artista;
+	@ManyToOne
+	private Artista artista;
 	private String genero;
 	private int año;
 	private Date fechaDeInclusion;
@@ -23,7 +25,7 @@ public class Cancion {
 	
 	public Cancion(){}
 
-	public Cancion(long id, String nombre, String artista, String genero, int año, Date fechaDeInclusion,
+	public Cancion(long id, String nombre, Artista artista, String genero, int año, Date fechaDeInclusion,
 			int valoracion, Image imagen, String url) {
 		
 		this.id = id;
@@ -54,11 +56,11 @@ public class Cancion {
 		this.nombre = nombre;
 	}
 
-	public String getArtista() {
+	public Artista getArtista() {
 		return artista;
 	}
 
-	public void setArtista(String artista) {
+	public void setArtista(Artista artista) {
 		this.artista = artista;
 	}
 

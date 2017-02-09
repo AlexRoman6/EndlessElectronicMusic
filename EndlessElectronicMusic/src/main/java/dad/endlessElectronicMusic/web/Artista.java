@@ -16,7 +16,7 @@ public class Artista {
     private String nacionalidad;
     private String estilo;
     
-    @OneToMany
+    @OneToMany (mappedBy="artista")
     private List<Cancion> cancion;
     
     public Artista (){};

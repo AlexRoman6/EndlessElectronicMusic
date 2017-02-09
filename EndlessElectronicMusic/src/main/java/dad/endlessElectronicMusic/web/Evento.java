@@ -25,7 +25,7 @@ public class Evento {
 	
 	private String texto;
 	
-	@OneToMany
+	@OneToMany (mappedBy="evento")
 	private List<Comentario> comentarios = new ArrayList<>();
 	
 	protected Evento() {
