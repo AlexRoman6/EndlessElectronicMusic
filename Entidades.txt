@@ -7,5 +7,5 @@ Eventos -> id, titulo, lugar, fecha, text, comentarios
 Post -> id, titulo, fecha, text, idcomentario
 
 *David*
-Comentario -> id, user, text, idType
+Comentario -> id, user, text, type, idType
 Artistas -> id, nombre, nacionalidad, estilos, 
