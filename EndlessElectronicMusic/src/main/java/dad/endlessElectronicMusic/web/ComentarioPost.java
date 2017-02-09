@@ -1,7 +1,5 @@
 package dad.endlessElectronicMusic.web;
 
-
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,29 +7,28 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Comentario {
+public class ComentarioPost {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
-	@ManyToOne 
-	private Usuario  usuario;
-	
-	private String texto;
-	// idType es False si es un comentario de blog y True si es un comentario de
-	// Evento
-	private boolean idType;
 
-	public Comentario() {
+	@ManyToOne
+	private Usuario usuario;
+
+	private String texto;
+
+	@ManyToOne
+	private Post post;
+
+	public ComentarioPost() {
 	};
 
-	public Comentario(long id, Usuario usuario, String texto, boolean idType) {
+	public ComentarioPost(long id, Usuario usuario, String texto, Post post) {
 		this.id = id;
 		this.usuario = usuario;
 		this.texto = texto;
-		this.idType = idType;
-
+		this.post = post;
 	}
 
 	public long getId() {
@@ -57,18 +54,19 @@ public class Comentario {
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
-
-	public boolean isIdType() {
-		return idType;
+	
+	public Post getpost() {
+		return post;
 	}
 
-	public void setIdType(boolean idType) {
-		this.idType = idType;
+	public void setpost(Post post) {
+		this.post = post;
 	}
 
 	@Override
 	public String toString() {
-		return "Comentario [id=" + id + ", usuario=" + usuario + ", texto=" + texto + ", idType=" + idType + "]";
+		return "Comentario [id=" + id + ", usuario=" + usuario + ", texto=" + texto + ", post=" + post + "]";
 	}
 
 }
+

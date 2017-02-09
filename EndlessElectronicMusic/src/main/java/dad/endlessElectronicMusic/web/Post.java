@@ -23,8 +23,8 @@ public class Post {
 	
 	private String texto;
 	
-	@OneToMany (mappedBy="comentario")
-	private List<Comentario> comentarios = new ArrayList<>();
+	@OneToMany (mappedBy="post")
+	private List<ComentarioPost> comentarios = new ArrayList<>();
 	
 	protected Post() {
 	}
@@ -68,11 +68,11 @@ public class Post {
 		this.fecha = fecha;
 	}
 	
-	public List<Comentario> getComentarios() {
+	public List<ComentarioPost> getComentarios() {
 		return comentarios;
 	}
 
-	public void setComentarios(List<Comentario> comentarios) {
+	public void setComentarios(List<ComentarioPost> comentarios) {
 		this.comentarios = comentarios;
 	}
 	

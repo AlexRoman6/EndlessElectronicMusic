@@ -1,12 +1,13 @@
 package dad.endlessElectronicMusic.web;
-import java.awt.Image;
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class Cancion {
 	
 	@Id
@@ -20,13 +21,13 @@ public class Cancion {
 	private int año;
 	private Date fechaDeInclusion;
 	private int valoracion;
-	private Image imagen;
+	private String imagen;
 	private String url;
 	
 	public Cancion(){}
 
 	public Cancion(long id, String nombre, Artista artista, String genero, int año, Date fechaDeInclusion,
-			int valoracion, Image imagen, String url) {
+			int valoracion, String imagen, String url) {
 		
 		this.id = id;
 		this.nombre = nombre;
@@ -96,11 +97,11 @@ public class Cancion {
 		this.valoracion = valoracion;
 	}
 
-	public Image getImagen() {
+	public String getImagen() {
 		return imagen;
 	}
 
-	public void setImagen(Image imagen) {
+	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
 

@@ -2,11 +2,13 @@ package dad.endlessElectronicMusic.web;
 
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+@Entity
 public class Usuario {
 	
 	@Id
@@ -20,13 +22,13 @@ public class Usuario {
 	private boolean prioridad;
 	//false prioridad baja y true prioridad alta
 	
-	@OneToMany(mappedBy="Usuario")
-	private List<Comentario>comentario;
+	@OneToMany(mappedBy="usuario")
+	private List<ComentarioEvento>comentarioEvento;
 	
 	public Usuario(){};
 	
 	public Usuario(long id, String usuario, String email, String contraseña, String autentificacion, boolean prioridad,
-			List<Comentario> comentario) {
+			List<ComentarioEvento> comentario) {
 		super();
 		this.id = id;
 		this.usuario = usuario;
@@ -34,7 +36,7 @@ public class Usuario {
 		this.contraseña = contraseña;
 		this.autentificacion = autentificacion;
 		this.prioridad = prioridad;
-		this.comentario = comentario;
+		this.comentarioEvento = comentario;
 	}
 
 	public long getId() {
@@ -85,18 +87,18 @@ public class Usuario {
 		this.prioridad = prioridad;
 	}
 
-	public List<Comentario> getComentario() {
-		return comentario;
+	public List<ComentarioEvento> getComentario() {
+		return comentarioEvento;
 	}
 
-	public void setComentario(List<Comentario> comentario) {
-		this.comentario = comentario;
+	public void setComentario(List<ComentarioEvento> comentario) {
+		this.comentarioEvento = comentario;
 	}
 
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", usuario=" + usuario + ", email=" + email + ", contraseña=" + contraseña
-				+ ", autentificacion=" + autentificacion + ", prioridad=" + prioridad + ", comentario=" + comentario
+				+ ", autentificacion=" + autentificacion + ", prioridad=" + prioridad + ", comentario=" + comentarioEvento
 				+ "]";
 	}
 	

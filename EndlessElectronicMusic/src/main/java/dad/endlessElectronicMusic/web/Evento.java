@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-;
+
 @Entity
 public class Evento {
 
@@ -26,7 +26,7 @@ public class Evento {
 	private String texto;
 	
 	@OneToMany (mappedBy="evento")
-	private List<Comentario> comentarios = new ArrayList<>();
+	private List<ComentarioEvento> comentarios = new ArrayList<>();
 	
 	protected Evento() {
 	}
@@ -79,11 +79,11 @@ public class Evento {
 		this.fecha = fecha;
 	}
 	
-	public List<Comentario> getComentarios() {
+	public List<ComentarioEvento> getComentarios() {
 		return comentarios;
 	}
 
-	public void setComentarios(List<Comentario> comentarios) {
+	public void setComentarios(List<ComentarioEvento> comentarios) {
 		this.comentarios = comentarios;
 	}
 	
