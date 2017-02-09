@@ -20,7 +20,7 @@ public class Usuario {
 	private boolean prioridad;
 	//false prioridad baja y true prioridad alta
 	
-	@OneToMany
+	@OneToMany(mappedBy="Usuario")
 	private List<Comentario>comentario;
 	
 	public Usuario(){};

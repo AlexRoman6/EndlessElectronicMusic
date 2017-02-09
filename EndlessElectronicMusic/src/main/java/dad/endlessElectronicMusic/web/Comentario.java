@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Comentario {
@@ -13,8 +14,10 @@ public class Comentario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-
-	private String usuario;
+	
+	@ManyToOne 
+	private Usuario  usuario;
+	
 	private String texto;
 	// idType es False si es un comentario de blog y True si es un comentario de
 	// Evento
@@ -23,7 +26,7 @@ public class Comentario {
 	public Comentario() {
 	};
 
-	public Comentario(long id, String usuario, String texto, boolean idType) {
+	public Comentario(long id, Usuario usuario, String texto, boolean idType) {
 		this.id = id;
 		this.usuario = usuario;
 		this.texto = texto;
@@ -39,11 +42,11 @@ public class Comentario {
 		this.id = id;
 	}
 
-	public String getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(String usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
 
