@@ -1,5 +1,6 @@
 package dad.endlessElectronicMusic.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -15,7 +16,7 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	private  String usuario;
+	private String usuario;
 	private String email;
 	private String contraseña;
 	private String autentificacion;
@@ -23,20 +24,20 @@ public class Usuario {
 	//false prioridad baja y true prioridad alta
 	
 	@OneToMany(mappedBy="usuario")
-	private List<ComentarioEvento>comentarioEvento;
+	private List<ComentarioEvento> comentariosEvento = new ArrayList<>();
 	
-	public Usuario(){};
+	@OneToMany(mappedBy="usuario")
+	private List<ComentarioPost> comentariosPost = new ArrayList<>();
 	
-	public Usuario(long id, String usuario, String email, String contraseña, String autentificacion, boolean prioridad,
-			List<ComentarioEvento> comentario) {
+	protected Usuario(){};
+	
+	public Usuario(String usuario, String email, String contraseña, String autentificacion, boolean prioridad) {
 		super();
-		this.id = id;
 		this.usuario = usuario;
 		this.email = email;
 		this.contraseña = contraseña;
 		this.autentificacion = autentificacion;
 		this.prioridad = prioridad;
-		this.comentarioEvento = comentario;
 	}
 
 	public long getId() {
@@ -87,19 +88,27 @@ public class Usuario {
 		this.prioridad = prioridad;
 	}
 
-	public List<ComentarioEvento> getComentario() {
-		return comentarioEvento;
+	public List<ComentarioEvento> getComentariosEvento() {
+		return comentariosEvento;
 	}
 
-	public void setComentario(List<ComentarioEvento> comentario) {
-		this.comentarioEvento = comentario;
+	public void setComentariosEvento(List<ComentarioEvento> comentariosEvento) {
+		this.comentariosEvento = comentariosEvento;
 	}
 
+	public List<ComentarioPost> getComentariosPost() {
+		return comentariosPost;
+	}
+
+	public void setComentariosPost(List<ComentarioPost> comentariosPost) {
+		this.comentariosPost = comentariosPost;
+	}
+	
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", usuario=" + usuario + ", email=" + email + ", contraseña=" + contraseña
-				+ ", autentificacion=" + autentificacion + ", prioridad=" + prioridad + ", comentario=" + comentarioEvento
-				+ "]";
+				+ ", autentificacion=" + autentificacion + ", prioridad=" + prioridad + ", comentarios=" + 
+				comentariosEvento + ", comentarios=" + comentariosPost + "]";
 	}
 	
 	

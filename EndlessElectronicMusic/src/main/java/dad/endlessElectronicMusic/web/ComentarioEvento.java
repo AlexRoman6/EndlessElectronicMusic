@@ -21,11 +21,10 @@ public class ComentarioEvento {
 	@ManyToOne
 	private Evento evento;
 
-	public ComentarioEvento() {
+	protected ComentarioEvento() {
 	};
 
-	public ComentarioEvento(long id, Usuario usuario, String texto, Evento evento) {
-		this.id = id;
+	public ComentarioEvento(Usuario usuario, String texto, Evento evento) {		
 		this.usuario = usuario;
 		this.texto = texto;
 		this.evento = evento;
@@ -55,11 +54,11 @@ public class ComentarioEvento {
 		this.texto = texto;
 	}
 	
-	public Evento getevento() {
+	public Evento getEvento() {
 		return evento;
 	}
 
-	public void setevento(Evento evento) {
+	public void setEvento(Evento evento) {
 		this.evento = evento;
 	}
 

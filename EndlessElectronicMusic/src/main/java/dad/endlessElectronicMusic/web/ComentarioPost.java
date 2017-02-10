@@ -21,11 +21,10 @@ public class ComentarioPost {
 	@ManyToOne
 	private Post post;
 
-	public ComentarioPost() {
+	protected ComentarioPost() {
 	};
 
-	public ComentarioPost(long id, Usuario usuario, String texto, Post post) {
-		this.id = id;
+	public ComentarioPost(Usuario usuario, String texto, Post post) {
 		this.usuario = usuario;
 		this.texto = texto;
 		this.post = post;
@@ -55,11 +54,11 @@ public class ComentarioPost {
 		this.texto = texto;
 	}
 	
-	public Post getpost() {
+	public Post getPost() {
 		return post;
 	}
 
-	public void setpost(Post post) {
+	public void setPost(Post post) {
 		this.post = post;
 	}
 

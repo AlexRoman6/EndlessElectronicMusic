@@ -1,5 +1,6 @@
 package dad.endlessElectronicMusic.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -19,54 +20,60 @@ public class Artista {
     private String estilo;
     
     @OneToMany (mappedBy="artista")
-    private List<Cancion> cancion;
+    private List<Cancion> canciones = new ArrayList<>();
     
-    public Artista (){};
+    protected Artista (){};
     
-    public Artista(long id, String nombre, String nacionalidad, String estilo,List<Cancion>cancion) {
-		this.id = id;
+    public Artista(String nombre, String nacionalidad, String estilo) {
 		this.nombre = nombre;
 		this.nacionalidad = nacionalidad;
 		this.estilo = estilo;
-		this.cancion=cancion;
 	}
+    
 	public long getId() {
 		return id;
 	}
+	
 	public void setId(long id) {
 		this.id = id;
 	}
+	
 	public String getNombre() {
 		return nombre;
 	}
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
 	public String getNacionalidad() {
 		return nacionalidad;
 	}
+	
 	public void setNacionalidad(String nacionalidad) {
 		this.nacionalidad = nacionalidad;
 	}
+	
 	public String getEstilo() {
 		return estilo;
 	}
+	
 	public void setEstilo(String estilo) {
 		this.estilo = estilo;
 	}
 
-	public List<Cancion> getCancion() {
-		return cancion;
+	public List<Cancion> getCanciones() {
+		return canciones;
 	}
 
-	public void setCancion(List<Cancion> cancion) {
-		this.cancion = cancion;
+	public void setCanciones(List<Cancion> canciones) {
+		this.canciones = canciones;
 	}
 
 	@Override
 	public String toString() {
 		return "Artista [id=" + id + ", nombre=" + nombre + ", nacionalidad=" + nacionalidad + ", estilo=" + estilo
-				+ ", cancion=" + cancion + "]";
+				+ ", canciones=" + canciones + "]";
 	}
 
     

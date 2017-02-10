@@ -17,22 +17,22 @@ public class Cancion {
 	private String nombre;
 	@ManyToOne
 	private Artista artista;
-	private String genero;
+	private String estilo;
 	private int año;
 	private Date fechaDeInclusion;
 	private int valoracion;
 	private String imagen;
 	private String url;
 	
-	public Cancion(){}
+	protected Cancion(){}
 
-	public Cancion(long id, String nombre, Artista artista, String genero, int año, Date fechaDeInclusion,
+	public Cancion(String nombre, Artista artista, String estilo, int año, Date fechaDeInclusion,
 			int valoracion, String imagen, String url) {
 		
-		this.id = id;
+		
 		this.nombre = nombre;
 		this.artista = artista;
-		this.genero = genero;
+		this.estilo = estilo;
 		this.año = año;
 		this.fechaDeInclusion = fechaDeInclusion;
 		this.valoracion = valoracion;
@@ -65,12 +65,12 @@ public class Cancion {
 		this.artista = artista;
 	}
 
-	public String getGenero() {
-		return genero;
+	public String getEstilo() {
+		return estilo;
 	}
 
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setEstilo(String estilo) {
+		this.estilo = estilo;
 	}
 
 	public int getAño() {
@@ -115,7 +115,7 @@ public class Cancion {
 
 	@Override
 	public String toString() {
-		return "Cancion [id=" + id + ", nombre=" + nombre + ", artista=" + artista + ", genero=" + genero + ", año="
+		return "Cancion [id=" + id + ", nombre=" + nombre + ", artista=" + artista + ", estilo=" + estilo + ", año="
 				+ año + ", fechaDeInclusion=" + fechaDeInclusion + ", valoracion=" + valoracion + ", imagen=" + imagen
 				+ ", url=" + url + "]";
 	};
