@@ -22,6 +22,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class SpringWebConfig extends WebMvcConfigurerAdapter {
 
 	/*
+	 
+	  
     //Modifica la ubicación de los templates para moustache
   	// If view "hello" is returned, Mustache temple will be '/static/templates/hello.html'
     @Bean
