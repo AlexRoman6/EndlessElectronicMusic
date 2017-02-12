@@ -354,8 +354,11 @@ _________________________________________________________ -->
 						</p>
 						<p class="text-muted">Solo se te permite cambiar actualmente
 							tu contraseña y mail</p>
+
+						<p class="text-muted">{{user.id}} {{user.usuario}}
+							{{user.email}} {{user.contraseña}}</p>
 							
-						<p class="text-muted">{{user.id}} {{user.usuario}} {{user.email}} {{user.contraseña}}</p>
+						<p class="text-muted">Control de errores: <b>{{error}}</b></p>
 
 						<div class="box">
 
@@ -363,12 +366,13 @@ _________________________________________________________ -->
 								<h3 class="text-uppercase">Cambiar Contraseña</h3>
 							</div>
 
-							<form action="/user-account" method="post">
+							<form method="post" id="fChangePass">
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label for="password_old">Contraseña anterior</label> <input
-												type="password" class="form-control" id="password_old" name='oldPass'>
+												type="password" class="form-control" id="password_old"
+												name='oldPass'>
 										</div>
 									</div>
 								</div>
@@ -376,54 +380,54 @@ _________________________________________________________ -->
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label for="password_1">Nueva Contraseña</label> <input
-												type="password" class="form-control" id="password_1" name='newPass1'>
+												type="password" class="form-control" id="password_1"
+												name='newPass1'>
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label for="password_2">Repita su nueva Contraseña</label> <input
-												type="password" class="form-control" id="password_2" name='newPass2'>
+												type="password" class="form-control" id="password_2"
+												name='newPass2'>
 										</div>
 									</div>
 								</div>
 								<!-- /.row -->
 
 								<div class="text-center">
-									<button type="submit" class="btn btn-template-main">
+									<button type="button" class="btn btn-template-main"
+										data-toggle="modal" data-target="#ChangePass-modal">
 										<i class="fa fa-save"></i> Cambiar Contraseña
 									</button>
+
 								</div>
 							</form>
 
 						</div>
 						<!-- /.box -->
 
+						<div class="modal fade" id="ChangePass-modal" tabindex="-1"
+							role="dialog" aria-labelledby="Login" aria-hidden="true">
+							<div class="modal-dialog modal-sm">
 
-						<div class="box clearfix">
-							<div class="heading">
-								<h3 class="text-uppercase">Cambiar Email</h3>
-							</div>
-							<p class="text-muted">
-								Actualmente estás usando el Email: <b>{{user.email}}</b>
-							</p>
-							<form>
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="form-group">
-											<label for="email_account">Email</label> <input type="text"
-												class="form-control" id="email_account">
-										</div>
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">&times;</button>
+										<h4 class="modal-title" id="Login">¿Seguro que desea
+											cambiar la contraseña?</h4>
 									</div>
-									<div class="col-sm-12 text-center">
-										<button type="submit" class="btn btn-template-main">
-											<i class="fa fa-save"></i> Cambiar Email
-										</button>
+									<div class="modal-body">
+										<p class="text-center text-muted">
+											<button type="submit" class="btn btn-template-main"
+												form="fChangePass" value="Submit">
+												<i class="fa fa-save"></i> Cambiar Contraseña
+											</button>
+										</p>
 
 									</div>
-
 								</div>
-							</form>
-
+							</div>
 						</div>
 
 					</div>
@@ -448,7 +452,7 @@ _________________________________________________________ -->
 								<ul class="nav nav-pills nav-stacked">
 									<li class="active"><a href="user-account.html"><i
 											class="fa fa-user"></i>Mi Cuenta</a></li>
-									<li ><a href="index.html"><i class="fa fa-sign-out"></i>
+									<li><a href="index.html"><i class="fa fa-sign-out"></i>
 											Cerrar Sesión</a></li>
 								</ul>
 							</div>
@@ -574,6 +578,7 @@ _________________________________________________________ -->
 	<script src="js/jquery.counterup.min.js"></script>
 	<script src="js/jquery.parallax-1.1.3.js"></script>
 	<script src="js/front.js"></script>
+
 
 
 
