@@ -14,6 +14,8 @@ public class ControllerIndex {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
 		
+		System.out.println(request.getContextPath() + "/resources");
+		
 		return result ;
 		
 	}
