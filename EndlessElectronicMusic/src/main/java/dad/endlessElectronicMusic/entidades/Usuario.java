@@ -19,7 +19,7 @@ public class Usuario {
 	private String usuario;
 	private String email;
 	private String contraseña;
-	private String autentificacion;
+	private boolean autentificacion;
 	private boolean prioridad;
 	//false prioridad baja y true prioridad alta
 	
@@ -31,7 +31,7 @@ public class Usuario {
 	
 	protected Usuario(){};
 	
-	public Usuario(String usuario, String email, String contraseña, String autentificacion, boolean prioridad) {
+	public Usuario(String usuario, String email, String contraseña, boolean autentificacion, boolean prioridad) {
 		super();
 		this.usuario = usuario;
 		this.email = email;
@@ -72,11 +72,11 @@ public class Usuario {
 		this.contraseña = contraseña;
 	}
 
-	public String getAutentificacion() {
+	public boolean getAutentificacion() {
 		return autentificacion;
 	}
 
-	public void setAutentificacion(String autentificacion) {
+	public void setAutentificacion(boolean autentificacion) {
 		this.autentificacion = autentificacion;
 	}
 
