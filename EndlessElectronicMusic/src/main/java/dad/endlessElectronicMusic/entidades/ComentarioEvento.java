@@ -24,10 +24,9 @@ public class ComentarioEvento {
 	protected ComentarioEvento() {
 	};
 
-	public ComentarioEvento(Usuario usuario, String texto, Evento evento) {		
+	public ComentarioEvento(Usuario usuario, String texto) {		
 		this.usuario = usuario;
 		this.texto = texto;
-		this.evento = evento;
 	}
 
 	public long getId() {

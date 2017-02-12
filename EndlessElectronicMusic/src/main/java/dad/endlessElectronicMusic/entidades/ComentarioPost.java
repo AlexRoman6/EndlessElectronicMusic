@@ -24,10 +24,9 @@ public class ComentarioPost {
 	protected ComentarioPost() {
 	};
 
-	public ComentarioPost(Usuario usuario, String texto, Post post) {
+	public ComentarioPost(Usuario usuario, String texto) {
 		this.usuario = usuario;
 		this.texto = texto;
-		this.post = post;
 	}
 
 	public long getId() {
