@@ -15,6 +15,7 @@ public class Cancion {
 	private long id;
 
 	private String nombre;
+	
 	@ManyToOne
 	private Artista autor;
 	private String nombreAutor;
@@ -27,12 +28,13 @@ public class Cancion {
 	
 	protected Cancion(){}
 
-	public Cancion(String nombre, Artista artista, String estilo, int año, Date fechaDeInclusion,
+	public Cancion(String nombre, Artista artista,String nombreAutor, String estilo, int año, Date fechaDeInclusion,
 			int valoracion, String imagen, String url) {
 		
 		
 		this.nombre = nombre;
 		this.autor = artista;
+		this.nombreAutor= nombreAutor;
 		this.genero = estilo;
 		this.anio = año;
 		this.addSong = fechaDeInclusion;

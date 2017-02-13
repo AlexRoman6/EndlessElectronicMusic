@@ -135,22 +135,22 @@ _________________________________________________________ -->
                                                     <div class="col-sm-3">
                                                         <h5>Buscar por:</h5>
                                                         <ul>
-                                                            <li><a href="songs-category.html?filter=genero">Género</a>
+                                                            <li><a href="songs-category.html?filter=nombre">Nombre</a>
                                                             </li>
-                                                            <li><a href="songs-category.html?filter=autor">Autor</a>
+                                                            <li><a href="songs-category.html?filter=nombreAutor">Autor</a>
+                                                            </li>
+                                                            <li><a href="songs-category.html?filter=genero">Genero</a>
                                                             </li>
                                                             <li><a href="songs-category.html?filter=anio">Año</a>
-                                                            </li>
-                                                            <li><a href="songs-category.html?filter=addSong">Fecha de inclusión</a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <h5>Ordenar por:</h5>
                                                         <ul>
-                                                            <li><a href="songs-category.html?valoracion">Valoración</a>
+                                                            <li><a href="songs-category.html?filter=valoracion">Valoración</a>
                                                             </li>
-                                                            <li><a href="songs-category.html?duracion">Duración</a>
+                                                            
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -328,7 +328,7 @@ _________________________________________________________ -->
                                     </div>
                                     <!-- /.image -->
                                     <div class="text">
-                                        <h3><a href="songs-detail.html">{{nombre}} {{-index}}</a></h3>
+                                        <h3><a href="songs-detail.html">{{nombre}} <strong>{{valoracion}}</strong></a></h3>
                                         <p class="price">{{artista.nombre}}</p>
                                         
                                     </div>
@@ -392,14 +392,14 @@ _________________________________________________________ -->
                                     <li>
                                         <a href="shop-category.html">Buscar por <span class="badge pull-right">total</span></a>
                                         <ul>
-                                            <li><a href="songs-category.html">Genero</a>
-                                            </li>
-                                            <li><a href="songs-category.html">Autor</a>
-                                            </li>
-                                            <li><a href="songs-category.html">Año</a>
-                                            </li>
-                                            <li><a href="songs-category.html">Fecha de inclusion</a>
-                                            </li>
+                                             <li><a href="songs-category.html?filter=nombre">Nombre</a>
+                                             </li>
+                                             <li><a href="songs-category.html?filter=nombreAutor">Autor</a>
+                                              </li>
+                                             <li><a href="songs-category.html?filter=genero">Genero</a>
+                                                            </li>
+                                             <li><a href="songs-category.html?filter=anio">Año</a>
+                                                 </li>
                                         </ul>
                                     </li>
                                     <li class="active">
@@ -407,8 +407,7 @@ _________________________________________________________ -->
                                         <ul>
                                             <li><a href="songs-category.html">Valoracion</a>
                                             </li>
-                                            <li><a href="songs-category.html">Año</a>
-                                            </li>
+                                            
                                             
                                         </ul>
                                     </li>

@@ -36,14 +36,16 @@ public class ControllerSongsCategory {
 		
 		Artista martin =new Artista("Martin Garrix","Holanda","Big Room");
 		Artista brennan= new Artista("Brennan Heart","Holanda","Hardstyle");
+		Artista hardwell= new Artista("Hardwell","Holanda","Electro House");
 		artistaRepository.save(martin);
 		artistaRepository.save(brennan);
-		Cancion animals= new Cancion("Animals",null,"Big Room",2013,new Date (11/02/2017),0,"martin_garrix_animals.jpg","https://www.youtube.com/watch?v=gCYcHz2k5x0");
-		Cancion imaginary= new Cancion("Imaginary",null,"Hardstyle",2013,new Date (11/02/2017),0,"brennan_heart_imaginary.jpeg","https://www.youtube.com/watch?v=h9I-9Sj4sKs");
-		animals.setArtista(martin);
-		imaginary.setArtista(brennan);
+		artistaRepository.save(hardwell);
+		Cancion animals= new Cancion("Animals",martin,martin.getNombre(),"Big Room",2013,new Date (11/02/2017),0,"martin_garrix_animals.jpg","https://www.youtube.com/watch?v=gCYcHz2k5x0");
+		Cancion imaginary= new Cancion("Imaginary",brennan,brennan.getNombre(),"Hardstyle",2013,new Date (11/02/2017),0,"brennan_heart_imaginary.jpeg","https://www.youtube.com/watch?v=h9I-9Sj4sKs");
+		Cancion spaceman= new Cancion("Spaceman",hardwell,hardwell.getNombre(),"Electro House",2012,new Date (13/02/2017),0,"hardwell_spaceman.jpg","https://www.youtube.com/watch?v=lETmskoqh30");
 		cancionRepository.save(imaginary);
 		cancionRepository.save(animals);
+		cancionRepository.save(spaceman);
 		
 		
 	}
