@@ -135,13 +135,13 @@ _________________________________________________________ -->
                                                     <div class="col-sm-3">
                                                         <h5>Buscar por:</h5>
                                                         <ul>
-                                                            <li><a href="songs-category.html?estilo">Género</a>
+                                                            <li><a href="songs-category.html?filter=estilo">Género</a>
                                                             </li>
-                                                            <li><a href="songs-category.html?autor">Autor</a>
+                                                            <li><a href="songs-category.html?filter=artista">Autor</a>
                                                             </li>
-                                                            <li><a href="songs-category.html?anio">Año</a>
+                                                            <li><a href="songs-category.html?filter=año">Año</a>
                                                             </li>
-                                                            <li><a href="songs-category.html?addSong">Fecha de inclusión</a>
+                                                            <li><a href="songs-category.html?filter=fechaDeInclusion">Fecha de inclusión</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -313,25 +313,31 @@ _________________________________________________________ -->
                         <p class="text-muted lead">La seleccion de los mejores temas de musica electronica</p>
 
                         <div class="row products">
-
+                        
+                        
+							
+								
+							{{#cancion}}
                             <div class="col-md-4 col-sm-6">
+                            
                                 <div class="product">
                                     <div class="image">
                                         <a href="songs-detail.html">
-                                            <img src="img/product1.jpg" alt="" class="img-responsive image1">
+                                            <img src={{{resources}}}/core/css/img/{{imagen}} alt="" class="img-responsive image1">
                                         </a>
                                     </div>
                                     <!-- /.image -->
                                     <div class="text">
-                                        <h3><a href="songs-detail.html">Titulo</a></h3>
-                                        <p class="price">Dj</p>
+                                        <h3><a href="songs-detail.html">{{nombre}}</a></h3>
+                                        <p class="price">{{artista.nombre}}</p>
                                         
                                     </div>
                                     <!-- /.text -->
                                 </div>
                                 <!-- /.product -->
+                                
                             </div>
-
+								{{/cancion}}
 
                         </div>
                         <!-- /.products -->
