@@ -24,6 +24,7 @@ public class ControllerUserAccount {
 	@PostConstruct
 	public void init() {
 		repository.save(new Usuario("Fran", "fmt@test.com", "1234", true, true));
+		//repository.save(new Usuario("Alex", "arm@test.com", "1234", true, true));
 	}
 
 	@RequestMapping("/user-account")
