@@ -35,9 +35,9 @@ public class ControllerSongDetail {
 		Cancion imaginary= new Cancion("Imaginary",null,"Hardstyle",2013,new Date (11/02/2017),0,"brennan_heart.jpeg","https://www.youtube.com/watch?v=h9I-9Sj4sKs");
 		animals.setArtista(martin);
 		imaginary.setArtista(brennan);
+		cancionRepository.save(animals);
 		cancionRepository.save(imaginary);
-		
-		
+				
 	}
 	
 	

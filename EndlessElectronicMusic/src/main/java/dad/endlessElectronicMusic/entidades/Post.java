@@ -18,7 +18,7 @@ public class Post {
 	private long id;
 	
 	private String titulo;
-	
+
 	private Date fecha;
 	
 	private String texto;
