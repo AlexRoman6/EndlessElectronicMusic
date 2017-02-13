@@ -16,10 +16,11 @@ public class Cancion {
 
 	private String nombre;
 	@ManyToOne
-	private Artista artista;
-	private String estilo;
-	private int año;
-	private Date fechaDeInclusion;
+	private Artista autor;
+	private String nombreAutor;
+	private String genero;
+	private int anio;
+	private Date addSong;
 	private int valoracion;
 	private String imagen;
 	private String url;
@@ -31,15 +32,55 @@ public class Cancion {
 		
 		
 		this.nombre = nombre;
-		this.artista = artista;
-		this.estilo = estilo;
-		this.año = año;
-		this.fechaDeInclusion = fechaDeInclusion;
+		this.autor = artista;
+		this.genero = estilo;
+		this.anio = año;
+		this.addSong = fechaDeInclusion;
 		this.valoracion = valoracion;
 		this.imagen = imagen;
 		this.url = url;
 	}
 	
+
+	public Artista getAutor() {
+		return autor;
+	}
+
+	public void setAutor(Artista autor) {
+		this.autor = autor;
+	}
+
+	public String getNombreAutor() {
+		return nombreAutor;
+	}
+
+	public void setNombreAutor(String nombreAutor) {
+		this.nombreAutor = nombreAutor;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public int getAnio() {
+		return anio;
+	}
+
+	public void setAnio(int anio) {
+		this.anio = anio;
+	}
+
+	public Date getAddSong() {
+		return addSong;
+	}
+
+	public void setAddSong(Date addSong) {
+		this.addSong = addSong;
+	}
 
 	public long getId() {
 		return id;
@@ -58,35 +99,35 @@ public class Cancion {
 	}
 
 	public Artista getArtista() {
-		return artista;
+		return autor;
 	}
 
 	public void setArtista(Artista artista) {
-		this.artista = artista;
+		this.autor = artista;
 	}
 
 	public String getEstilo() {
-		return estilo;
+		return genero;
 	}
 
 	public void setEstilo(String estilo) {
-		this.estilo = estilo;
+		this.genero = estilo;
 	}
 
 	public int getAño() {
-		return año;
+		return anio;
 	}
 
 	public void setAño(int año) {
-		this.año = año;
+		this.anio = año;
 	}
 
 	public Date getFechaDeInclusion() {
-		return fechaDeInclusion;
+		return addSong;
 	}
 
 	public void setFechaDeInclusion(Date fechaDeInclusion) {
-		this.fechaDeInclusion = fechaDeInclusion;
+		this.addSong = fechaDeInclusion;
 	}
 
 	public int getValoracion() {
@@ -115,8 +156,8 @@ public class Cancion {
 
 	@Override
 	public String toString() {
-		return "Cancion [id=" + id + ", nombre=" + nombre + ", artista=" + artista + ", estilo=" + estilo + ", año="
-				+ año + ", fechaDeInclusion=" + fechaDeInclusion + ", valoracion=" + valoracion + ", imagen=" + imagen
+		return "Cancion [id=" + id + ", nombre=" + nombre + ", artista=" + autor + ", estilo=" + genero + ", año="
+				+ anio + ", fechaDeInclusion=" + addSong + ", valoracion=" + valoracion + ", imagen=" + imagen
 				+ ", url=" + url + "]";
 	};
 	

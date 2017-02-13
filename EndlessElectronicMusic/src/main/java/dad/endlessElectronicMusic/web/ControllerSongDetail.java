@@ -19,29 +19,6 @@ import dad.endlessElectronicMusic.entidades.CancionRepository;
 public class ControllerSongDetail {
 	
 	
-	@Autowired
-	private CancionRepository cancionRepository;
-	@Autowired
-	private ArtistaRepository artistaRepository;
-	
-	@PostConstruct 
-	public void init(){
-		
-		Artista martin =new Artista("Martin Garrix","Holanda","Big Room");
-		Artista brennan= new Artista("Brennan Heart","Holanda","Hardstyle");
-		artistaRepository.save(martin);
-		artistaRepository.save(brennan);
-		Cancion animals= new Cancion("Animals",null,"Big Room",2013,new Date (11/02/2017),0,"martin_garrix_animals.jpg","https://www.youtube.com/watch?v=gCYcHz2k5x0");
-		Cancion imaginary= new Cancion("Imaginary",null,"Hardstyle",2013,new Date (11/02/2017),0,"brennan_heart.jpeg","https://www.youtube.com/watch?v=h9I-9Sj4sKs");
-		animals.setArtista(martin);
-		imaginary.setArtista(brennan);
-		cancionRepository.save(animals);
-		cancionRepository.save(imaginary);
-				
-	}
-	
-	
-	
 	@RequestMapping("/songs-detail")
 	public ModelAndView printSongDetail(HttpServletRequest request) {
 		ModelAndView result = new ModelAndView();

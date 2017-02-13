@@ -19,7 +19,7 @@ public class Artista {
     private String nacionalidad;
     private String estilo;
     
-    @OneToMany (mappedBy="artista")
+    @OneToMany (mappedBy="autor")
     private List<Cancion> canciones = new ArrayList<>();
     
     protected Artista (){};
@@ -75,6 +75,8 @@ public class Artista {
 		return "Artista [id=" + id + ", nombre=" + nombre + ", nacionalidad=" + nacionalidad + ", estilo=" + estilo
 				+ ", canciones=" + canciones + "]";
 	}
+
+	
 
     
  

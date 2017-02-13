@@ -39,7 +39,7 @@ public class ControllerSongsCategory {
 		artistaRepository.save(martin);
 		artistaRepository.save(brennan);
 		Cancion animals= new Cancion("Animals",null,"Big Room",2013,new Date (11/02/2017),0,"martin_garrix_animals.jpg","https://www.youtube.com/watch?v=gCYcHz2k5x0");
-		Cancion imaginary= new Cancion("Imaginary",null,"Hardstyle",2013,new Date (11/02/2017),0,"brennan_heart.jpeg","https://www.youtube.com/watch?v=h9I-9Sj4sKs");
+		Cancion imaginary= new Cancion("Imaginary",null,"Hardstyle",2013,new Date (11/02/2017),0,"brennan_heart_imaginary.jpeg","https://www.youtube.com/watch?v=h9I-9Sj4sKs");
 		animals.setArtista(martin);
 		imaginary.setArtista(brennan);
 		cancionRepository.save(imaginary);
@@ -55,10 +55,14 @@ public class ControllerSongsCategory {
 	public ModelAndView printSongCategory(HttpServletRequest request,@RequestParam String filter) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
-	
-		List<Cancion> genero = cancionRepository.findAll(new Sort(filter));
 		
-		result.addObject("cancion", genero);
+		
+		List<Cancion> canciones = cancionRepository.findAll(new Sort(filter));
+		result.addObject("cancion", canciones);
+		
+		
+		
+		
 		return result;
 
 	}
