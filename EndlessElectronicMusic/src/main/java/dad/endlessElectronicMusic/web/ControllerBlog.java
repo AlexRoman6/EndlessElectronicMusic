@@ -1,5 +1,7 @@
 package dad.endlessElectronicMusic.web;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -7,8 +9,11 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import dad.endlessElectronicMusic.entidades.ComentarioEvento;
@@ -43,42 +48,95 @@ public class ControllerBlog {
 	@PostConstruct
 	public void init() {
 		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 		
-		Date fecha1 = new Date (21/07/2017);
-		Date fecha2 = new Date (13/02/2017);
+		String dateInString1 = "21-07-2017";
+		Date fecha1 = null;
+		
+		try {
+			fecha1 = sdf.parse(dateInString1);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String dateInString2 = "27-01-2017";
+		Date fecha2 = null;
+		
+		try {
+			fecha2 = sdf.parse(dateInString2);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String dateInString3 = "24-03-2017";
+		Date fecha3 = null;
+		
+		try {
+			fecha3 = sdf.parse(dateInString3);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String dateInString4 = "22-09-2016";
+		Date fecha4 = null;
+		
+		try {
+			fecha4 = sdf.parse(dateInString4);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		Evento evento1 = new Evento("Tomorrowland", "Bélgica", fecha1, "El mejor festival de Europa");
-		Post post1 = new Post("Nuevo tema", fecha2, "El último hit de este mes");
+		Post post1 = new Post("Scared To Be Lonely", fecha2, "Lo último de Martin Garrix");
+		Evento evento2 = new Evento("UMF", "Miami", fecha3, "La reunión de los mejores DJs");
+		Post post2 = new Post("Do It Right", fecha4, "Lo último de Martin Solveig");
 		
 		eventoRepository.save(evento1);
+		eventoRepository.save(evento2);
 		postRepository.save(post1);
+		postRepository.save(post2);
 		
 		Usuario usuario1 = new Usuario("Alex", "arm@test.com", "1234", true, true);		
 		usuarioRepository.save(usuario1);
 		
 		ComentarioEvento c1 = new ComentarioEvento(usuario1, "Qué ganas!");
 		ComentarioPost c2 = new ComentarioPost(usuario1, "Temazo!");
+		ComentarioEvento c3 = new ComentarioEvento(usuario1, "Ya falta menos!");
+		ComentarioPost c4 = new ComentarioPost(usuario1, "Brutal!");
 		
 		c1.setEvento(evento1);
 		c2.setPost(post1);
+		c3.setEvento(evento2);
+		c4.setPost(post2);
 		
 		comentarioEventoRepository.save(c1);
-		comentarioPostRepository.save(c2);				
+		comentarioPostRepository.save(c2);
+		comentarioEventoRepository.save(c3);
+		comentarioPostRepository.save(c4);
 		
-	}
-		
-	public List<Evento> eventos() {
-		return eventoRepository.findAll();
-	}
-		
-	public List<Post> posts() {
-		return postRepository.findAll();
-	}
+	}		
+	
 	
 	@RequestMapping("/blog")
-	public ModelAndView printBlog(HttpServletRequest request) {
+	public ModelAndView printBlog(HttpServletRequest request, @RequestParam String filter) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		if (filter == "evento") {
+		
+			List<Evento> eventos = eventoRepository.findAll();
+			result.addObject("evento", eventos);
+		}
+		
+		if (filter == "post") {
+		
+			List<Post> posts = postRepository.findAll();
+			result.addObject("post", posts);
+		}
 		
 		return result;
 		

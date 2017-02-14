@@ -170,7 +170,7 @@ _________________________________________________________ -->
                                                     <div class="col-sm-3">
                                                         <h5>Eventos</h5>
                                                         <ul>
-                                                            <li><a href="blog.html?type=eventos">Eventos de interes</a>
+                                                            <li><a href="blog.html?filter=evento">Eventos de interés</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -192,7 +192,7 @@ _________________________________________________________ -->
                                                     <div class="col-sm-3">
                                                         <h5>Blogs</h5>
                                                         <ul>
-                                                            <li><a href="blog.html?type=blog">Top canciones</a>
+                                                            <li><a href="blog.html?filter=post">Top canciones</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -308,31 +308,31 @@ _________________________________________________________ -->
 			 _________________________________________________________ -->
 
                     <div class="col-md-9" id="blog-listing-big">
-
+						
                         <section class="post">
-                            <h2><a href="post.htmls">Fashion now</a></h2>
+                        {{#evento}}
+                            <h2><a href="post.htmls">{{titulo}}</a></h2>
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <p class="author-category">Por <a href="#">John Snow</a> en <a href="blog.html">Eventos</a>
-                                    </p>
-                                </div>
+                                
                                 <div class="col-sm-6">
                                     <p class="date-comments">
-                                        <a href="blog-post.html"><i class="fa fa-calendar-o"></i> 20 de Junio, 2013</a>
-                                        <a href="blog-post.html"><i class="fa fa-comment-o"></i> 8 Comentarios</a>
+                                        <a href="blog-post.html"><i class="fa fa-calendar-o"></i> {{fecha}}</a>
+                                        <a href="blog-post.html"><i class="fa fa-comment-o"></i> Comentarios</a>
                                     </p>
                                 </div>
                             </div>
-                            <div class="image">
-                                <a href="blog-post.html">
-                                    <img src="{{{resources}}}/core/css/img/blog2.jpg" class="img-responsive" alt="Example blog post alt">
-                                </a>
-                            </div>
-                            <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                            
+                            <p class="intro">
+                            	Lugar: {{lugar}}
+                            	
+                            	{{texto}}
+                            
+                            </p>
                             <p class="read-more"><a href="blog-post.html" class="btn btn-template-main">Continuar leyendo</a>
                             </p>
+                        {{/evento}}    
                         </section>
+                        
                         
                         <ul class="pager">
                             <li class="previous"><a href="#">&larr; Más antiguas</a>
