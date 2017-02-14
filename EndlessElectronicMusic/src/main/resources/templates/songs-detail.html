@@ -316,10 +316,10 @@ _________________________________________________________ -->
                     
 						
 						
-						 {{#cancion}}
+						 
                         <div class="row" id="productMain">
                        
-                       
+                       {{#cancion}}
                         
                             <div class="col-sm-6">
                                 <div id="mainImage">
@@ -370,10 +370,11 @@ _________________________________________________________ -->
 
                                 
                         </div>
-
+							{{/cancion}}
                         
 
                         <div class="row">
+                        {{#cancionartista}}
                             <div class="col-md-3 col-sm-6">
                                 <div class="box text-uppercase">
                                     <h3>Otra cancion del autor</h3>
@@ -383,26 +384,28 @@ _________________________________________________________ -->
                             <div class="col-md-3 col-sm-6">
                                 <div class="product">
                                     <div class="image">
-                                        <a href="">
-                                            <img src="img/product2.jpg" alt="" class="img-responsive image1">
+                                        <a href="songs-detail.html?filter={{id}}">
+                                            <img src="{{{resources}}}/core/css/img/{{imagen}}" alt="" class="img-responsive image1">
                                         </a>
                                     </div>
                                     <div class="text">
-                                        <h3>Fur coat</h3>
-                                        <p class="price">$143</p>
+                                        <h3>{{nombre}}</h3>
+                                        <p class="price">{{autor.nombre}}</p>
 
                                     </div>
                                 </div>
                                 <!-- /.product -->
                             </div>
 
-                           
+                           {{/cancionartista}}
 
                             
 
                         </div>
 
                         <div class="row">
+                        {{#canciongenero}}
+                        
                             <div class="col-md-3 col-sm-6">
                                 <div class="box text-uppercase">
                                     <h3>Otra cancion del genero</h3>
@@ -413,25 +416,25 @@ _________________________________________________________ -->
                             <div class="col-md-3 col-sm-6">
                                 <div class="product">
                                     <div class="image">
-                                        <a href="#">
-                                            <img src="img/product3.jpg" alt="" class="img-responsive image1">
+                                        <a href="songs-detail.html?filter={{id}}">
+                                            <img src="{{{resources}}}/core/css/img/{{imagen}}" alt="" class="img-responsive image1">
                                         </a>
                                     </div>
                                     <div class="text">
-                                        <h3>Fur coat</h3>
-                                        <p class="price">$143</p>
+                                        <h3>{{nombre}}</h3>
+                                        <p class="price">{{autor.nombre}}</p>
                                     </div>
                                 </div>
                                 <!-- /.product -->
                             </div>
-
+							{{/canciongenero}}
                            
 
 
                             
 
                         </div>
-						{{/cancion}}
+						
                     </div>
                     <!-- /.col-md-9 -->
 
