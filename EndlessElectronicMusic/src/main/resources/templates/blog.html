@@ -170,7 +170,7 @@ _________________________________________________________ -->
                                                     <div class="col-sm-3">
                                                         <h5>Eventos</h5>
                                                         <ul>
-                                                            <li><a href="blog.html?filter=evento">Eventos de interés</a>
+                                                            <li><a href="blog.html?type=eventos">Eventos de interés</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -190,9 +190,9 @@ _________________________________________________________ -->
                                                         <img src="{{{resources}}}/core/css/img/template-homepage.png" class="img-responsive hidden-xs" alt="">
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <h5>Blogs</h5>
+                                                        <h5>Blog</h5>
                                                         <ul>
-                                                            <li><a href="blog.html?filter=post">Top canciones</a>
+                                                            <li><a href="blog.html?type=posts">Noticias</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -309,37 +309,26 @@ _________________________________________________________ -->
 
                     <div class="col-md-9" id="blog-listing-big">
 						
-                        <section class="post">
-                        {{#evento}}
+						{{#evento}}
+                        <section class="post">                        
                             <h2><a href="post.htmls">{{titulo}}</a></h2>
-                            <div class="row">
-                                
+                            <div class="row">                                
                                 <div class="col-sm-6">
                                     <p class="date-comments">
                                         <a href="blog-post.html"><i class="fa fa-calendar-o"></i> {{fecha}}</a>
                                         <a href="blog-post.html"><i class="fa fa-comment-o"></i> Comentarios</a>
                                     </p>
                                 </div>
-                            </div>
-                            
+                            </div>                            
                             <p class="intro">
-                            	Lugar: {{lugar}}
                             	
-                            	{{texto}}
-                            
+                            	{{texto}}                            
                             </p>
                             <p class="read-more"><a href="blog-post.html" class="btn btn-template-main">Continuar leyendo</a>
-                            </p>
-                        {{/evento}}    
+                            </p>                            
                         </section>
+                        {{/evento}}
                         
-                        
-                        <ul class="pager">
-                            <li class="previous"><a href="#">&larr; Más antiguas</a>
-                            </li>
-                            <li class="next disabled"><a href="#"> Más recientes &rarr;</a>
-                            </li>
-                        </ul>
 
 
                     </div>
@@ -376,9 +365,9 @@ _________________________________________________________ -->
 
                             <div class="panel-body">
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="blog.html">Eventos</a>
+                                    <li><a href="blog.html?type=eventos">Eventos</a>
                                     </li>
-                                    <li><a href="blog.html">Canciones</a>
+                                    <li><a href="blog.html?type=posts">Noticias</a>
                                     </li>
                                 </ul>
                             </div>
