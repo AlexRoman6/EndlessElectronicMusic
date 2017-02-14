@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.naming.spi.DirStateFactory.Result;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,9 +44,11 @@ public class ControllerSongsCategory {
 		Cancion animals= new Cancion("Animals",martin,martin.getNombre(),"Big Room",2013,new Date (11/02/2017),0,"martin_garrix_animals.jpg","https://www.youtube.com/watch?v=gCYcHz2k5x0");
 		Cancion imaginary= new Cancion("Imaginary",brennan,brennan.getNombre(),"Hardstyle",2013,new Date (11/02/2017),0,"brennan_heart_imaginary.jpeg","https://www.youtube.com/watch?v=h9I-9Sj4sKs");
 		Cancion spaceman= new Cancion("Spaceman",hardwell,hardwell.getNombre(),"Electro House",2012,new Date (13/02/2017),0,"hardwell_spaceman.jpg","https://www.youtube.com/watch?v=lETmskoqh30");
+		Cancion losemymind= new Cancion("Lose My Mind",brennan,brennan.getNombre(),"Hardstyle",2011,new Date (14/02/2017),0,"brennan_heart_lose_my_mind.jpg","https://www.youtube.com/watch?v=JP6Tz5tP8EE");
 		cancionRepository.save(imaginary);
 		cancionRepository.save(animals);
 		cancionRepository.save(spaceman);
+		cancionRepository.save(losemymind);
 		
 		
 	}
@@ -62,7 +65,7 @@ public class ControllerSongsCategory {
 		List<Cancion> canciones = cancionRepository.findAll(new Sort(filter));
 		result.addObject("cancion", canciones);
 		
-		
+		result.addObject("total", canciones.size());
 		
 		
 		return result;
