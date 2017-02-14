@@ -312,11 +312,18 @@ _________________________________________________________ -->
 		    _________________________________________________________ -->
 
                     <div class="col-md-9">
-
+                    
+                    
+						
+						
+						 {{#cancion}}
                         <div class="row" id="productMain">
+                       
+                       
+                        
                             <div class="col-sm-6">
                                 <div id="mainImage">
-                                    <img src="img/detailbig1.jpg" alt="" class="img-responsive">
+                                    <img src="{{{resources}}}/core/css/img/{{imagen}}" alt="" class="img-responsive">
                                 </div>
 
                             </div>
@@ -326,18 +333,18 @@ _________________________________________________________ -->
                                     <form>
                                         <div class="sizes">
 
-                                            <h3>Titulo</h3>
+                                            <h3>{{nombre}}</h3>
 
-                                            <h4>Año</h4>
+                                            <h4>{{autor.nombre}}</h4>
 
                                         </div>
 
-                                        <p class="price">$124.00</p>
+                                        
 
                                         <p class="text-center">
                                             <button type="submit" class="btn btn-template-main"> +</button>
                                            	<button type="submit" class="btn btn-template-main"> -</button>
-                                           
+                                           <h1> Votos: {{valoracion}}</h1>
                                         </p>
 
                                     </form>
@@ -345,29 +352,23 @@ _________________________________________________________ -->
 
                                 
                             </div>
-
+							
                         </div>
 
 
                         <div class="box" id="details">
                             <p>
-                                <h4>Product details</h4>
-                                <p>White lace top, woven, has a round neck, short sleeves, has knitted lining attached</p>
-                                <h4>Material & care</h4>
+                                <h4>Año:</h4>
+                                <p>{{anio}}</p>
+                                <h4>Genero:</h4>
+                                <p> {{genero}}</p>
+                                <h4>Ver Video</h4>
                                 <ul>
-                                    <li>Polyester</li>
-                                    <li>Machine wash</li>
-                                </ul>
-                                <h4>Size & Fit</h4>
-                                <ul>
-                                    <li>Regular fit</li>
-                                    <li>The model (height 5'8" and chest 33") is wearing a size S</li>
+                                  <p><a href="{{url}}">{{autor.nombre}} - {{nombre}}</a>
+                                    
                                 </ul>
 
-                                <blockquote>
-                                    <p><em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.</em>
-                                    </p>
-                                </blockquote>
+                                
                         </div>
 
                         
@@ -375,14 +376,14 @@ _________________________________________________________ -->
                         <div class="row">
                             <div class="col-md-3 col-sm-6">
                                 <div class="box text-uppercase">
-                                    <h3>Canciones del autor</h3>
+                                    <h3>Otra cancion del autor</h3>
                                 </div>
                             </div>
 
                             <div class="col-md-3 col-sm-6">
                                 <div class="product">
                                     <div class="image">
-                                        <a href="#">
+                                        <a href="">
                                             <img src="img/product2.jpg" alt="" class="img-responsive image1">
                                         </a>
                                     </div>
@@ -404,7 +405,7 @@ _________________________________________________________ -->
                         <div class="row">
                             <div class="col-md-3 col-sm-6">
                                 <div class="box text-uppercase">
-                                    <h3>Canciones del genero</h3>
+                                    <h3>Otra cancion del genero</h3>
                                 </div>
                             </div>
 
@@ -430,7 +431,7 @@ _________________________________________________________ -->
                             
 
                         </div>
-
+						{{/cancion}}
                     </div>
                     <!-- /.col-md-9 -->
 
