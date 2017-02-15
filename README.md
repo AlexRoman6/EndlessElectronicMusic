@@ -22,3 +22,11 @@ En esta fase hemos planificado cómo va a ser nuestra aplicación. En el siguien
 ![Diagrama](http://i.imgur.com/j9C1Xiy.png "De navegacion")
 
 Para esta fase no hemos diferenciado entre la parte pública y la privada, puesto que no es necesario. Sin embargo, hemos decidido que la parte privada será para que el usuario pueda escribir en el blog y votar las diferentes canciones, y el resto de la página será pública.
+
+A continuación, mostramos un diagrama UML de nuestra base de datos MySQL, en el que pueden verse las entidades con sus atributos y las relaciones que existen entre ellas.
+
+![UML](http://i.imgur.com/yKX12c3.png "UML")
+
+Cabe destacar que hasta la fase siguiente no existirá una relación entre los usuarios y las canciones, ya que será entonces cuando los usuarios puedan registrarse en la página y votar. Para entonces, nuestra página seguirá este diagrama entidad-relación.
+
+![ER](http://i.imgur.com/FjMDqZd.jpg "ER")
