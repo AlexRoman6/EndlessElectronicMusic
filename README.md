@@ -33,23 +33,29 @@ Cabe destacar que hasta la fase siguiente no existirá una relación entre los u
 
 **Páginas principales diseñadas**
 
-- Inicio: Presenta nuestra página y muestra las últimas canciones y las últimas entradas de los blogs.
+- Inicio: Presenta una breve introducion página, con informacion referida a nuestra pagina. Ademas, dispone de una entrada con las ultimas canciones de la pagina y otra con las ultimas entradas a los blogs, pudiendo visitarlas si lo desea.
 
 ![Inicio](http://i.imgur.com/LjmkAsT.jpg "Inicio")
 
-- Canciones: Contiene toda las canciones de nuestra página. Se pueden ordenar y clasificar por varios criterios.
+- Canciones: Contiene toda las canciones de nuestra página. 
+- Se pueden ordenar y clasificar por los siguientes criterios:
+    **Nombre**: Ordena las canciones por el nombre de la cancion.
+    **Artista**:Ordena las canciones por el nombre del artista.
+    **Genero**: Ordena las canciones por el genero musical de la cancion.
+    **Año**: Ordena las canciones por el año de creaccion de las mismas.
+    Pulsando en cada una de ellas podemos ir a su ficha.
 
 ![Canciones](http://i.imgur.com/DdpmeQ5.jpg "Canciones")
 
-- Ficha de la canción: Se muestran los datos de cada canción e incluye el videoclip.
+- Ficha de la canción: Se muestran los datos de cada canción, entre ellos el video de la cancion. Ademas,se nos muestra una cancion del mismo genero y otra del mismo autor, pudiendo visualizar su ficha de igual manera.
 
 ![Cancion](http://i.imgur.com/Jfpfg9Q.jpg "Cancion")
 
-- Eventos: Lista de todos los eventos de nuestra página.
+- Eventos: Lista de todos los eventos de nuestra página, indicandonos el tema y la localizacion de este, entre otros datos.Pulsando en cada uno de ellos iremos a su entrada.
 
 ![Eventos](http://i.imgur.com/TztmdCU.jpg "Eventos")
 
-- Ficha del evento: Muestra información sobre cada evento y los comentarios que han hecho los usuarios.
+- Ficha del evento: Muestra información sobre el  evento y los comentarios que han hecho los usuarios.
 
 ![Evento](http://i.imgur.com/n02E5ic.jpg "Evento")
 
