@@ -69,11 +69,21 @@ public class ControllerWeb {
 		Artista hardwell = new Artista("Hardwell", "Holanda", "Electro House");
 		Artista dimitrivegaslikemike= new Artista("Dimitri Vegas & Like Mike","Belgica","Big Room");
 		Artista headhunterz =new Artista("Headhunterz","Holanda","Hardstyle");
+		Artista zatox = new Artista("Zatox","Italia","Hardstyle");
+		Artista oliverheldens=new Artista("Oliver Heldens","Holanda","Future House");
+		Artista gunzforhire= new Artista("Gunz for Hire","Holanda","Hardstyle");
+		Artista ww= new Artista("W&W","Holanda","Big Room");
+		Artista theprophet= new Artista("The Prophet","Holanda","Hardstyle");
 		artistRepo.save(martin);
 		artistRepo.save(brennan);
 		artistRepo.save(hardwell);
 		artistRepo.save(dimitrivegaslikemike);
 		artistRepo.save(headhunterz);
+		artistRepo.save(zatox);
+		artistRepo.save(oliverheldens);
+		artistRepo.save(gunzforhire);
+		artistRepo.save(ww);
+		artistRepo.save(theprophet);
 
 		// Create Canción
 
@@ -91,12 +101,22 @@ public class ControllerWeb {
 				new Date(15/02/ 2017),0,"dimitri_vegas_like_mike_the_hum.jpg","exJlapzPnlc");
 		Cancion thesacrifice= new Cancion("The Sacrifice",headhunterz,headhunterz.getNombre(),"Hardstyle",2006,
 				new Date(15/02/ 2017),0,"headhunterz_the_sacrifice.jpg","a7uToulRNeQ");
+		Cancion wizard =new Cancion("Wizard",martin,martin.getNombre(),"Big Room",2013,
+				new Date(15/02/ 2017),0,"martin_garrix_wizard.jpg","KnL2RJZTdA4");
+		Cancion fifo = new Cancion("F.I.F.O", brennan, brennan.getNombre(), "Hardstyle", 2013,
+				new Date(15 / 02 / 2017), 0, "brennan_heart_fifo.jpeg","T3SQZOW-iZk");
+		Cancion alternatereality = new Cancion("Alternate Reality", brennan, brennan.getNombre(), "Hardstyle", 2010,
+				new Date(15 / 02 / 2017), 0, "brennan_heart_alternate_reality.jpg","t2Pavrg02_E");
+				
 		songRepo.save(imaginary);
 		songRepo.save(animals);
 		songRepo.save(spaceman);
 		songRepo.save(losemymind);
 		songRepo.save(thehum);
 		songRepo.save(thesacrifice);
+		songRepo.save(wizard);
+		songRepo.save(fifo);
+		songRepo.save(alternatereality);
 
 		// Create PostSimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
 		
