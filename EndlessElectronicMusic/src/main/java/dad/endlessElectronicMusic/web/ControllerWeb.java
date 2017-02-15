@@ -102,23 +102,36 @@ public class ControllerWeb {
 		
 		//recordad que Enero es el mes 0, febrero el 1...
 		Date fecha1 = new GregorianCalendar(2017, 6, 21).getTime();
-		Date fecha2 = new GregorianCalendar(2017, 6, 27).getTime();
-		Date fecha3 = new GregorianCalendar(2017, 6, 24).getTime();
-		Date fecha4 = new GregorianCalendar(2017, 6, 22).getTime();
+		Date fecha2 = new GregorianCalendar(2017, 0, 27).getTime();
+		Date fecha3 = new GregorianCalendar(2017, 2, 24).getTime();
+		Date fecha4 = new GregorianCalendar(2016, 8, 22).getTime();
+		Date fecha5 = new GregorianCalendar(2017, 7, 10).getTime();
+		Date fecha6 = new GregorianCalendar(2017, 1, 1).getTime();
 
 		Evento evento1 = new Evento("Tomorrowland", "Bélgica", fecha1, "Tomorrowland.jpg", "El mejor festival de Europa"
 				+ " regresa. Los mejores artista del panorama internacional se citan un año más en Bélgica.");
+		
 		Post post1 = new Post("Scared To Be Lonely", fecha2, "ScaredToBeLonely.jpg", "Lo último de Martin Garrix. "
 				+ "Junto a Dua Lipa, el joven Dj holandés quiere comenzar el año a lo grande");
+		
 		Evento evento2 = new Evento("UMF", "Miami", fecha3, "Ultra.jpg", "La reunión de los mejores DJs y "
 				+ "productores del mundo vuelve a Miami para hacernos disfrutar durante tres días.");
+		
 		Post post2 = new Post("Do It Right", fecha4, "DoItRight.png", "El último tema del productor y DJ francés "
 				+ "Martin Solveig, junto con Tkay Maidza, por fín ha llegado");
-
+		
+		Evento evento3 = new Evento("Dreambeach", "Villaricos", fecha5, "Dreambeach.jpg", "Uno de los grandes festivales "
+				+ "de España regresa con los mejores artistas para hacernos pasar un mes de agosto inolvidable en Villaricos.");
+		
+		Post post3 = new Post("Avicii trabaja en nueva música", fecha6, "Avicii.jpg", "El Dj y pruductor sueco "
+				+ "cuelga varios videos en sus redes sociales en los que aprece elaborando su próximo álbum.");
+		
 		eventRepo.save(evento1);
 		eventRepo.save(evento2);
+		eventRepo.save(evento3);
 		postRepo.save(post1);
 		postRepo.save(post2);
+		postRepo.save(post3);
 
 		// Create Comentario
 
@@ -126,16 +139,40 @@ public class ControllerWeb {
 		ComentarioPost c2 = new ComentarioPost(alex, "Temazo!");
 		ComentarioEvento c3 = new ComentarioEvento(david, "Ya falta menos!");
 		ComentarioPost c4 = new ComentarioPost(alex, "Brutal!");
+		ComentarioEvento c5 = new ComentarioEvento(alex, "Vamooossss!!");
+		ComentarioPost c6 = new ComentarioPost(david, "Menudo crack! Tengo ganas de ver lo que está preparando.");
+		ComentarioEvento c7 = new ComentarioEvento(alex, "Esto pinta bien");
+		ComentarioPost c8 = new ComentarioPost(fran, "Se sale!!");
+		ComentarioEvento c9 = new ComentarioEvento(alex, "Cómo me gustaría ir :(");
+		ComentarioPost c10 = new ComentarioPost(david, "Buenisimooo!!");
+		ComentarioEvento c11 = new ComentarioEvento(david, "A ver si empiezan a confirmar artistas.");
+		ComentarioPost c12 = new ComentarioPost(fran, "Qué gran noticia.");
 
 		c1.setEvento(evento1);
 		c2.setPost(post1);
 		c3.setEvento(evento2);
 		c4.setPost(post2);
+		c5.setEvento(evento3);
+		c6.setPost(post3);
+		c7.setEvento(evento1);
+		c8.setPost(post1);
+		c9.setEvento(evento2);
+		c10.setPost(post2);
+		c11.setEvento(evento3);
+		c12.setPost(post3);
 
 		comenEvenRepo.save(c1);
 		comenPostRepo.save(c2);
 		comenEvenRepo.save(c3);
 		comenPostRepo.save(c4);
+		comenEvenRepo.save(c5);
+		comenPostRepo.save(c6);
+		comenEvenRepo.save(c7);
+		comenPostRepo.save(c8);
+		comenEvenRepo.save(c9);
+		comenPostRepo.save(c10);
+		comenEvenRepo.save(c11);
+		comenPostRepo.save(c12);
 
 	}
 
