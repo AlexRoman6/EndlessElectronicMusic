@@ -67,10 +67,13 @@ public class ControllerWeb {
 		Artista martin = new Artista("Martin Garrix", "Holanda", "Big Room");
 		Artista brennan = new Artista("Brennan Heart", "Holanda", "Hardstyle");
 		Artista hardwell = new Artista("Hardwell", "Holanda", "Electro House");
-
+		Artista dimitrivegaslikemike= new Artista("Dimitri Vegas & Like Mike","Belgica","Big Room");
+		Artista headhunterz =new Artista("Headhunterz","Holanda","Hardstyle");
 		artistRepo.save(martin);
 		artistRepo.save(brennan);
 		artistRepo.save(hardwell);
+		artistRepo.save(dimitrivegaslikemike);
+		artistRepo.save(headhunterz);
 
 		// Create Canción
 
@@ -84,11 +87,16 @@ public class ControllerWeb {
 		Cancion losemymind = new Cancion("Lose My Mind", brennan, brennan.getNombre(), "Hardstyle", 2011,
 				new Date(14 / 02 / 2017), 0, "brennan_heart_lose_my_mind.jpg",
 				"JP6Tz5tP8EE");
-
+		Cancion thehum= new Cancion("The Hum",dimitrivegaslikemike,dimitrivegaslikemike.getNombre(),"Big Room",2015,
+				new Date(15/02/ 2017),0,"dimitri_vegas_like_mike_the_hum.jpg","exJlapzPnlc");
+		Cancion thesacrifice= new Cancion("The Sacrifice",headhunterz,headhunterz.getNombre(),"Hardstyle",2006,
+				new Date(15/02/ 2017),0,"headhunterz_the_sacrifice.jpg","a7uToulRNeQ");
 		songRepo.save(imaginary);
 		songRepo.save(animals);
 		songRepo.save(spaceman);
 		songRepo.save(losemymind);
+		songRepo.save(thehum);
+		songRepo.save(thesacrifice);
 
 		// Create PostSimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
 		
