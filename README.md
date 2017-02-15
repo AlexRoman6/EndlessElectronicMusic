@@ -39,10 +39,11 @@ Cabe destacar que hasta la fase siguiente no existirá una relación entre los u
 
 - Canciones: Contiene toda las canciones de nuestra página. 
 - Se pueden ordenar y clasificar por los siguientes criterios:
-    **Nombre**: Ordena las canciones por el nombre de la cancion.
-    **Artista**:Ordena las canciones por el nombre del artista.
-    **Genero**: Ordena las canciones por el genero musical de la cancion.
-    **Año**: Ordena las canciones por el año de creaccion de las mismas.
+
+    -**Nombre**: Ordena las canciones por el nombre de la cancion.
+    -**Artista**:Ordena las canciones por el nombre del artista.
+    -**Genero**: Ordena las canciones por el genero musical de la cancion.
+    -**Año**: Ordena las canciones por el año de creaccion de las mismas.
     Pulsando en cada una de ellas podemos ir a su ficha.
 
 ![Canciones](http://i.imgur.com/DdpmeQ5.jpg "Canciones")
@@ -55,11 +56,11 @@ Cabe destacar que hasta la fase siguiente no existirá una relación entre los u
 
 ![Eventos](http://i.imgur.com/TztmdCU.jpg "Eventos")
 
-- Ficha del evento: Muestra información sobre el  evento y los comentarios que han hecho los usuarios.
+- Ficha del evento: Muestra información sobre el evento y los comentarios que han hecho los usuarios.
 
 ![Evento](http://i.imgur.com/n02E5ic.jpg "Evento")
 
-- Noticias: Lista de todos los posts que publicamos en nuestra página.
+- Noticias: Lista de todos los posts que publicamos en nuestra página.Pulsando en cada uno de ellos iremos a su entrada.
 
 ![Noticias](http://i.imgur.com/NRAemwd.jpg "Noticias")
 
