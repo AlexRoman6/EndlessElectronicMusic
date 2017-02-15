@@ -137,6 +137,8 @@ public class ControllerBlog {
 
 			result.addObject("evento", posts);
 		}
+		
+		result.addObject("type", type);
 
 		return result;
 
