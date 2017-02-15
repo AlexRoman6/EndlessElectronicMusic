@@ -107,7 +107,26 @@ public class ControllerWeb {
 				new Date(15 / 02 / 2017), 0, "brennan_heart_fifo.jpeg","T3SQZOW-iZk");
 		Cancion alternatereality = new Cancion("Alternate Reality", brennan, brennan.getNombre(), "Hardstyle", 2010,
 				new Date(15 / 02 / 2017), 0, "brennan_heart_alternate_reality.jpg","t2Pavrg02_E");
-				
+		Cancion apollo = new Cancion("Apollo", hardwell, hardwell.getNombre(), "Electro House", 2013,
+				new Date(15 / 02 / 2017), 0, "hardwell_apollo.jpg", "q8kUckZ15fE");	
+		Cancion madness= new Cancion("Madness",dimitrivegaslikemike,dimitrivegaslikemike.getNombre(),"Big Room",2013,
+				new Date(15/02/ 2017),0,"dimitri_vegas_like_mike_madness.jpg","dHDImoc94XQ");
+		Cancion scrapattack= new Cancion("Scrap Attack",headhunterz,headhunterz.getNombre(),"Hardstyle",2009,
+				new Date(15/02/ 2017),0,"headhunterz_scrap_attack.jpeg","OouY9rwIRjA");
+		Cancion rumbleinthejungle= new Cancion("Rumble In The Jungle",zatox,zatox.getNombre(),"Hardstyle",2015,
+				new Date(15/02/ 2017),0,"zatox_rumble_in_the_jungle.jpeg","EkiKN9sVFu0");
+		Cancion mystrengthishardstyle= new Cancion("My Strength Is Hardstyle",zatox,zatox.getNombre(),"Hardstyle",2016,
+				new Date(15/02/ 2017),0,"zatox_my_strength_is_hardstyle.jpg","pKGQlh7xaeE");
+		Cancion melody= new Cancion("Melody",oliverheldens,oliverheldens.getNombre(),"Future House",2015,
+				new Date(15/02/ 2017),0,"oliver_heldens_melody.jpg","VMnPX3GeyEM");
+		Cancion executionerstyle= new Cancion("Executioner Style",gunzforhire,gunzforhire.getNombre(),"Hardstyle",2016,
+				new Date(15/02/ 2017),0,"gunz_for_hire_executioner_style.jpg","snQQsXoU3l8");
+		Cancion maygodbewithyouall= new Cancion("May God Be With You All",gunzforhire,gunzforhire.getNombre(),"Hardstyle",2015,
+				new Date(15/02/ 2017),0,"gunz_for_hire_may_god_be_with_you_all.jpg","bp7D-kgQt5A");
+		Cancion caribbeanrave = new Cancion("Caribbean Rave", ww, ww.getNombre(), "Big Room", 2016,
+				new Date(11 / 02 / 2017),0, "ww_caribbean_rave.jpg", "t0thau7RIWA");
+		Cancion aycaramba= new Cancion("Ay Caramba!",theprophet,theprophet.getNombre(),"Hardstyle",2016,
+				new Date(15/02/ 2017),0,"the_prophet_ay_caramba.jpg","-06PzCM5Okc");
 		songRepo.save(imaginary);
 		songRepo.save(animals);
 		songRepo.save(spaceman);
@@ -117,6 +136,17 @@ public class ControllerWeb {
 		songRepo.save(wizard);
 		songRepo.save(fifo);
 		songRepo.save(alternatereality);
+		songRepo.save(apollo);
+		songRepo.save(madness);
+		songRepo.save(scrapattack);
+		songRepo.save(rumbleinthejungle);
+		songRepo.save(mystrengthishardstyle);
+		songRepo.save(melody);
+		songRepo.save(executionerstyle);
+		songRepo.save(maygodbewithyouall);
+		songRepo.save(caribbeanrave);
+		songRepo.save(aycaramba);
+		
 
 		// Create PostSimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
 		
