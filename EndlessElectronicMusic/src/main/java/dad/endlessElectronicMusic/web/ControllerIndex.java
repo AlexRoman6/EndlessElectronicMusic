@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import dad.endlessElectronicMusic.entidades.CancionRepository;
+import dad.endlessElectronicMusic.entidades.EventoRepository;
+import dad.endlessElectronicMusic.entidades.PostRepository;
 import dad.endlessElectronicMusic.entidades.Usuario;
 import dad.endlessElectronicMusic.entidades.UsuarioRepository;
 
@@ -20,9 +24,18 @@ import dad.endlessElectronicMusic.entidades.UsuarioRepository;
 public class ControllerIndex {
 
 	@Autowired
-	private UsuarioRepository repository;
-
-	// private Long idUser = 0L;
+	private UsuarioRepository repositoryUsers;
+	
+	@Autowired
+	private CancionRepository repositoryCancion;
+	
+	@Autowired
+	private PostRepository repositoryPost;
+	
+	@Autowired
+	private EventoRepository repositoryEventos;
+	
+	
 
 	private String sLogin = "Iniciar Sesión";
 	private String sRegister = "Registrarse";
@@ -40,7 +53,7 @@ public class ControllerIndex {
 
 		if (idUser != null) {
 
-			Usuario u = repository.findOne(idUser);
+			Usuario u = repositoryUsers.findOne(idUser);
 			sLogin = u.getUsuario().toUpperCase();
 			sRegister = "Cerrar Sesión";
 			sPathRegister = "logout.html";
@@ -55,6 +68,12 @@ public class ControllerIndex {
 			toModal = "#login-modal";
 		}
 
+		result.addObject("numUsers", repositoryUsers.findAll().size());
+		result.addObject("numEventos", repositoryEventos.findAll().size());
+		result.addObject("numBlogs", repositoryPost.findAll().size());
+		result.addObject("numSongs", repositoryCancion.findAll().size());
+		result.addObject("canciones", repositoryCancion.findAll(new Sort("addSong")));
+		result.addObject("post", repositoryPost.findAll(new Sort("fecha")));
 		result.addObject("sLogin", sLogin);
 		result.addObject("sRegister", sRegister);
 		result.addObject("SPathRegister", sPathRegister);
@@ -74,7 +93,7 @@ public class ControllerIndex {
 		String userName = request.getParameter("campoUser");
 		String userPass = request.getParameter("campoPass");
 
-		List<Usuario> lUsers = repository.findByUsuarioAndContraseña(userName, userPass);
+		List<Usuario> lUsers = repositoryUsers.findByUsuarioAndContraseña(userName, userPass);
 
 		if (lUsers.size() == 1) {
 			Usuario user = lUsers.get(0);
@@ -89,7 +108,7 @@ public class ControllerIndex {
 
 		if (idUser != null) {
 
-			Usuario u = repository.findOne(idUser);
+			Usuario u = repositoryUsers.findOne(idUser);
 			sLogin = u.getUsuario().toUpperCase();
 			sRegister = "Cerrar Sesión";
 			sPathRegister = "logout.html";
@@ -104,6 +123,12 @@ public class ControllerIndex {
 			toModal = "#login-modal";
 		}
 		
+		result.addObject("numUsers", repositoryUsers.findAll().size());
+		result.addObject("numEventos", repositoryEventos.findAll().size());
+		result.addObject("numBlogs", repositoryPost.findAll().size());
+		result.addObject("numSongs", repositoryCancion.findAll().size());
+		result.addObject("canciones", repositoryCancion.findAll(new Sort("addSong")));
+		result.addObject("post", repositoryPost.findAll(new Sort("fecha")));
 		result.addObject("sLogin", sLogin);
 		result.addObject("sRegister", sRegister);
 		result.addObject("SPathRegister", sPathRegister);
