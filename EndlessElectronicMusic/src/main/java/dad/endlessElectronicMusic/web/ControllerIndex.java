@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import dad.endlessElectronicMusic.entidades.Cancion;
 import dad.endlessElectronicMusic.entidades.CancionRepository;
 import dad.endlessElectronicMusic.entidades.EventoRepository;
+import dad.endlessElectronicMusic.entidades.Post;
 import dad.endlessElectronicMusic.entidades.PostRepository;
 import dad.endlessElectronicMusic.entidades.Usuario;
 import dad.endlessElectronicMusic.entidades.UsuarioRepository;
@@ -67,13 +70,16 @@ public class ControllerIndex {
 			sPathLogin = "#";
 			toModal = "#login-modal";
 		}
-
+		List<Cancion>cancionesnuevas=repositoryCancion.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
+		List<Cancion>cancionesnuevas1=cancionesnuevas.subList(0,3);
+		List<Post>postnuevos=repositoryPost.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
+		List<Post>postnuevos1=postnuevos.subList(0,2);
 		result.addObject("numUsers", repositoryUsers.findAll().size());
 		result.addObject("numEventos", repositoryEventos.findAll().size());
 		result.addObject("numBlogs", repositoryPost.findAll().size());
 		result.addObject("numSongs", repositoryCancion.findAll().size());
-		result.addObject("canciones", repositoryCancion.findAll(new Sort("addSong")));
-		result.addObject("post", repositoryPost.findAll(new Sort("fecha")));
+		result.addObject("canciones", cancionesnuevas1);
+		result.addObject("post", postnuevos1);
 		result.addObject("sLogin", sLogin);
 		result.addObject("sRegister", sRegister);
 		result.addObject("SPathRegister", sPathRegister);
