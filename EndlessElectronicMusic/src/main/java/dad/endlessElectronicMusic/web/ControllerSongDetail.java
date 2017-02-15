@@ -6,6 +6,7 @@ import java.util.Random;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -18,51 +19,62 @@ import dad.endlessElectronicMusic.entidades.Artista;
 import dad.endlessElectronicMusic.entidades.ArtistaRepository;
 import dad.endlessElectronicMusic.entidades.Cancion;
 import dad.endlessElectronicMusic.entidades.CancionRepository;
+import dad.endlessElectronicMusic.entidades.UsuarioRepository;
 
 @Controller
 public class ControllerSongDetail {
-	   Random numAleatorio = new Random();
-      
+	Random numAleatorio = new Random();
+
 	@Autowired
 	private CancionRepository cancionRepository;
 	@Autowired
 	private ArtistaRepository artistaRepository;
-	
+
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+
+	private String sLogin = "Iniciar Sesión";
+	private String sRegister = "Registrarse";
+	private String sPathRegister = "user-register.html";
+	private String sPathLogin = "#";
+	private String toModal = "#login-modal";
+	private String modal = "modal";
+
 	@RequestMapping("/songs-detail")
-	public ModelAndView printSongDetail(HttpServletRequest request, @RequestParam Long filter) {
+	public ModelAndView printSongDetail(HttpServletRequest request, HttpSession sesion, @RequestParam Long filter) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
-		
+
+		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
+				usuarioRepository);
+
 		Cancion cancion = cancionRepository.findOne(filter);
 		result.addObject("cancion", cancion);
-		
-		String nombre=cancion.getNombreAutor();
-		List<Cancion> cancionartista=cancionRepository.findAllByNombreAutor(nombre);
+
+		String nombre = cancion.getNombreAutor();
+		List<Cancion> cancionartista = cancionRepository.findAllByNombreAutor(nombre);
 		cancionartista.remove(cancion);
 		Cancion cancionartista1;
-		if (cancionartista.size()==0){
-			cancionartista1=null;
-		}else
-		{
-			cancionartista1=cancionartista.get(numAleatorio.nextInt(cancionartista.size()));
+		if (cancionartista.size() == 0) {
+			cancionartista1 = null;
+		} else {
+			cancionartista1 = cancionartista.get(numAleatorio.nextInt(cancionartista.size()));
 		}
-		result.addObject("cancionartista",cancionartista1);
-		
-		String genero=cancion.getGenero();
-		List<Cancion> canciongenero=cancionRepository.findAllByGenero(genero);
+		result.addObject("cancionartista", cancionartista1);
+
+		String genero = cancion.getGenero();
+		List<Cancion> canciongenero = cancionRepository.findAllByGenero(genero);
 		canciongenero.remove(cancion);
 		Cancion canciongenero1;
-		if (canciongenero.size()==0){
-			canciongenero1=null;
-		}else
-		{
-			canciongenero1=canciongenero.get(numAleatorio.nextInt(canciongenero.size()));
+		if (canciongenero.size() == 0) {
+			canciongenero1 = null;
+		} else {
+			canciongenero1 = canciongenero.get(numAleatorio.nextInt(canciongenero.size()));
 		}
-		result.addObject("canciongenero",canciongenero1);
-		
-	
+		result.addObject("canciongenero", canciongenero1);
+
 		return result;
-		
+
 	}
 
 }

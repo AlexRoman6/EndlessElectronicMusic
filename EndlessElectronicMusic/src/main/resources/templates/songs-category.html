@@ -73,8 +73,8 @@ _________________________________________________________ -->
                             </div>
 
                             <div class="login">
-                                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Iniciar Sesión</span></a>
-                                <a href="user-register.html"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Registrarse</span></a>
+                                <a href="{{SPathLogin}}" data-toggle="modal" data-target="{{toModal}}"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">{{sLogin}}</span></a>
+                                <a href="{{SPathRegister}}"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">{{sRegister}}</span></a>
                             </div>
 
                         </div>
@@ -105,7 +105,7 @@ _________________________________________________________ -->
                                 </button>
                             </div>
                         </div>
-                        <!--/.navbarheader -->
+                        <!--/.navbar-header -->
 
                         <div class="navbar-collapse collapse" id="navigation">
 
@@ -115,11 +115,11 @@ _________________________________________________________ -->
                                     <ul class="dropdown-menu">
                                         <li><a href="index.html">Inicio</a>
                                         </li>
-                                        <li><a href="index.html#sobre">Sobre el projecto</a>
+                                        <li><a href="#sobre">Sobre el projecto</a>
                                         </li>
-                                        <li><a href="index.html#last">Últimas canciones</a>
+                                        <li><a href="#last">Últimas canciones</a>
                                         </li>
-                                        <li><a href="index.html#blog">Entradas recientes</a>
+                                        <li><a href="#blog">Entradas recientes</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -150,7 +150,7 @@ _________________________________________________________ -->
                                                         <ul>
                                                             <li><a href="songs-category.html?filter=valoracion">Valoración</a>
                                                             </li>
-                                                            
+                                                           
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -170,7 +170,7 @@ _________________________________________________________ -->
                                                     <div class="col-sm-3">
                                                         <h5>Eventos</h5>
                                                         <ul>
-                                                            <li><a href="blog.html?type=eventos">Eventos de interes</a>
+                                                            <li><a href="blog.html?type=eventos">Eventos de interés</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -190,9 +190,9 @@ _________________________________________________________ -->
                                                         <img src="{{{resources}}}/core/css/img/template-homepage.png" class="img-responsive hidden-xs" alt="">
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <h5>Blogs</h5>
+                                                        <h5>Blog</h5>
                                                         <ul>
-                                                            <li><a href="blog.html?type=blog">Top canciones</a>
+                                                            <li><a href="blog.html?type=posts">Noticias</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -239,7 +239,8 @@ _________________________________________________________ -->
 
 
                 </div>
-           
+                <!-- /#navbar -->
+
             </div>
 
             <!-- *** NAVBAR END *** -->
@@ -258,16 +259,16 @@ _________________________________________________________ -->
                         <h4 class="modal-title" id="Login">Inicio de sesión</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="user-account.html" method="post">
+                        <form action="index.html" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="email_modal" placeholder="email">
+                                <input type="text" class="form-control" id="email_modal" placeholder="usuario" name="campoUser">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password_modal" placeholder="password">
+                                <input type="password" class="form-control" id="password_modal" placeholder="contraseña" name="campoPass">
                             </div>
 
                             <p class="text-center">
-                                <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Login</button>
+                                <button type="submit" value="Submit" class="btn btn-template-main"><i class="fa fa-sign-in"></i> Iniciar Sesión</button>
                             </p>
 
                         </form>

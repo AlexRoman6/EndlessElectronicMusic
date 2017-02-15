@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.jpa.criteria.predicate.IsEmptyPredicate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,17 +22,28 @@ public class ControllerUserAccount {
 	@Autowired
 	private UsuarioRepository repository;
 
+	private String sLogin = "Iniciar Sesión";
+	private String sRegister = "Registrarse";
+	private String sPathRegister = "user-register.html";
+	private String sPathLogin = "#";
+	private String toModal = "#login-modal";
+	private String modal = "modal";
+
 	@PostConstruct
 	public void init() {
 		repository.save(new Usuario("Fran", "fmt@test.com", "1234", true, true));
-		//repository.save(new Usuario("Alex", "arm@test.com", "1234", true, true));
+		// repository.save(new Usuario("Alex", "arm@test.com", "1234", true,
+		// true));
 	}
 
 	@RequestMapping("/user-account")
-	public ModelAndView printUserAccount(HttpServletRequest request) {
+	public ModelAndView printUserAccount(HttpServletRequest request, HttpSession sesion) {
 
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+
+		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
+				repository);
 
 		List<Usuario> users = repository.findAll();
 		Usuario user = users.get(0);

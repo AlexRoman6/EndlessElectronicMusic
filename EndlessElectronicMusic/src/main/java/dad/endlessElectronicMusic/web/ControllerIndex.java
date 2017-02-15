@@ -28,63 +28,40 @@ public class ControllerIndex {
 
 	@Autowired
 	private UsuarioRepository repositoryUsers;
-	
+
 	@Autowired
 	private CancionRepository repositoryCancion;
-	
+
 	@Autowired
 	private PostRepository repositoryPost;
-	
+
 	@Autowired
 	private EventoRepository repositoryEventos;
-	
-	
 
 	private String sLogin = "Iniciar Sesión";
 	private String sRegister = "Registrarse";
 	private String sPathRegister = "user-register.html";
 	private String sPathLogin = "#";
 	private String toModal = "#login-modal";
+	private String modal = "modal";
 
 	@RequestMapping("/index")
 	public ModelAndView printWelcome(HttpServletRequest request, HttpSession sesion) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
 
-		Long idUser = (Long) sesion.getAttribute("idUser");
-		 //Long idUser = 1L;
-
-		if (idUser != null) {
-
-			Usuario u = repositoryUsers.findOne(idUser);
-			sLogin = u.getUsuario().toUpperCase();
-			sRegister = "Cerrar Sesión";
-			sPathRegister = "logout.html";
-			sPathLogin = "user-account.html";
-			toModal = "";
-
-		} else {
-			sLogin = "Iniciar Sesión";
-			sRegister = "Registrarse";
-			sPathRegister = "user-register.html";
-			sPathLogin = "#";
-			toModal = "#login-modal";
-		}
-		List<Cancion>cancionesnuevas=repositoryCancion.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
-		List<Cancion>cancionesnuevas1=cancionesnuevas.subList(0,3);
-		List<Post>postnuevos=repositoryPost.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
-		List<Post>postnuevos1=postnuevos.subList(0,2);
+		loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion, repositoryUsers);
+		
+		List<Cancion> cancionesnuevas = repositoryCancion.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
+		List<Cancion> cancionesnuevas1 = cancionesnuevas.subList(0, 3);
+		List<Post> postnuevos = repositoryPost.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
+		List<Post> postnuevos1 = postnuevos.subList(0, 2);
 		result.addObject("numUsers", repositoryUsers.findAll().size());
 		result.addObject("numEventos", repositoryEventos.findAll().size());
 		result.addObject("numBlogs", repositoryPost.findAll().size());
 		result.addObject("numSongs", repositoryCancion.findAll().size());
 		result.addObject("canciones", cancionesnuevas1);
 		result.addObject("post", postnuevos1);
-		result.addObject("sLogin", sLogin);
-		result.addObject("sRegister", sRegister);
-		result.addObject("SPathRegister", sPathRegister);
-		result.addObject("SPathLogin", sPathLogin);
-		result.addObject("toModal", toModal);
 
 		return result;
 
@@ -108,38 +85,16 @@ public class ControllerIndex {
 		} else {
 			sesion.setAttribute("idUser", null);
 		}
-		
-		Long idUser = (Long) sesion.getAttribute("idUser");
-		 //Long idUser = 1L;
 
-		if (idUser != null) {
+		loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion, repositoryUsers);
 
-			Usuario u = repositoryUsers.findOne(idUser);
-			sLogin = u.getUsuario().toUpperCase();
-			sRegister = "Cerrar Sesión";
-			sPathRegister = "logout.html";
-			sPathLogin = "user-account.html";
-			toModal = "";
-
-		} else {
-			sLogin = "Iniciar Sesión";
-			sRegister = "Registrarse";
-			sPathRegister = "user-register.html";
-			sPathLogin = "#";
-			toModal = "#login-modal";
-		}
-		
 		result.addObject("numUsers", repositoryUsers.findAll().size());
 		result.addObject("numEventos", repositoryEventos.findAll().size());
 		result.addObject("numBlogs", repositoryPost.findAll().size());
 		result.addObject("numSongs", repositoryCancion.findAll().size());
 		result.addObject("canciones", repositoryCancion.findAll(new Sort("addSong")));
 		result.addObject("post", repositoryPost.findAll(new Sort("fecha")));
-		result.addObject("sLogin", sLogin);
-		result.addObject("sRegister", sRegister);
-		result.addObject("SPathRegister", sPathRegister);
-		result.addObject("SPathLogin", sPathLogin);
-		result.addObject("toModal", toModal);
+		
 
 		return result;
 
@@ -151,5 +106,38 @@ public class ControllerIndex {
 		sesion.setAttribute("idUser", null);
 
 		return "logout";
+	}
+
+	public static void loginString(String sLogin, String sRegister, String sPathRegister, String sPathLogin, String toModal,
+			String modal, ModelAndView result, HttpSession sesion, UsuarioRepository repositoryUsers) {
+		
+		Long idUser = (Long) sesion.getAttribute("idUser");
+
+		if (idUser != null) {
+
+			Usuario u = repositoryUsers.findOne(idUser);
+			sLogin = u.getUsuario().toUpperCase();
+			sRegister = "Cerrar Sesión";
+			sPathRegister = "logout.html";
+			sPathLogin = "user-account.html";
+			toModal = "";
+			modal = "";
+
+		} else {
+			sLogin = "Iniciar Sesión";
+			sRegister = "Registrarse";
+			sPathRegister = "user-register.html";
+			sPathLogin = "#";
+			toModal = "#login-modal";
+			modal = "modal";
+		}
+		
+		result.addObject("sLogin", sLogin);
+		result.addObject("sRegister", sRegister);
+		result.addObject("SPathRegister", sPathRegister);
+		result.addObject("SPathLogin", sPathLogin);
+		result.addObject("toModal", toModal);
+		result.addObject("modal", modal);
+
 	}
 }

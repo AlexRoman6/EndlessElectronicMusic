@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,6 +43,13 @@ public class ControllerBlog {
 
 	@Autowired
 	private ComentarioPostRepository comentarioPostRepository;
+	
+	private String sLogin = "Iniciar Sesión";
+	private String sRegister = "Registrarse";
+	private String sPathRegister = "user-register.html";
+	private String sPathLogin = "#";
+	private String toModal = "#login-modal";
+	private String modal = "modal";
 
 	@PostConstruct
 	public void init() {
@@ -123,10 +131,12 @@ public class ControllerBlog {
 	}
 
 	@RequestMapping("/blog")
-	public ModelAndView printBlog(HttpServletRequest request, @RequestParam String type) {
+	public ModelAndView printBlog(HttpServletRequest request,HttpSession sesion, @RequestParam String type) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
 
+		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion, usuarioRepository);
+		
 		if (type.equals("eventos")) {
 
 			List<Evento> eventos = eventoRepository.findAll();
@@ -137,6 +147,8 @@ public class ControllerBlog {
 
 			result.addObject("evento", posts);
 		}
+		
+		
 		
 		result.addObject("type", type);
 
