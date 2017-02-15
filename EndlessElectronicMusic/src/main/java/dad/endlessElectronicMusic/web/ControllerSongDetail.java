@@ -1,22 +1,18 @@
 package dad.endlessElectronicMusic.web;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import dad.endlessElectronicMusic.entidades.Artista;
-import dad.endlessElectronicMusic.entidades.ArtistaRepository;
 import dad.endlessElectronicMusic.entidades.Cancion;
 import dad.endlessElectronicMusic.entidades.CancionRepository;
 import dad.endlessElectronicMusic.entidades.UsuarioRepository;
@@ -27,8 +23,6 @@ public class ControllerSongDetail {
 
 	@Autowired
 	private CancionRepository cancionRepository;
-	@Autowired
-	private ArtistaRepository artistaRepository;
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;

@@ -12,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import dad.endlessElectronicMusic.entidades.Cancion;
@@ -51,7 +50,7 @@ public class ControllerIndex {
 		result.addObject("resources", request.getContextPath() + "/resources");
 
 		loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion, repositoryUsers);
-		
+
 		List<Cancion> cancionesnuevas = repositoryCancion.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
 		List<Cancion> cancionesnuevas1 = cancionesnuevas.subList(0, 3);
 		List<Post> postnuevos = repositoryPost.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
@@ -94,7 +93,6 @@ public class ControllerIndex {
 		result.addObject("numSongs", repositoryCancion.findAll().size());
 		result.addObject("canciones", repositoryCancion.findAll(new Sort("addSong")));
 		result.addObject("post", repositoryPost.findAll(new Sort("fecha")));
-		
 
 		return result;
 
@@ -108,9 +106,9 @@ public class ControllerIndex {
 		return "logout";
 	}
 
-	public static void loginString(String sLogin, String sRegister, String sPathRegister, String sPathLogin, String toModal,
-			String modal, ModelAndView result, HttpSession sesion, UsuarioRepository repositoryUsers) {
-		
+	public static void loginString(String sLogin, String sRegister, String sPathRegister, String sPathLogin,
+			String toModal, String modal, ModelAndView result, HttpSession sesion, UsuarioRepository repositoryUsers) {
+
 		Long idUser = (Long) sesion.getAttribute("idUser");
 
 		if (idUser != null) {
@@ -131,7 +129,7 @@ public class ControllerIndex {
 			toModal = "#login-modal";
 			modal = "modal";
 		}
-		
+
 		result.addObject("sLogin", sLogin);
 		result.addObject("sRegister", sRegister);
 		result.addObject("SPathRegister", sPathRegister);

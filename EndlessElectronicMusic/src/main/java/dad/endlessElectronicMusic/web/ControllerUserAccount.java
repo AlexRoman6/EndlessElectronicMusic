@@ -1,12 +1,8 @@
 package dad.endlessElectronicMusic.web;
 
-import java.util.List;
-
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.jpa.criteria.predicate.IsEmptyPredicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,13 +25,6 @@ public class ControllerUserAccount {
 	private String toModal = "#login-modal";
 	private String modal = "modal";
 
-	@PostConstruct
-	public void init() {
-		repository.save(new Usuario("Fran", "fmt@test.com", "1234", true, true));
-		// repository.save(new Usuario("Alex", "arm@test.com", "1234", true,
-		// true));
-	}
-
 	@RequestMapping("/user-account")
 	public ModelAndView printUserAccount(HttpServletRequest request, HttpSession sesion) {
 
@@ -45,8 +34,7 @@ public class ControllerUserAccount {
 		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
 				repository);
 
-		List<Usuario> users = repository.findAll();
-		Usuario user = users.get(0);
+		Usuario user = repository.findOne((Long) sesion.getAttribute("idUser"));
 
 		String error = "Sin errores";
 
@@ -58,10 +46,9 @@ public class ControllerUserAccount {
 	}
 
 	@PostMapping("/user-account")
-	public ModelAndView changePass(HttpServletRequest request) {
+	public ModelAndView changePass(HttpServletRequest request, HttpSession sesion) {
 
-		List<Usuario> users = repository.findAll();
-		Usuario user = users.get(0);
+		Usuario user = repository.findOne((Long) sesion.getAttribute("idUser"));
 
 		String oldPass = request.getParameter("oldPass");
 		String newPass1 = request.getParameter("newPass1");
@@ -86,6 +73,9 @@ public class ControllerUserAccount {
 
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+
+		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
+				repository);
 
 		result.addObject("user", user);
 		result.addObject("error", error);
