@@ -24,6 +24,8 @@ public class Evento {
 	
 	private Date fecha;
 	
+	private String imagen;
+	
 	private String texto;
 	
 	@OneToMany (mappedBy="evento")
@@ -32,11 +34,12 @@ public class Evento {
 	protected Evento() {
 	}
 	
-	public Evento(String titulo, String lugar, Date fecha, String texto) {
+	public Evento(String titulo, String lugar, Date fecha, String imagen, String texto) {
 		super();
 		this.titulo = titulo;
 		this.lugar = lugar;
 		this.fecha = fecha;
+		this.imagen = imagen;
 		this.texto = texto;
 	}
 	
@@ -62,6 +65,14 @@ public class Evento {
 
 	public void setLugar(String lugar) {
 		this.lugar = lugar;
+	}
+	
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 	
 	public String getTexto() {

@@ -21,6 +21,8 @@ public class Post {
 
 	private Date fecha;
 	
+	private String imagen;
+	
 	private String texto;
 	
 	@OneToMany (mappedBy="post")
@@ -29,10 +31,11 @@ public class Post {
 	protected Post() {
 	}
 	
-	public Post(String titulo, Date fecha, String texto) {
+	public Post(String titulo, Date fecha, String imagen, String texto) {
 		super();
 		this.titulo = titulo;
 		this.fecha = fecha;
+		this.imagen = imagen;
 		this.texto = texto;
 	}
 	
@@ -51,6 +54,14 @@ public class Post {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}	
+	
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
 	
 	public String getTexto() {
 		return texto;

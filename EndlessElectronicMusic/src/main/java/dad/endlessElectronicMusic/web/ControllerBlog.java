@@ -88,10 +88,14 @@ public class ControllerBlog {
 			e.printStackTrace();
 		}
 
-		Evento evento1 = new Evento("Tomorrowland", "Bélgica", fecha1, "El mejor festival de Europa");
-		Post post1 = new Post("Scared To Be Lonely", fecha2, "Lo último de Martin Garrix");
-		Evento evento2 = new Evento("UMF", "Miami", fecha3, "La reunión de los mejores DJs");
-		Post post2 = new Post("Do It Right", fecha4, "Lo último de Martin Solveig");
+		Evento evento1 = new Evento("Tomorrowland", "Bélgica", fecha1, "Tomorrowland.jpg", "El mejor festival de Europa"
+		+ " regresa. Los mejores artista del panorama internacional se citan un año más en Bélgica.");
+		Post post1 = new Post("Scared To Be Lonely", fecha2, "ScaredToBeLonely.jpg", "Lo último de Martin Garrix. "
+		+ "Junto a Dua Lipa, el joven Dj holandés quiere comenzar el año a lo grande");
+		Evento evento2 = new Evento("UMF", "Miami", fecha3, "Ultra.jpg", "La reunión de los mejores DJs y "
+		+ "productores del mundo vuelve a Miami para hacernos disfrutar durante tres días.");
+		Post post2 = new Post("Do It Right", fecha4, "DoItRight.png", "El último tema del productor y DJ francés "
+		+ "Martin Solveig, junto con Tkay Maidza, por fín ha llegado");
 
 		eventoRepository.save(evento1);
 		eventoRepository.save(evento2);
