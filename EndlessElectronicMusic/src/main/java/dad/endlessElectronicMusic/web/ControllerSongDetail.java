@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -66,6 +67,28 @@ public class ControllerSongDetail {
 			canciongenero1 = canciongenero.get(numAleatorio.nextInt(canciongenero.size()));
 		}
 		result.addObject("canciongenero", canciongenero1);
+		result.addObject("id", filter);
+
+		return result;
+
+	}
+
+	@RequestMapping("/vote")
+	public ModelAndView voteSong(HttpServletRequest request, HttpSession sesion, @RequestParam int vote,
+			@RequestParam Long id) {
+
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+
+		Cancion c = cancionRepository.findOne(id);
+
+		if (vote == 0) {
+			cancionRepository.updateVote(c.getValoracion() - 1, id);
+		} else {
+			cancionRepository.updateVote(c.getValoracion() + 1, id);
+		}
+
+		result.addObject("id", id);
 
 		return result;
 

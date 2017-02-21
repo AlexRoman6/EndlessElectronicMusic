@@ -54,7 +54,7 @@ public class ControllerIndex {
 		List<Cancion> cancionesnuevas = repositoryCancion.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
 		List<Cancion> cancionesnuevas1 = cancionesnuevas.subList(0, 3);
 		List<Post> postnuevos = repositoryPost.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
-		List<Post> postnuevos1 = postnuevos.subList(0, 2);
+		List<Post> postnuevos1 = postnuevos.subList(0, 3);
 		result.addObject("numUsers", repositoryUsers.findAll().size());
 		result.addObject("numEventos", repositoryEventos.findAll().size());
 		result.addObject("numBlogs", repositoryPost.findAll().size());
@@ -86,13 +86,18 @@ public class ControllerIndex {
 		}
 
 		loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion, repositoryUsers);
+		
+		List<Cancion> cancionesnuevas = repositoryCancion.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
+		List<Cancion> cancionesnuevas1 = cancionesnuevas.subList(0, 3);
+		List<Post> postnuevos = repositoryPost.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
+		List<Post> postnuevos1 = postnuevos.subList(0, 3);
 
 		result.addObject("numUsers", repositoryUsers.findAll().size());
 		result.addObject("numEventos", repositoryEventos.findAll().size());
 		result.addObject("numBlogs", repositoryPost.findAll().size());
 		result.addObject("numSongs", repositoryCancion.findAll().size());
-		result.addObject("canciones", repositoryCancion.findAll(new Sort("addSong")));
-		result.addObject("post", repositoryPost.findAll(new Sort("fecha")));
+		result.addObject("canciones", cancionesnuevas1);
+		result.addObject("post", postnuevos1);
 
 		return result;
 
