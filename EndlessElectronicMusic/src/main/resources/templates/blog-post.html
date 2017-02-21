@@ -394,7 +394,7 @@ _________________________________________________________ -->
 						<!-- /#comments -->
 
 							<div id="comment-form">
-							<form>
+							<form action="/procesarComentario.html?type={{type}}&id={{id}}" method="post">
 
 								<div class="row">
 									<div class="col-sm-12">
@@ -402,7 +402,7 @@ _________________________________________________________ -->
 											<label for="comment">Comentario <span
 												class="required">*</span>
 											</label>
-											<textarea class="form-control" id="comment" rows="4"></textarea>
+											<textarea class="form-control" id="comment" rows="4" name="textoComentario"></textarea>
 										</div>
 									</div>
 								</div>
