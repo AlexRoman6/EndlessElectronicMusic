@@ -40,8 +40,8 @@ public class ControllerSongsCategory {
 		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
 				usuarioRepository);
 		List<Cancion> canciones;
-		if(filter.equals("valoracion")){
-			canciones=cancionRepository.findAll(new Sort(new Order(Sort.Direction.ASC, "valoracion")));
+		if(filter.equals("valoracion") || filter.equals("anio")){
+			canciones=cancionRepository.findAll(new Sort(new Order(Sort.Direction.DESC, filter)));
 		}
 		else{
 		 canciones = cancionRepository.findAll(new Sort(filter));
