@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,8 +39,13 @@ public class ControllerSongsCategory {
 
 		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
 				usuarioRepository);
-
-		List<Cancion> canciones = cancionRepository.findAll(new Sort(filter));
+		List<Cancion> canciones;
+		if(filter.equals("valoracion")){
+			canciones=cancionRepository.findAll(new Sort(new Order(Sort.Direction.ASC, "valoracion")));
+		}
+		else{
+		 canciones = cancionRepository.findAll(new Sort(filter));
+		}
 		result.addObject("cancion", canciones);
 
 		result.addObject("total", canciones.size());
