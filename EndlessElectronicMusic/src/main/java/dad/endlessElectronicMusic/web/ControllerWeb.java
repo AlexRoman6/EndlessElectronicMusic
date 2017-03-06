@@ -52,6 +52,17 @@ public class ControllerWeb {
 	@PostConstruct
 	public void init() {
 
+		//resetDB();
+		
+	}
+
+	@RequestMapping("/")
+	public String index(Model model) {
+		return "redirect:/index.html";
+
+	}
+
+	private void resetDB() {
 		// Create Usuarios
 
 		Usuario fran = new Usuario("fran", "fmt@test.com", "1234", true, true);
@@ -67,13 +78,13 @@ public class ControllerWeb {
 		Artista martin = new Artista("Martin Garrix", "Holanda", "Big Room");
 		Artista brennan = new Artista("Brennan Heart", "Holanda", "Hardstyle");
 		Artista hardwell = new Artista("Hardwell", "Holanda", "Electro House");
-		Artista dimitrivegaslikemike= new Artista("Dimitri Vegas & Like Mike","Belgica","Big Room");
-		Artista headhunterz =new Artista("Headhunterz","Holanda","Hardstyle");
-		Artista zatox = new Artista("Zatox","Italia","Hardstyle");
-		Artista oliverheldens=new Artista("Oliver Heldens","Holanda","Future House");
-		Artista gunzforhire= new Artista("Gunz for Hire","Holanda","Hardstyle");
-		Artista ww= new Artista("W&W","Holanda","Big Room");
-		Artista theprophet= new Artista("The Prophet","Holanda","Hardstyle");
+		Artista dimitrivegaslikemike = new Artista("Dimitri Vegas & Like Mike", "Belgica", "Big Room");
+		Artista headhunterz = new Artista("Headhunterz", "Holanda", "Hardstyle");
+		Artista zatox = new Artista("Zatox", "Italia", "Hardstyle");
+		Artista oliverheldens = new Artista("Oliver Heldens", "Holanda", "Future House");
+		Artista gunzforhire = new Artista("Gunz for Hire", "Holanda", "Hardstyle");
+		Artista ww = new Artista("W&W", "Holanda", "Big Room");
+		Artista theprophet = new Artista("The Prophet", "Holanda", "Hardstyle");
 		artistRepo.save(martin);
 		artistRepo.save(brennan);
 		artistRepo.save(hardwell);
@@ -90,44 +101,43 @@ public class ControllerWeb {
 		Cancion animals = new Cancion("Animals", martin, martin.getNombre(), "Big Room", 2013, new Date(11 / 02 / 2017),
 				0, "martin_garrix_animals.jpg", "gCYcHz2k5x0");
 		Cancion imaginary = new Cancion("Imaginary", brennan, brennan.getNombre(), "Hardstyle", 2013,
-				new Date(11 / 02 / 2017), 0, "brennan_heart_imaginary.jpeg",
-				"h9I-9Sj4sKs");
+				new Date(11 / 02 / 2017), 0, "brennan_heart_imaginary.jpeg", "h9I-9Sj4sKs");
 		Cancion spaceman = new Cancion("Spaceman", hardwell, hardwell.getNombre(), "Electro House", 2012,
 				new Date(13 / 02 / 2017), 0, "hardwell_spaceman.jpg", "lETmskoqh30");
 		Cancion losemymind = new Cancion("Lose My Mind", brennan, brennan.getNombre(), "Hardstyle", 2011,
-				new Date(14 / 02 / 2017), 0, "brennan_heart_lose_my_mind.jpg",
-				"JP6Tz5tP8EE");
-		Cancion thehum= new Cancion("The Hum",dimitrivegaslikemike,dimitrivegaslikemike.getNombre(),"Big Room",2015,
-				new Date(15/02/ 2017),0,"dimitri_vegas_like_mike_the_hum.jpg","exJlapzPnlc");
-		Cancion thesacrifice= new Cancion("The Sacrifice",headhunterz,headhunterz.getNombre(),"Hardstyle",2006,
-				new Date(15/02/ 2017),0,"headhunterz_the_sacrifice.jpg","a7uToulRNeQ");
-		Cancion wizard =new Cancion("Wizard",martin,martin.getNombre(),"Big Room",2013,
-				new Date(15/02/ 2017),0,"martin_garrix_wizard.jpg","KnL2RJZTdA4");
-		Cancion fifo = new Cancion("F.I.F.O", brennan, brennan.getNombre(), "Hardstyle", 2013,
-				new Date(15 / 02 / 2017), 0, "brennan_heart_fifo.jpeg","T3SQZOW-iZk");
+				new Date(14 / 02 / 2017), 0, "brennan_heart_lose_my_mind.jpg", "JP6Tz5tP8EE");
+		Cancion thehum = new Cancion("The Hum", dimitrivegaslikemike, dimitrivegaslikemike.getNombre(), "Big Room",
+				2015, new Date(15 / 02 / 2017), 0, "dimitri_vegas_like_mike_the_hum.jpg", "exJlapzPnlc");
+		Cancion thesacrifice = new Cancion("The Sacrifice", headhunterz, headhunterz.getNombre(), "Hardstyle", 2006,
+				new Date(15 / 02 / 2017), 0, "headhunterz_the_sacrifice.jpg", "a7uToulRNeQ");
+		Cancion wizard = new Cancion("Wizard", martin, martin.getNombre(), "Big Room", 2013, new Date(15 / 02 / 2017),
+				0, "martin_garrix_wizard.jpg", "KnL2RJZTdA4");
+		Cancion fifo = new Cancion("F.I.F.O", brennan, brennan.getNombre(), "Hardstyle", 2013, new Date(15 / 02 / 2017),
+				0, "brennan_heart_fifo.jpeg", "T3SQZOW-iZk");
 		Cancion alternatereality = new Cancion("Alternate Reality", brennan, brennan.getNombre(), "Hardstyle", 2010,
-				new Date(15 / 02 / 2017), 0, "brennan_heart_alternate_reality.jpg","t2Pavrg02_E");
+				new Date(15 / 02 / 2017), 0, "brennan_heart_alternate_reality.jpg", "t2Pavrg02_E");
 		Cancion apollo = new Cancion("Apollo", hardwell, hardwell.getNombre(), "Electro House", 2013,
-				new Date(15 / 02 / 2017), 0, "hardwell_apollo.jpg", "q8kUckZ15fE");	
-		Cancion madness= new Cancion("Madness",dimitrivegaslikemike,dimitrivegaslikemike.getNombre(),"Big Room",2013,
-				new Date(15/02/ 2017),0,"dimitri_vegas_like_mike_madness.jpg","dHDImoc94XQ");
-		Cancion scrapattack= new Cancion("Scrap Attack",headhunterz,headhunterz.getNombre(),"Hardstyle",2009,
-				new Date(15/02/ 2017),0,"headhunterz_scrap_attack.jpeg","OouY9rwIRjA");
-		Cancion rumbleinthejungle= new Cancion("Rumble In The Jungle",zatox,zatox.getNombre(),"Hardstyle",2015,
-				new Date(15/02/ 2017),0,"zatox_rumble_in_the_jungle.jpeg","EkiKN9sVFu0");
-		Cancion mystrengthishardstyle= new Cancion("My Strength Is Hardstyle",zatox,zatox.getNombre(),"Hardstyle",2016,
-				new Date(15/02/ 2017),0,"zatox_my_strength_is_hardstyle.jpg","pKGQlh7xaeE");
-		Cancion melody= new Cancion("Melody",oliverheldens,oliverheldens.getNombre(),"Future House",2015,
-				new Date(15/02/ 2017),0,"oliver_heldens_melody.jpg","VMnPX3GeyEM");
-		Cancion executionerstyle= new Cancion("Executioner Style",gunzforhire,gunzforhire.getNombre(),"Hardstyle",2016,
-				new Date(15/02/ 2017),0,"gunz_for_hire_executioner_style.jpg","snQQsXoU3l8");
-		Cancion maygodbewithyouall= new Cancion("May God Be With You All",gunzforhire,gunzforhire.getNombre(),"Hardstyle",2015,
-				new Date(15/02/ 2017),0,"gunz_for_hire_may_god_be_with_you_all.jpg","bp7D-kgQt5A");
+				new Date(15 / 02 / 2017), 0, "hardwell_apollo.jpg", "q8kUckZ15fE");
+		Cancion madness = new Cancion("Madness", dimitrivegaslikemike, dimitrivegaslikemike.getNombre(), "Big Room",
+				2013, new Date(15 / 02 / 2017), 0, "dimitri_vegas_like_mike_madness.jpg", "dHDImoc94XQ");
+		Cancion scrapattack = new Cancion("Scrap Attack", headhunterz, headhunterz.getNombre(), "Hardstyle", 2009,
+				new Date(15 / 02 / 2017), 0, "headhunterz_scrap_attack.jpeg", "OouY9rwIRjA");
+		Cancion rumbleinthejungle = new Cancion("Rumble In The Jungle", zatox, zatox.getNombre(), "Hardstyle", 2015,
+				new Date(15 / 02 / 2017), 0, "zatox_rumble_in_the_jungle.jpeg", "EkiKN9sVFu0");
+		Cancion mystrengthishardstyle = new Cancion("My Strength Is Hardstyle", zatox, zatox.getNombre(), "Hardstyle",
+				2016, new Date(15 / 02 / 2017), 0, "zatox_my_strength_is_hardstyle.jpg", "pKGQlh7xaeE");
+		Cancion melody = new Cancion("Melody", oliverheldens, oliverheldens.getNombre(), "Future House", 2015,
+				new Date(15 / 02 / 2017), 0, "oliver_heldens_melody.jpg", "VMnPX3GeyEM");
+		Cancion executionerstyle = new Cancion("Executioner Style", gunzforhire, gunzforhire.getNombre(), "Hardstyle",
+				2016, new Date(15 / 02 / 2017), 0, "gunz_for_hire_executioner_style.jpg", "snQQsXoU3l8");
+		Cancion maygodbewithyouall = new Cancion("May God Be With You All", gunzforhire, gunzforhire.getNombre(),
+				"Hardstyle", 2015, new Date(15 / 02 / 2017), 0, "gunz_for_hire_may_god_be_with_you_all.jpg",
+				"bp7D-kgQt5A");
 		Cancion caribbeanrave = new Cancion("Caribbean Rave", ww, ww.getNombre(), "Big Room", 2016,
-				new Date(11 / 02 / 2017),0, "ww_caribbean_rave.jpg", "t0thau7RIWA");
-		Cancion aycaramba= new Cancion("Ay Caramba!",theprophet,theprophet.getNombre(),"Hardstyle",2016,
-				new Date(15/02/ 2017),0,"the_prophet_ay_caramba.jpg","-06PzCM5Okc");
-		
+				new Date(11 / 02 / 2017), 0, "ww_caribbean_rave.jpg", "t0thau7RIWA");
+		Cancion aycaramba = new Cancion("Ay Caramba!", theprophet, theprophet.getNombre(), "Hardstyle", 2016,
+				new Date(15 / 02 / 2017), 0, "the_prophet_ay_caramba.jpg", "-06PzCM5Okc");
+
 		songRepo.save(imaginary);
 		songRepo.save(animals);
 		songRepo.save(spaceman);
@@ -147,11 +157,11 @@ public class ControllerWeb {
 		songRepo.save(maygodbewithyouall);
 		songRepo.save(caribbeanrave);
 		songRepo.save(aycaramba);
-		
 
-		// Create PostSimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
-		
-		//recordad que Enero es el mes 0, febrero el 1...
+		// Create PostSimpleDateFormat sdf = new SimpleDateFormat("dd MMM
+		// yyyy");
+
+		// recordad que Enero es el mes 0, febrero el 1...
 		Date fecha1 = new GregorianCalendar(2017, 6, 21).getTime();
 		Date fecha2 = new GregorianCalendar(2017, 0, 27).getTime();
 		Date fecha3 = new GregorianCalendar(2017, 2, 24).getTime();
@@ -161,22 +171,23 @@ public class ControllerWeb {
 
 		Evento evento1 = new Evento("Tomorrowland", "Bélgica", fecha1, "Tomorrowland.jpg", "El mejor festival de Europa"
 				+ " regresa. Los mejores artista del panorama internacional se citan un año más en Bélgica.");
-		
+
 		Post post1 = new Post("Scared To Be Lonely", fecha2, "ScaredToBeLonely.jpg", "Lo último de Martin Garrix. "
 				+ "Junto a Dua Lipa, el joven Dj holandés quiere comenzar el año a lo grande");
-		
+
 		Evento evento2 = new Evento("UMF", "Miami", fecha3, "Ultra.jpg", "La reunión de los mejores DJs y "
 				+ "productores del mundo vuelve a Miami para hacernos disfrutar durante tres días.");
-		
+
 		Post post2 = new Post("Do It Right", fecha4, "DoItRight.png", "El último tema del productor y DJ francés "
 				+ "Martin Solveig, junto con Tkay Maidza, por fín ha llegado");
-		
-		Evento evento3 = new Evento("Dreambeach", "Villaricos", fecha5, "Dreambeach.jpg", "Uno de los grandes festivales "
-				+ "de España regresa con los mejores artistas para hacernos pasar un mes de agosto inolvidable en Villaricos.");
-		
+
+		Evento evento3 = new Evento("Dreambeach", "Villaricos", fecha5, "Dreambeach.jpg",
+				"Uno de los grandes festivales "
+						+ "de España regresa con los mejores artistas para hacernos pasar un mes de agosto inolvidable en Villaricos.");
+
 		Post post3 = new Post("Avicii trabaja en nueva música", fecha6, "Avicii.jpg", "El Dj y pruductor sueco "
 				+ "cuelga varios videos en sus redes sociales en los que aprece elaborando su próximo álbum.");
-		
+
 		eventRepo.save(evento1);
 		eventRepo.save(evento2);
 		eventRepo.save(evento3);
@@ -224,13 +235,6 @@ public class ControllerWeb {
 		comenPostRepo.save(c10);
 		comenEvenRepo.save(c11);
 		comenPostRepo.save(c12);
-
 	}
 
-	@RequestMapping("/")
-	public String index(Model model) {
-		return "redirect:/index.html";
-
-	}
-	
 }
