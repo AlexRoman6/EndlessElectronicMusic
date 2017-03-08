@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Imagen {
@@ -13,6 +14,15 @@ public class Imagen {
 	private long id;
 
 	private String url;
+	
+	@OneToOne(mappedBy="imagen")
+	private Cancion cancion;
+	
+	@OneToOne(mappedBy="imagen")
+	private Evento evento;
+	
+	@OneToOne(mappedBy="imagen")
+	private Post post;
 	
 	protected Imagen(){
 		

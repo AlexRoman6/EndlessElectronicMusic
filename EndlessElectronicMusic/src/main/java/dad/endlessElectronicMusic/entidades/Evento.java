@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -24,7 +25,8 @@ public class Evento {
 	
 	private Date fecha;
 	
-	private String imagen;
+	@OneToOne
+	private Imagen imagen;
 	
 	private String texto;
 	
@@ -34,7 +36,7 @@ public class Evento {
 	protected Evento() {
 	}
 	
-	public Evento(String titulo, String lugar, Date fecha, String imagen, String texto) {
+	public Evento(String titulo, String lugar, Date fecha, Imagen imagen, String texto) {
 		super();
 		this.titulo = titulo;
 		this.lugar = lugar;
@@ -67,11 +69,11 @@ public class Evento {
 		this.lugar = lugar;
 	}
 	
-	public String getImagen() {
+	public Imagen getImagen() {
 		return imagen;
 	}
 
-	public void setImagen(String imagen) {
+	public void setImagen(Imagen imagen) {
 		this.imagen = imagen;
 	}
 	

@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Cancion {
@@ -23,13 +24,14 @@ public class Cancion {
 	private int anio;
 	private Date addSong;
 	private int valoracion;
-	private String imagen;
+	@OneToOne
+	private Imagen imagen;
 	private String url;
 	
 	protected Cancion(){}
 
 	public Cancion(String nombre, Artista artista,String nombreAutor, String estilo, int año, Date fechaDeInclusion,
-			int valoracion, String imagen, String url) {
+			int valoracion, Imagen imagen, String url) {
 		
 		
 		this.nombre = nombre;
@@ -140,11 +142,11 @@ public class Cancion {
 		this.valoracion = valoracion;
 	}
 
-	public String getImagen() {
+	public Imagen getImagen() {
 		return imagen;
 	}
 
-	public void setImagen(String imagen) {
+	public void setImagen(Imagen imagen) {
 		this.imagen = imagen;
 	}
 

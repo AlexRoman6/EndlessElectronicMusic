@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Post {
@@ -21,7 +22,8 @@ public class Post {
 
 	private Date fecha;
 	
-	private String imagen;
+	@OneToOne
+	private Imagen imagen;
 	
 	private String texto;
 	
@@ -31,7 +33,7 @@ public class Post {
 	protected Post() {
 	}
 	
-	public Post(String titulo, Date fecha, String imagen, String texto) {
+	public Post(String titulo, Date fecha, Imagen imagen, String texto) {
 		super();
 		this.titulo = titulo;
 		this.fecha = fecha;
@@ -55,11 +57,11 @@ public class Post {
 		this.titulo = titulo;
 	}	
 	
-	public String getImagen() {
+	public Imagen getImagen() {
 		return imagen;
 	}
 
-	public void setImagen(String imagen) {
+	public void setImagen(Imagen imagen) {
 		this.imagen = imagen;
 	}
 	
