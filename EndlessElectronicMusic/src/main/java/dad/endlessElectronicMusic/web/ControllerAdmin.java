@@ -25,15 +25,6 @@ public class ControllerAdmin {
 
 	}
 
-	@RequestMapping("/admin/dropzone")
-	public ModelAndView printAdminDropzone(HttpServletRequest request) {
-		ModelAndView result = new ModelAndView();
-		result.addObject("resources", request.getContextPath() + "/resources");
-
-		return result;
-
-	}
-
 	@RequestMapping("/admin/addUserSong")
 	public ModelAndView printAdminAddUserSong(HttpServletRequest request) {
 		ModelAndView result = new ModelAndView();
