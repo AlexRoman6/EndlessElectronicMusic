@@ -210,7 +210,7 @@
 															<div class="hidden-sm hidden-xs action-buttons">
 																
 
-																<a class="red" href="#">
+																<a class="red" href="eliminarContenido.html?type=usuario&id={{id}}">
 																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																</a>
 															</div>
@@ -269,11 +269,11 @@
 													<tr>
 														
 														<th>id</th>
-														<th>Autor</th>
+														<th>Nombre</th>
 														<th>Genero</th>
 														<th>Año</th>
 														<th>Valoracion</th>
-				                                        <th>url</th>
+				                                        <th>Artista</th>
 													</tr>
 												</thead>
 
@@ -284,21 +284,22 @@
 														{{id}}
 														</td>
 														<td>
-														{{nombreAutor}}	
+														{{nombre}}	
 														</td>
+														
 														<td>{{genero}}</td>
 														<td>{{anio}}</td>
 														<td>{{valoracion}}</td>
 
 														<td>
-															{{url}}
+															{{nombreAutor}}
 														</td>
 
 														<td>
 															<div class="hidden-sm hidden-xs action-buttons">
 																
 
-																<a class="red" href="#">
+																<a class="red" href="eliminarContenido.html?type=cancion&id={{id}}">
 																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																</a>
 															</div>
@@ -381,7 +382,7 @@
 															<div class="hidden-sm hidden-xs action-buttons">
 																
 
-																<a class="red" href="#">
+																<a class="red" href="eliminarContenido.html?type=artista&id={{id}}">
 																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																</a>
 															</div>
@@ -464,7 +465,7 @@
 															<div class="hidden-sm hidden-xs action-buttons">
 																
 
-																<a class="red" href="#">
+																<a class="red" href="eliminarContenido.html?type=evento&id={{id}}">
 																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																</a>
 															</div>
@@ -545,7 +546,7 @@
 															<div class="hidden-sm hidden-xs action-buttons">
 																
 
-																<a class="red" href="#">
+																<a class="red" href="eliminarContenido.html?type=post&id={{id}}">
 																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																</a>
 															</div>

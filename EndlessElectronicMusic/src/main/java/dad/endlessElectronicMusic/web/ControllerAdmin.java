@@ -188,8 +188,23 @@ public class ControllerAdmin {
 		if(type.equals("img")){
 			imageRepo.delete(id);
 		}
-
+		if(type.equals("usuario")){
+			usuarioRepository.delete(id);
+		}
+		if(type.equals("cancion")){
+			songRepo.delete(id);
+		}
+		if(type.equals("artista")){
+			artistRepo.delete(id);
+		}
+		if(type.equals("evento")){
+			eventRepo.delete(id);
+		}
+		if(type.equals("post")){
+			postRepo.delete(id);
+		}
 		return result;
+		
 
 	}
 

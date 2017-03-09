@@ -57,7 +57,8 @@ public class ControllerWeb {
 	@PostConstruct
 	public void init() {
 
-		resetDB();
+		
+	   resetDB();
 		
 	}
 
