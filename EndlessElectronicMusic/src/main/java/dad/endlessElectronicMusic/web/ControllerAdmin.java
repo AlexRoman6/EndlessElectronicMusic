@@ -179,5 +179,19 @@ public class ControllerAdmin {
 		return result;
 
 	}
+	
+	@RequestMapping("/admin/eliminarContenido")
+	public ModelAndView printDelContent(HttpServletRequest request, @RequestParam String type, @RequestParam Long id) {
+		ModelAndView result = new ModelAndView();
+		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		if(type.equals("img")){
+			imageRepo.delete(id);
+		}
+
+		return result;
+
+	}
+
 
 }
