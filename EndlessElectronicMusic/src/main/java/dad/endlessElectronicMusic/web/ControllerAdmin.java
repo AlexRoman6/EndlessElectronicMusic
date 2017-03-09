@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Date;
 import java.util.List;
 
@@ -58,7 +62,7 @@ public class ControllerAdmin {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-	
+
 	@RequestMapping("/admin")
 	public String adminIndex(Model model) {
 		return "redirect:/admin/tables.html";
@@ -69,9 +73,9 @@ public class ControllerAdmin {
 	public ModelAndView printAdminTables(HttpServletRequest request) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
-		
-	List<Usuario>totalusuarios=usuarioRepository.findAll();
-	result.addObject("usuarios", totalusuarios);
+
+		List<Usuario> totalusuarios = usuarioRepository.findAll();
+		result.addObject("usuarios", totalusuarios);
 		return result;
 
 	}
@@ -119,8 +123,7 @@ public class ControllerAdmin {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
 
-		// String uploadPath = request.getContextPath() +
-		// "/resources/core/css/img/";
+		String uploadPath = "resources/core/css/img/";
 		// String uploadPath = "D:\\";
 
 		if (type.equals("addArtista")) {
@@ -131,15 +134,17 @@ public class ControllerAdmin {
 
 		if (type.equals("addSong")) {
 
-			// try {
-			//
-			// byte[] bytes = file.getBytes();
-			// Path path = Paths.get(uploadPath + file.getOriginalFilename());
-			// Files.write(path, bytes);
-			//
-			// } catch (IOException e) {
-			// e.printStackTrace();
-			// }
+			System.out.println(uploadPath);
+
+			try {
+
+				byte[] bytes = file.getBytes();
+				Path path = Paths.get(uploadPath + file.getOriginalFilename());
+				Files.write(path, bytes);
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 
 			Imagen imagen1 = new Imagen("fotoDef.png");
 			imageRepo.save(imagen1);
