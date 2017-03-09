@@ -92,6 +92,12 @@ public class ControllerAdmin {
 	public ModelAndView printAdminGallery(HttpServletRequest request) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		List<Imagen> imagenes;
+		imagenes = imageRepo.findAll();
+		
+		result.addObject("imagen", imagenes);
+			
 
 		return result;
 

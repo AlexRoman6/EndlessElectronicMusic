@@ -14,16 +14,16 @@ public class Imagen {
 	private long id;
 
 	private String url;
-	
-	@OneToOne(mappedBy="imagen")
+	/*
+	@OneToOne
 	private Cancion cancion;
 	
-	@OneToOne(mappedBy="imagen")
+	@OneToOne
 	private Evento evento;
 	
-	@OneToOne(mappedBy="imagen")
+	@OneToOne
 	private Post post;
-	
+	*/
 	protected Imagen(){
 		
 	}
