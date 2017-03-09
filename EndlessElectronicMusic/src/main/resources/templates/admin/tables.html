@@ -167,9 +167,7 @@
 									<div class="col-xs-12">
 										<h3 class="header smaller lighter blue">TABLAS</h3>
 
-										<div class="clearfix">
-											<div class="pull-right tableTools-container"></div>
-										</div>
+										
 										<div class="table-header">
 											Usuarios
 										</div>
@@ -254,6 +252,341 @@
 													</tr>
 
 													{{/usuarios}}
+												
+												</tbody>
+											</table>
+										</div>
+										<div class="table-header">
+											Canciones
+										</div>
+										
+										<!-- div.table-responsive -->
+
+										<!-- div.dataTables_borderWrap -->
+										<div>
+											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
+												<thead>
+													<tr>
+														
+														<th>id</th>
+														<th>Autor</th>
+														<th>Genero</th>
+														<th>Año</th>
+														<th>Valoracion</th>
+				                                        <th>url</th>
+													</tr>
+												</thead>
+
+												<tbody>
+												{{#canciones}}
+													<tr>
+													     <td>
+														{{id}}
+														</td>
+														<td>
+														{{nombreAutor}}	
+														</td>
+														<td>{{genero}}</td>
+														<td>{{anio}}</td>
+														<td>{{valoracion}}</td>
+
+														<td>
+															{{url}}
+														</td>
+
+														<td>
+															<div class="hidden-sm hidden-xs action-buttons">
+																
+
+																<a class="red" href="#">
+																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
+																</a>
+															</div>
+
+															<div class="hidden-md hidden-lg">
+																<div class="inline pos-rel">
+																	<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																		<i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+																	</button>
+
+																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																		<li>
+																			<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																				<span class="blue">
+																					<i class="ace-icon fa fa-search-plus bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																				<span class="green">
+																					<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																				<span class="red">
+																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</td>
+													</tr>
+
+													{{/canciones}}
+												
+												</tbody>
+											</table>
+										</div>
+										<div class="table-header">
+											Artistas
+										</div>
+
+										<!-- div.table-responsive -->
+
+										<!-- div.dataTables_borderWrap -->
+										<div>
+											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
+												<thead>
+													<tr>
+														
+														<th>id</th>
+														<th>nombre</th>
+														<th>nacionalidad</th>
+														<th>estilo</th>
+														
+													</tr>
+												</thead>
+
+												<tbody>
+												{{#artistas}}
+													<tr>
+													     <td>
+														{{id}}
+														</td>
+														<td>
+														{{nombre}}	
+														</td>
+														<td>{{nacionalidad}}</td>
+														<td>{{estilo}}</td>
+														
+
+														<td>
+															<div class="hidden-sm hidden-xs action-buttons">
+																
+
+																<a class="red" href="#">
+																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
+																</a>
+															</div>
+
+															<div class="hidden-md hidden-lg">
+																<div class="inline pos-rel">
+																	<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																		<i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+																	</button>
+
+																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																		<li>
+																			<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																				<span class="blue">
+																					<i class="ace-icon fa fa-search-plus bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																				<span class="green">
+																					<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																				<span class="red">
+																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</td>
+													</tr>
+
+													{{/artistas}}
+												
+												</tbody>
+											</table>
+										</div>
+										<div class="table-header">
+											Eventos
+										</div>
+
+										<!-- div.table-responsive -->
+
+										<!-- div.dataTables_borderWrap -->
+										<div>
+											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
+												<thead>
+													<tr>
+														
+														<th>id</th>
+														<th>tiulo</th>
+														<th>lugar</th>
+														<th>fecha</th>
+														
+													</tr>
+												</thead>
+
+												<tbody>
+												{{#eventos}}
+													<tr>
+													     <td>
+														{{id}}
+														</td>
+														<td>
+														{{titulo}}	
+														</td>
+														<td>{{lugar}}</td>
+														<td>{{fecha}}</td>
+														
+
+														<td>
+															<div class="hidden-sm hidden-xs action-buttons">
+																
+
+																<a class="red" href="#">
+																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
+																</a>
+															</div>
+
+															<div class="hidden-md hidden-lg">
+																<div class="inline pos-rel">
+																	<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																		<i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+																	</button>
+
+																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																		<li>
+																			<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																				<span class="blue">
+																					<i class="ace-icon fa fa-search-plus bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																				<span class="green">
+																					<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																				<span class="red">
+																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</td>
+													</tr>
+
+													{{/eventos}}
+												
+												</tbody>
+											</table>
+										</div>
+										<div class="table-header">
+											Posts
+										</div>
+
+										<!-- div.table-responsive -->
+
+										<!-- div.dataTables_borderWrap -->
+										<div>
+											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
+												<thead>
+													<tr>
+														
+														<th>id</th>
+														<th>titulo</th>
+														<th>fecha</th>
+														
+													</tr>
+												</thead>
+
+												<tbody>
+												{{#posts}}
+													<tr>
+													     <td>
+														{{id}}
+														</td>
+														<td>
+														{{titulo}}	
+														</td>
+														<td>{{fecha}}</td>
+														
+
+														<td>
+															<div class="hidden-sm hidden-xs action-buttons">
+																
+
+																<a class="red" href="#">
+																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
+																</a>
+															</div>
+
+															<div class="hidden-md hidden-lg">
+																<div class="inline pos-rel">
+																	<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																		<i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+																	</button>
+
+																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																		<li>
+																			<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																				<span class="blue">
+																					<i class="ace-icon fa fa-search-plus bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																				<span class="green">
+																					<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																				<span class="red">
+																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																				</span>
+																			</a>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</td>
+													</tr>
+
+													{{/posts}}
 												
 												</tbody>
 											</table>

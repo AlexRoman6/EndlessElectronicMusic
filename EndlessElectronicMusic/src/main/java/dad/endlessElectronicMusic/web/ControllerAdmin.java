@@ -26,9 +26,11 @@ import dad.endlessElectronicMusic.entidades.Cancion;
 import dad.endlessElectronicMusic.entidades.CancionRepository;
 import dad.endlessElectronicMusic.entidades.ComentarioEventoRepository;
 import dad.endlessElectronicMusic.entidades.ComentarioPostRepository;
+import dad.endlessElectronicMusic.entidades.Evento;
 import dad.endlessElectronicMusic.entidades.EventoRepository;
 import dad.endlessElectronicMusic.entidades.Imagen;
 import dad.endlessElectronicMusic.entidades.ImagenRepository;
+import dad.endlessElectronicMusic.entidades.Post;
 import dad.endlessElectronicMusic.entidades.PostRepository;
 
 import dad.endlessElectronicMusic.entidades.Cancion;
@@ -73,9 +75,28 @@ public class ControllerAdmin {
 	public ModelAndView printAdminTables(HttpServletRequest request) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+<<<<<<< Upstream, based on origin/master
 
 		List<Usuario> totalusuarios = usuarioRepository.findAll();
 		result.addObject("usuarios", totalusuarios);
+=======
+		
+	List<Usuario>totalusuarios=usuarioRepository.findAll();
+	result.addObject("usuarios", totalusuarios);
+	
+	List<Cancion>totalcanciones=songRepo.findAll();
+	result.addObject("canciones", totalcanciones);
+	
+	List<Artista>totalartistas=artistRepo.findAll();
+	result.addObject("artistas", totalartistas);
+	
+	List<Evento>totaleventos=eventRepo.findAll();
+	result.addObject("eventos", totaleventos);
+	
+	List<Post>totalposts=postRepo.findAll();
+	result.addObject("posts", totalposts);
+	
+>>>>>>> 60db545 todas las tablas acabadas
 		return result;
 
 	}
