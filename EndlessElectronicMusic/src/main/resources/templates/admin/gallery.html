@@ -177,12 +177,12 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<div>
 									<ul class="ace-thumbnails clearfix">
-										
+										{{#imagen}}
 										<li>
-											<a href="{{{resources}}}/core/assets/images/gallery/image-3.jpg" data-rel="colorbox">
-												<img width="150" height="150" alt="150x150" src="{{{resources}}}/core/assets/images/gallery/thumb-3.jpg" />
+											<a href="{{{resources}}}/core/css/img/{{url}}" data-rel="colorbox">
+												<img width="150" height="150" alt="150x150" src="{{{resources}}}/core/css/img/{{url}}" />
 												<div class="text">
-													<div class="inner">Sample Caption on Hover</div>
+													<div class="inner">{{url}}</div>
 												</div>
 											</a>
 
@@ -192,7 +192,7 @@
 												</a>
 											</div>
 										</li>
-
+										{{/imagen}}
 									</ul>
 								</div><!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
