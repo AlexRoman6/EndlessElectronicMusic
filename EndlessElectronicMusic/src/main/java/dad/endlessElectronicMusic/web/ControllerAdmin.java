@@ -186,6 +186,70 @@ public class ControllerAdmin {
 			songRepo.save(c);
 
 		}
+		
+		if (type.equals("addPost")) {
+
+			String orgName = file.getOriginalFilename();
+
+			try {
+
+				String filePath = realPathtoUploads + orgName;
+				File dest = new File(filePath);
+				file.transferTo(dest);
+
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			Imagen imagen1 = new Imagen(orgName);
+			imageRepo.save(imagen1);
+
+			String titulo = request.getParameter("titulo");
+			Date date = new Date();
+			String texto = request.getParameter("texto");
+			
+			Post p = new Post(titulo, date, imagen1, texto);
+
+			postRepo.save(p);
+
+		}
+		
+		if (type.equals("addEvento")) {
+
+			String orgName = file.getOriginalFilename();
+
+			try {
+
+				String filePath = realPathtoUploads + orgName;
+				File dest = new File(filePath);
+				file.transferTo(dest);
+
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			Imagen imagen1 = new Imagen(orgName);
+			imageRepo.save(imagen1);
+
+			String titulo = request.getParameter("titulo");
+			String lugar = request.getParameter("lugar");
+			Date date = new Date();
+			String texto = request.getParameter("texto");
+			
+			Evento e = new Evento(titulo, lugar, date, imagen1, texto);
+			
+			eventRepo.save(e);
+		}
+		
+		
 
 		return result;
 
