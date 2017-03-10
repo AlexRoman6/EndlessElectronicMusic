@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -111,6 +113,7 @@ public class ControllerAdmin {
 	public ModelAndView printAdminGallery(HttpServletRequest request) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+		result.addObject("upload", request.getContextPath() + "/upload");
 
 		List<Imagen> imagenes;
 		imagenes = imageRepo.findAll();
@@ -136,9 +139,13 @@ public class ControllerAdmin {
 
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+		result.addObject("upload", request.getContextPath() + "/upload");
 
-		String uploadPath = "resources/core/css/img/";
-		// String uploadPath = "D:\\";
+		String realPathtoUploads = request.getServletContext().getRealPath("/upload/");
+
+		if (!new File(realPathtoUploads).exists()) {
+			new File(realPathtoUploads).mkdir();
+		}
 
 		if (type.equals("addArtista")) {
 			Artista a = new Artista(request.getParameter("nomArtista"), request.getParameter("nomNacionalidad"),
@@ -148,19 +155,23 @@ public class ControllerAdmin {
 
 		if (type.equals("addSong")) {
 
-			System.out.println(uploadPath);
+			String orgName = file.getOriginalFilename();
 
 			try {
 
-				byte[] bytes = file.getBytes();
-				Path path = Paths.get(uploadPath + file.getOriginalFilename());
-				Files.write(path, bytes);
+				String filePath = realPathtoUploads + orgName;
+				File dest = new File(filePath);
+				file.transferTo(dest);
 
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			} catch (IOException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
-			Imagen imagen1 = new Imagen("fotoDef.png");
+			Imagen imagen1 = new Imagen(orgName);
 			imageRepo.save(imagen1);
 
 			Artista a = artistRepo.findOne(Long.parseLong(request.getParameter("idSong")));
@@ -179,34 +190,45 @@ public class ControllerAdmin {
 		return result;
 
 	}
-	
+
 	@RequestMapping("/admin/eliminarContenido")
 	public ModelAndView printDelContent(HttpServletRequest request, @RequestParam String type, @RequestParam Long id) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
-		
-		if(type.equals("img")){
-			imageRepo.delete(id);
+
+		if (type.equals("img")) {
+			
+			eliminarContenidoFisico(imageRepo.findOne(id).getUrl(), request);
+			
+			imageRepo.updateImg("NoImg.jpg", id);
+
 		}
-		if(type.equals("usuario")){
+		if (type.equals("usuario")) {
 			usuarioRepository.delete(id);
 		}
-		if(type.equals("cancion")){
+		if (type.equals("cancion")) {
 			songRepo.delete(id);
 		}
-		if(type.equals("artista")){
+		if (type.equals("artista")) {
 			artistRepo.delete(id);
 		}
-		if(type.equals("evento")){
+		if (type.equals("evento")) {
 			eventRepo.delete(id);
 		}
-		if(type.equals("post")){
+		if (type.equals("post")) {
 			postRepo.delete(id);
 		}
 		return result;
-		
 
 	}
 
+	public static void eliminarContenidoFisico(String name, HttpServletRequest request) {
+
+		String realPathtoUploads = request.getServletContext().getRealPath("/upload/");
+		String filePath = realPathtoUploads + name;
+
+		new File(filePath).delete();
+
+	}
 
 }

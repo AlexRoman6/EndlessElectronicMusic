@@ -48,6 +48,7 @@ public class ControllerIndex {
 	public ModelAndView printWelcome(HttpServletRequest request, HttpSession sesion) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+		result.addObject("upload", request.getContextPath() + "/upload");
 
 		loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion, repositoryUsers);
 
@@ -71,6 +72,7 @@ public class ControllerIndex {
 
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+		result.addObject("upload", request.getContextPath() + "/upload");
 
 		String userName = request.getParameter("campoUser");
 		String userPass = request.getParameter("campoPass");

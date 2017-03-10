@@ -36,6 +36,7 @@ public class ControllerSongsCategory {
 	public ModelAndView printSongCategory(HttpServletRequest request, HttpSession sesion, @RequestParam String filter) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+		result.addObject("upload", request.getContextPath() + "/upload");
 
 		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
 				usuarioRepository);

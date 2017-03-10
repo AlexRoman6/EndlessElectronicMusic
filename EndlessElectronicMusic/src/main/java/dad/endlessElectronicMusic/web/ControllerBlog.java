@@ -40,6 +40,7 @@ public class ControllerBlog {
 	public ModelAndView printBlog(HttpServletRequest request, HttpSession sesion, @RequestParam String type) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+		result.addObject("upload", request.getContextPath() + "/upload");
 
 		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
 				usuarioRepository);

@@ -39,6 +39,7 @@ public class ControllerSongDetail {
 	public ModelAndView printSongDetail(HttpServletRequest request, HttpSession sesion, @RequestParam Long filter) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+		result.addObject("upload", request.getContextPath() + "/upload");
 
 		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
 				usuarioRepository);

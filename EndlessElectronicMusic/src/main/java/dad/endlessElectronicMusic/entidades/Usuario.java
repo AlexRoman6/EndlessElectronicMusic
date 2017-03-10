@@ -3,6 +3,7 @@ package dad.endlessElectronicMusic.entidades;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,10 +24,10 @@ public class Usuario {
 	private boolean prioridad;
 	//false prioridad baja y true prioridad alta
 	
-	@OneToMany(mappedBy="usuario")
+	@OneToMany(mappedBy="usuario", cascade=CascadeType.REMOVE)
 	private List<ComentarioEvento> comentariosEvento = new ArrayList<>();
 	
-	@OneToMany(mappedBy="usuario")
+	@OneToMany(mappedBy="usuario", cascade=CascadeType.REMOVE)
 	private List<ComentarioPost> comentariosPost = new ArrayList<>();
 	
 	protected Usuario(){};

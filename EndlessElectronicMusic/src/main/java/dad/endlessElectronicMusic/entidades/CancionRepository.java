@@ -18,6 +18,5 @@ public interface CancionRepository extends JpaRepository<Cancion, Long> {
     @Query("UPDATE Cancion c SET c.valoracion = :vote WHERE c.id = :id")
     int updateVote(@Param("vote") int vote, @Param("id") Long id);
 	
-	
 			
 }

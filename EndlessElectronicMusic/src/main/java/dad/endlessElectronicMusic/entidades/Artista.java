@@ -3,6 +3,7 @@ package dad.endlessElectronicMusic.entidades;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +20,7 @@ public class Artista {
     private String nacionalidad;
     private String estilo;
     
-    @OneToMany (mappedBy="autor")
+    @OneToMany (mappedBy="autor", cascade=CascadeType.REMOVE)
     private List<Cancion> canciones = new ArrayList<>();
     
     protected Artista (){};

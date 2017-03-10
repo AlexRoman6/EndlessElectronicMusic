@@ -25,8 +25,10 @@ public class Cancion {
 	private int anio;
 	private Date addSong;
 	private int valoracion;
-	@OneToOne
+	
+	@OneToOne(cascade=CascadeType.REMOVE)
 	private Imagen imagen;
+	
 	private String url;
 	
 	protected Cancion(){}

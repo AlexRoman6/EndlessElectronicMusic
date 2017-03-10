@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -25,12 +27,12 @@ public class Evento {
 	
 	private Date fecha;
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.REMOVE)
 	private Imagen imagen;
 	
 	private String texto;
 	
-	@OneToMany (mappedBy="evento")
+	@OneToMany (mappedBy="evento", cascade=CascadeType.REMOVE)
 	private List<ComentarioEvento> comentarios = new ArrayList<>();
 	
 	protected Evento() {
