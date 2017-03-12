@@ -18,21 +18,11 @@ public class ControllerUserAccount {
 	@Autowired
 	private UsuarioRepository repository;
 
-	private String sLogin = "Iniciar Sesión";
-	private String sRegister = "Registrarse";
-	private String sPathRegister = "user-register.html";
-	private String sPathLogin = "#";
-	private String toModal = "#login-modal";
-	private String modal = "modal";
-
 	@RequestMapping("/user-account")
 	public ModelAndView printUserAccount(HttpServletRequest request, HttpSession sesion) {
 
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
-
-		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
-				repository);
 
 		Usuario user = repository.findOne((Long) sesion.getAttribute("idUser"));
 
@@ -73,9 +63,6 @@ public class ControllerUserAccount {
 
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
-
-		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
-				repository);
 
 		result.addObject("user", user);
 		result.addObject("error", error);

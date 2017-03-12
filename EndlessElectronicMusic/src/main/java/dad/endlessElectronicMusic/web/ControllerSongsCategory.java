@@ -15,22 +15,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import dad.endlessElectronicMusic.entidades.Cancion;
 import dad.endlessElectronicMusic.entidades.CancionRepository;
-import dad.endlessElectronicMusic.entidades.UsuarioRepository;
 
 @Controller
 public class ControllerSongsCategory {
 
 	@Autowired
 	private CancionRepository cancionRepository;
-	@Autowired
-	private UsuarioRepository usuarioRepository;
 
-	private String sLogin = "Iniciar Sesión";
-	private String sRegister = "Registrarse";
-	private String sPathRegister = "user-register.html";
-	private String sPathLogin = "#";
-	private String toModal = "#login-modal";
-	private String modal = "modal";
 
 	@RequestMapping("/songs-category")
 	public ModelAndView printSongCategory(HttpServletRequest request, HttpSession sesion, @RequestParam String filter) {
@@ -38,8 +29,6 @@ public class ControllerSongsCategory {
 		result.addObject("resources", request.getContextPath() + "/resources");
 		result.addObject("upload", request.getContextPath() + "/upload");
 
-		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
-				usuarioRepository);
 		List<Cancion> canciones;
 		if(filter.equals("valoracion") || filter.equals("anio")){
 			canciones=cancionRepository.findAll(new Sort(new Order(Sort.Direction.DESC, filter)));

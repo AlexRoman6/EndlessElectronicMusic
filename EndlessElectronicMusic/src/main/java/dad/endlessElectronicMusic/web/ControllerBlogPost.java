@@ -41,13 +41,6 @@ public class ControllerBlogPost {
 	@Autowired
 	private ComentarioPostRepository comentarioPostRepo;
 	
-	
-	private String sLogin = "Iniciar Sesión";
-	private String sRegister = "Registrarse";
-	private String sPathRegister = "user-register.html";
-	private String sPathLogin = "#";
-	private String toModal = "#login-modal";
-	private String modal = "modal";
 
 	@RequestMapping("/blog-post")
 	public ModelAndView printPost(HttpServletRequest request, HttpSession sesion, @RequestParam String type,
@@ -55,9 +48,6 @@ public class ControllerBlogPost {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
 		result.addObject("upload", request.getContextPath() + "/upload");
-
-		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
-				usuarioRepository);
 
 		if (type.equals("posts")) {
 

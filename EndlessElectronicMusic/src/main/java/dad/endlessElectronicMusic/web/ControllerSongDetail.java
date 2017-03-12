@@ -7,16 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import dad.endlessElectronicMusic.entidades.Cancion;
 import dad.endlessElectronicMusic.entidades.CancionRepository;
-import dad.endlessElectronicMusic.entidades.UsuarioRepository;
 
 @Controller
 public class ControllerSongDetail {
@@ -25,24 +23,11 @@ public class ControllerSongDetail {
 	@Autowired
 	private CancionRepository cancionRepository;
 
-	@Autowired
-	private UsuarioRepository usuarioRepository;
-
-	private String sLogin = "Iniciar Sesión";
-	private String sRegister = "Registrarse";
-	private String sPathRegister = "user-register.html";
-	private String sPathLogin = "#";
-	private String toModal = "#login-modal";
-	private String modal = "modal";
-
 	@RequestMapping("/songs-detail")
 	public ModelAndView printSongDetail(HttpServletRequest request, HttpSession sesion, @RequestParam Long filter) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
 		result.addObject("upload", request.getContextPath() + "/upload");
-
-		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
-				usuarioRepository);
 
 		Cancion cancion = cancionRepository.findOne(filter);
 		result.addObject("cancion", cancion);
@@ -69,6 +54,9 @@ public class ControllerSongDetail {
 		}
 		result.addObject("canciongenero", canciongenero1);
 		result.addObject("id", filter);
+		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+		result.addObject("token", token.getToken());  
 
 		return result;
 

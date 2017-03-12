@@ -79,18 +79,46 @@
 
 								<li class="divider"></li>
 
-								<li>
-									<a href="../logout.html">
-										<i class="ace-icon fa fa-power-off"></i>
-										Cerrar Sesión
-									</a>
-								</li>
+								<li><a href="#" data-toggle="modal"
+								data-target="#modal-Logout"> <i
+									class="ace-icon fa fa-power-off"></i> Cerrar Sesión
+							</a></li>
 							</ul>
 						</li>
 					</ul>
 				</div>
 			</div><!-- /.navbar-container -->
 		</div>
+		
+		<div id="modal-Logout" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="/logout" method="post">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="blue bigger">Cerrar Sesión</h4>
+					</div>
+
+					<div class="modal-body">
+						<label for="form-field-username">¿Seguro que desea cerrar
+							sesión?</label>
+					</div>
+
+					<div class="modal-footer">
+						<button class="btn btn-sm" data-dismiss="modal">
+							<i class="ace-icon fa fa-times"></i> Cancelar
+						</button>
+
+						<button class="btn btn-sm btn-primary" type="submit"
+							value="Submit">
+							<i class="ace-icon fa fa-check"></i> Salir
+						</button>
+					</div>
+					<input type="hidden" name="_csrf" value="{{token}}" />
+				</form>
+			</div>
+		</div>
+	</div>
 
 		<div class="main-container ace-save-state" id="main-container">
 			<script type="text/javascript">

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -92,6 +93,9 @@ public class ControllerAdmin {
 
 		List<Post> totalposts = postRepo.findAll();
 		result.addObject("posts", totalposts);
+		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+		result.addObject("token", token.getToken()); 
 
 		return result;
 
@@ -104,6 +108,9 @@ public class ControllerAdmin {
 
 		List<Artista> ls = artistRepo.findAll();
 		result.addObject("artistas", ls);
+		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+		result.addObject("token", token.getToken()); 
 
 		return result;
 
@@ -119,6 +126,9 @@ public class ControllerAdmin {
 		imagenes = imageRepo.findAll();
 
 		result.addObject("imagen", imagenes);
+		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+		result.addObject("token", token.getToken()); 
 
 		return result;
 
@@ -128,6 +138,9 @@ public class ControllerAdmin {
 	public ModelAndView printAdminAddPost(HttpServletRequest request) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
+		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+		result.addObject("token", token.getToken()); 
 
 		return result;
 

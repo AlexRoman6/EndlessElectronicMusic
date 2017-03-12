@@ -15,7 +15,6 @@ import dad.endlessElectronicMusic.entidades.Evento;
 import dad.endlessElectronicMusic.entidades.EventoRepository;
 import dad.endlessElectronicMusic.entidades.Post;
 import dad.endlessElectronicMusic.entidades.PostRepository;
-import dad.endlessElectronicMusic.entidades.UsuarioRepository;
 
 @Controller
 public class ControllerBlog {
@@ -26,24 +25,12 @@ public class ControllerBlog {
 	@Autowired
 	private PostRepository postRepository;
 
-	@Autowired
-	private UsuarioRepository usuarioRepository;
-
-	private String sLogin = "Iniciar Sesión";
-	private String sRegister = "Registrarse";
-	private String sPathRegister = "user-register.html";
-	private String sPathLogin = "#";
-	private String toModal = "#login-modal";
-	private String modal = "modal";
 
 	@RequestMapping("/blog")
 	public ModelAndView printBlog(HttpServletRequest request, HttpSession sesion, @RequestParam String type) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
 		result.addObject("upload", request.getContextPath() + "/upload");
-
-		ControllerIndex.loginString(sLogin, sRegister, sPathRegister, sPathLogin, toModal, modal, result, sesion,
-				usuarioRepository);
 
 		if (type.equals("eventos")) {
 
