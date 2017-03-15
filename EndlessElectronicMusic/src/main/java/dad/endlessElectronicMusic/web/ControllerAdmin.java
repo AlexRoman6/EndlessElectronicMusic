@@ -16,19 +16,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Date;
-import java.util.List;
 
 import dad.endlessElectronicMusic.entidades.Artista;
 import dad.endlessElectronicMusic.entidades.ArtistaRepository;
 import dad.endlessElectronicMusic.entidades.Cancion;
 import dad.endlessElectronicMusic.entidades.CancionRepository;
-import dad.endlessElectronicMusic.entidades.ComentarioEventoRepository;
-import dad.endlessElectronicMusic.entidades.ComentarioPostRepository;
 import dad.endlessElectronicMusic.entidades.Evento;
 import dad.endlessElectronicMusic.entidades.EventoRepository;
 import dad.endlessElectronicMusic.entidades.Imagen;
@@ -36,8 +29,6 @@ import dad.endlessElectronicMusic.entidades.ImagenRepository;
 import dad.endlessElectronicMusic.entidades.Post;
 import dad.endlessElectronicMusic.entidades.PostRepository;
 
-import dad.endlessElectronicMusic.entidades.Cancion;
-import dad.endlessElectronicMusic.entidades.CancionRepository;
 import dad.endlessElectronicMusic.entidades.Usuario;
 import dad.endlessElectronicMusic.entidades.UsuarioRepository;
 
@@ -55,12 +46,6 @@ public class ControllerAdmin {
 
 	@Autowired
 	private ArtistaRepository artistRepo;
-
-	@Autowired
-	private ComentarioEventoRepository comenEvenRepo;
-
-	@Autowired
-	private ComentarioPostRepository comenPostRepo;
 
 	@Autowired
 	private ImagenRepository imageRepo;
@@ -95,7 +80,7 @@ public class ControllerAdmin {
 		result.addObject("posts", totalposts);
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
-		result.addObject("token", token.getToken()); 
+		result.addObject("token", token.getToken());   	
 
 		return result;
 
@@ -110,8 +95,8 @@ public class ControllerAdmin {
 		result.addObject("artistas", ls);
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
-		result.addObject("token", token.getToken()); 
-
+		result.addObject("token", token.getToken());
+		
 		return result;
 
 	}
@@ -128,7 +113,7 @@ public class ControllerAdmin {
 		result.addObject("imagen", imagenes);
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
-		result.addObject("token", token.getToken()); 
+		result.addObject("token", token.getToken());
 
 		return result;
 
@@ -140,7 +125,7 @@ public class ControllerAdmin {
 		result.addObject("resources", request.getContextPath() + "/resources");
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
-		result.addObject("token", token.getToken()); 
+		result.addObject("token", token.getToken());
 
 		return result;
 

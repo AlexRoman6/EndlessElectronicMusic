@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -50,6 +51,9 @@ public class ControllerIndex {
 		result.addObject("numSongs", repositoryCancion.findAll().size());
 		result.addObject("canciones", cancionesnuevas1);
 		result.addObject("post", postnuevos1);
+		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+		result.addObject("token", token.getToken());
 
 		return result;
 

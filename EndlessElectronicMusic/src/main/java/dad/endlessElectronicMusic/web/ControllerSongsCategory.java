@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,6 +40,9 @@ public class ControllerSongsCategory {
 		result.addObject("cancion", canciones);
 
 		result.addObject("total", canciones.size());
+		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+		result.addObject("token", token.getToken());
 
 		return result;
 

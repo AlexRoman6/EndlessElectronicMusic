@@ -24,8 +24,8 @@ public class ControllerUserRegister {
 	public ModelAndView printUserRegister(HttpServletRequest request, HttpSession sesion) {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
-
-		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
 		result.addObject("token", token.getToken());
 
 		return result;

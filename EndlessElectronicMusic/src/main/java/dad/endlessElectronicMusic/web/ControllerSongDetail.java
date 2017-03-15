@@ -56,7 +56,8 @@ public class ControllerSongDetail {
 		result.addObject("id", filter);
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
-		result.addObject("token", token.getToken());  
+		result.addObject("token", token.getToken());
+		
 
 		return result;
 

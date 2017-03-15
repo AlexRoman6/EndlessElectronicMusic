@@ -74,10 +74,14 @@ public class ControllerWeb {
 		Usuario fran = new Usuario("fran", "fmt@test.com", "1234", true, true);
 		Usuario alex = new Usuario("alex", "arm@test.com", "1234", true, true);
 		Usuario david = new Usuario("david", "dvd@test.com", "1234", true, true);
+		
+		Usuario user = new Usuario("user", "user@test.com", "pass", true, false);
 
 		userRepo.save(fran);
 		userRepo.save(alex);
 		userRepo.save(david);
+		
+		userRepo.save(user);
 
 		// Create Artistas
 

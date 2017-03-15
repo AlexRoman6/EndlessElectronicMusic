@@ -17,4 +17,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     int updatePass(@Param("pass") String pass, @Param("id") Long ip);
 	
 	List<Usuario> findByUsuarioAndContraseña(String usuario, String contraseña);
+	
+	Usuario findByUsuario(String user);
+	
 }

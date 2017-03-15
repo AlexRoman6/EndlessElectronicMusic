@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 public class Usuario {
@@ -20,6 +24,7 @@ public class Usuario {
 	private String usuario;
 	private String email;
 	private String contraseña;
+	
 	private boolean autentificacion;
 	private boolean prioridad;
 	//false prioridad baja y true prioridad alta
@@ -36,7 +41,7 @@ public class Usuario {
 		super();
 		this.usuario = usuario;
 		this.email = email;
-		this.contraseña = contraseña;
+		this.contraseña = new BCryptPasswordEncoder().encode(contraseña);
 		this.autentificacion = autentificacion;
 		this.prioridad = prioridad;
 	}
