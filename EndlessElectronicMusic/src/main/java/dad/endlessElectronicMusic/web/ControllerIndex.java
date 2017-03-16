@@ -51,12 +51,41 @@ public class ControllerIndex {
 		result.addObject("numSongs", repositoryCancion.findAll().size());
 		result.addObject("canciones", cancionesnuevas1);
 		result.addObject("post", postnuevos1);
-		
-		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
 		result.addObject("token", token.getToken());
+		
+		renderUsuarios(request, result);
 
 		return result;
 
 	}
-	
+
+	public static String renderUsuarios(HttpServletRequest request, ModelAndView result) {
+
+		// Usuario u = (Usuario) sesion.getAttribute("userLogin");
+		// result.addObject("userHola", request.getUserPrincipal().getName());
+
+		Boolean adminC = request.isUserInRole("ADMIN");
+		Boolean userC = request.isUserInRole("USER");
+
+		if (userC) {
+
+			result.addObject("admin", adminC);
+			result.addObject("user", userC);
+			result.addObject("public", false);
+
+			result.addObject("uName", request.getUserPrincipal().getName());
+			
+			return request.getUserPrincipal().getName();
+			
+		} else {
+
+			result.addObject("public", true);
+			
+			return null;
+		}
+
+	}
+
 }

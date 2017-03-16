@@ -75,6 +75,8 @@ public class ControllerBlogPost {
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
 		result.addObject("token", token.getToken());
+		
+		ControllerIndex.renderUsuarios(request, result);
 
 		return result;
 
@@ -87,7 +89,7 @@ public class ControllerBlogPost {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
 		
-		Usuario temp = usuarioRepository.getOne(1L);
+		Usuario temp = usuarioRepository.findByUsuario(ControllerIndex.renderUsuarios(request, result));
 		
 		if(type.equals("eventos")){
 			

@@ -43,6 +43,8 @@ public class ControllerSongsCategory {
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
 		result.addObject("token", token.getToken());
+		
+		ControllerIndex.renderUsuarios(request, result);
 
 		return result;
 

@@ -81,7 +81,9 @@ public class ControllerAdmin {
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
 		result.addObject("token", token.getToken());   	
-
+		
+		result.addObject("userName", ControllerIndex.renderUsuarios(request, result));
+		
 		return result;
 
 	}
@@ -96,6 +98,8 @@ public class ControllerAdmin {
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
 		result.addObject("token", token.getToken());
+		
+		result.addObject("userName", ControllerIndex.renderUsuarios(request, result));
 		
 		return result;
 
@@ -114,6 +118,8 @@ public class ControllerAdmin {
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
 		result.addObject("token", token.getToken());
+		
+		result.addObject("userName", ControllerIndex.renderUsuarios(request, result));
 
 		return result;
 
@@ -126,6 +132,8 @@ public class ControllerAdmin {
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
 		result.addObject("token", token.getToken());
+		
+		result.addObject("userName", ControllerIndex.renderUsuarios(request, result));
 
 		return result;
 

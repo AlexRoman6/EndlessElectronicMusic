@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,15 +26,21 @@ public class ControllerUserAccount {
 		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
 
-		Usuario user = repository.findOne((Long) sesion.getAttribute("idUser"));
-
-		String error = "Sin errores";
-
-		result.addObject("user", user);
-		result.addObject("error", error);
-		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
 		result.addObject("token", token.getToken());
+		
+		String userName = ControllerIndex.renderUsuarios(request, result);
+		String error = "Sin errores";
+		
+
+		result.addObject("error", error);
+		
+		Usuario u = repository.findByUsuario(userName);
+		
+		if(u != null){
+
+			result.addObject("uData", u);
+		}
 
 		return result;
 
@@ -42,7 +49,9 @@ public class ControllerUserAccount {
 	@PostMapping("/user-account")
 	public ModelAndView changePass(HttpServletRequest request, HttpSession sesion) {
 
-		Usuario user = repository.findOne((Long) sesion.getAttribute("idUser"));
+		ModelAndView result = new ModelAndView();
+		
+		Usuario u = repository.findByUsuario(ControllerIndex.renderUsuarios(request, result));
 
 		String oldPass = request.getParameter("oldPass");
 		String newPass1 = request.getParameter("newPass1");
@@ -53,9 +62,9 @@ public class ControllerUserAccount {
 		if (oldPass.isEmpty() || newPass1.isEmpty() || newPass2.isEmpty()) {
 			error = "No se han detectado todos los campos de contraseña";
 		} else {
-			if (oldPass.equals(user.getContraseña())) {
+			if (new BCryptPasswordEncoder().matches(oldPass, u.getContraseña())) {
 				if (newPass1.equals(newPass2)) {
-					repository.updatePass(newPass1, user.getId());
+					repository.updatePass(new BCryptPasswordEncoder().encode(newPass1), u.getId());
 					error = "Contraseña cambiada correctamente";
 				} else {
 					error = "Las nuevas contraseñas no coinciden";
@@ -65,10 +74,9 @@ public class ControllerUserAccount {
 			}
 		}
 
-		ModelAndView result = new ModelAndView();
 		result.addObject("resources", request.getContextPath() + "/resources");
 
-		result.addObject("user", user);
+		result.addObject("uData", u);
 		result.addObject("error", error);
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 

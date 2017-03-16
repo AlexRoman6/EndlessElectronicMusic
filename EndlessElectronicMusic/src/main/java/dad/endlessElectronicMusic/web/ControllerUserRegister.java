@@ -27,6 +27,8 @@ public class ControllerUserRegister {
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
 		result.addObject("token", token.getToken());
+		
+		ControllerIndex.renderUsuarios(request, result);
 
 		return result;
 
@@ -44,7 +46,9 @@ public class ControllerUserRegister {
 
 	@RequestMapping("/login")
 	public String login() {
-
+		
+		
 		return "redirect:/user-register.html";
 	}
+	
 }
