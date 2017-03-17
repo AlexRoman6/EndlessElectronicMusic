@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import dad.endlessElectronicMusic.entidades.Usuario;
 import dad.endlessElectronicMusic.entidades.UsuarioRepository;
+import dad.endlessElectronicMusic.socket.MailSender;
 
 @Controller
 public class ControllerUserRegister {
@@ -38,6 +39,8 @@ public class ControllerUserRegister {
 	public String newUser(@RequestParam String userReg, @RequestParam String mailReg, @RequestParam String passReg) {
 
 		Usuario u = new Usuario(userReg, mailReg, passReg, true, false);
+		
+		MailSender.mailSender(userReg, mailReg);
 
 		userRepo.save(u);
 
