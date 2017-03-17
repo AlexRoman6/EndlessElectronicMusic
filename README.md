@@ -1,7 +1,7 @@
 # Endless Electronic Music #
 Esta aplicación tratará sobre el mundo de la música electrónica. Será un lugar donde poder conocer a los artistas más destacados y las mejores canciones de cada uno de los estilos, además de ver los temas mejor valorados por los usuarios y seguir los grandes festivales. 
 - **Parte pública**: el usuario va a poder navegar por cada una de las entidades que describiremos más tarde. 
-- **Parte privada**: el usuario deberá loguearse para tratar diferentes temas con otros usuarios y para poder votar positiva o negativamente las canciones. Igualmente, implementaremos un servicio de correo electrónico que enviará a los usuarios registrados, cada cierto periodo de tiempo, la lista de las canciones con mejor valoración.
+- **Parte privada**: el usuario deberá loguearse para tratar diferentes temas con otros usuarios y para poder votar positiva o negativamente las canciones. Igualmente, implementaremos un servicio de correo electrónico que enviará a los usuarios un mensaje de bienvenida cuando se registren en nuestra página.
 
 Las entidades que se pueden distinguir en nuestra web son las siguientes:
 - **Artistas**: Aquí aparecerán los diferentes músicos que aparecerán en nuestra web.
@@ -33,26 +33,26 @@ Cabe destacar que hasta la fase siguiente no existirá una relación entre los u
 
 **Páginas principales diseñadas**
 
-- Inicio: Presenta una breve introducion página, con informacion referida a nuestra pagina. Ademas, dispone de una entrada con las ultimas canciones de la pagina y otra con las ultimas entradas a los blogs, pudiendo visitarlas si lo desea.
+- Inicio: Presenta una breve introducción, con información referida a nuestra página. Además, dispone de un espacio con las últimas canciones de la página y otro con las últimas entradas de los blogs, pudiendo visitarlas si se desea.
 
 ![Inicio](http://i.imgur.com/LjmkAsT.jpg "Inicio")
 
-- Canciones: Contiene toda las canciones de nuestra página. 
-- Se pueden ordenar y clasificar por los siguientes criterios:
+- Canciones: Contiene toda las canciones de nuestra página. Se pueden ordenar y clasificar por los siguientes criterios:
 
-    -**Nombre**: Ordena las canciones por el nombre de la cancion.
-    -**Artista**:Ordena las canciones por el nombre del artista.
-    -**Genero**: Ordena las canciones por el genero musical de la cancion.
-    -**Año**: Ordena las canciones por el año de creaccion de las mismas.
-    Pulsando en cada una de ellas podemos ir a su ficha.
+     - *Nombre*: Ordena las canciones alfabéticamente.
+     - *Artista*: Ordena las canciones por el nombre del artista alfabéticamente.
+     - *Genero*: Ordena las canciones por su género musical.
+     - *Año*: Ordena las canciones por el año de creación de las mismas.
+     ---    
+     Pulsando en cada una de ellas podemos ir a su ficha.
 
 ![Canciones](http://i.imgur.com/DdpmeQ5.jpg "Canciones")
 
-- Ficha de la canción: Se muestran los datos de cada canción, entre ellos el video de la cancion. Ademas,se nos muestra una cancion del mismo genero y otra del mismo autor, pudiendo visualizar su ficha de igual manera.
+- Ficha de la canción: Se muestran los datos de cada canción, entre ellos su videoclip. Además, se muestran una canción del mismo género y otra del mismo autor, pudiendo visualizar su ficha de igual manera.
 
 ![Cancion](http://i.imgur.com/Jfpfg9Q.jpg "Cancion")
 
-- Eventos: Lista de todos los eventos de nuestra página, indicandonos el tema y la localizacion de este, entre otros datos.Pulsando en cada uno de ellos iremos a su entrada.
+- Eventos: Lista de todos los eventos de nuestra página, indicándonos su temática y su localización, entre otros datos. Pulsando en cada uno de ellos iremos a su entrada.
 
 ![Eventos](http://i.imgur.com/TztmdCU.jpg "Eventos")
 
@@ -60,7 +60,7 @@ Cabe destacar que hasta la fase siguiente no existirá una relación entre los u
 
 ![Evento](http://i.imgur.com/n02E5ic.jpg "Evento")
 
-- Noticias: Lista de todos los posts que publicamos en nuestra página.Pulsando en cada uno de ellos iremos a su entrada.
+- Noticias: Lista de todos los posts que publicamos en nuestra página. Pulsando en cada uno de ellos iremos a su entrada.
 
 ![Noticias](http://i.imgur.com/NRAemwd.jpg "Noticias")
 
@@ -75,3 +75,7 @@ Cabe destacar que hasta la fase siguiente no existirá una relación entre los u
 - Contacto: Muestra en un mapa nuestra ubicación e invita a rellenar un formulario para contactar con los administradores de la página.
 
 ![Contacto](http://i.imgur.com/WTXDibZ.jpg "Contacto")
+
+## Fase 3 ##
+Lo primero que hemos hecho al comenzar esta fase ha sido crear una página admin, a la que sólo tenemos acceso los usuarios registrados con el rol de administrador. En esta página se pueden añadir elementos a nuestra base de datos y, por consiguiente, a nuestra web, de una forma sencilla. En la siguiente captura de pantalla se pueden apreciar las tablas ya creadas y las opciones para añadir más canciones, artistas, eventos o posts.
+
