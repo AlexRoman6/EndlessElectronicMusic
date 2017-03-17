@@ -77,5 +77,18 @@ Cabe destacar que hasta la fase siguiente no existirá una relación entre los u
 ![Contacto](http://i.imgur.com/WTXDibZ.jpg "Contacto")
 
 ## Fase 3 ##
-Lo primero que hemos hecho al comenzar esta fase ha sido crear una página admin, a la que sólo tenemos acceso los usuarios registrados con el rol de administrador. En esta página se pueden añadir elementos a nuestra base de datos y, por consiguiente, a nuestra web, de una forma sencilla. En la siguiente captura de pantalla se pueden apreciar las tablas ya creadas y las opciones para añadir más canciones, artistas, eventos o posts.
+Lo primero que hemos hecho al comenzar esta fase ha sido crear una página admin, a la que sólo tenemos acceso los usuarios registrados con el rol de administrador. En esta página se pueden añadir elementos a nuestra base de datos y, por consiguiente, a nuestra web, de una forma sencilla. También se pueden borrar los elementos ya creados. En la siguiente captura de pantalla se pueden apreciar las tablas ya creadas y las opciones para añadir más canciones, artistas, eventos o posts.
 
+![Administración](http://i.imgur.com/e6kpTgE.jpg "Admin")
+
+**Navegación**
+
+Lo siguiente fue implementar seguridad en nuestra página mediante Spring Security. Cuando un usuario quiera iniciar sesión o registrarse lo hará a través del siguiente formulario:
+
+![Login](http://i.imgur.com/ZvZ261I.jpg "Registro")
+
+Esto ha cambiado respecto a la fase anterior, en la que el registro y el logueo se hacía a través de un pop up.
+Se puede acceder a esta nueva página desde cualquiera de los otros apartados de nuestra web. Sin embargo, la web redirigirá automáticamente a esta página a cualquier persona que intente acceder a la ficha de una canción, evento o post, para votar o comentar, si esta persona no está logueada. Una vez se loguee o se registre, la web le redigirá automáticamente hacia la canción o entrada a la que ha intentado acceder.
+Por todo esto, el diagrama de navegación también cambia un poco respecto a la fase anterior:
+
+![Diagrama](http://i.imgur.com/BCoOizX.jpg "Nuevo")
