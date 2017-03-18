@@ -92,3 +92,17 @@ Se puede acceder a esta nueva página desde cualquiera de los otros apartados de
 Por todo esto, el diagrama de navegación también cambia un poco respecto a la fase anterior:
 
 ![Diagrama](http://i.imgur.com/BCoOizX.jpg "Nuevo")
+
+**Servicio interno**
+
+El servicio interno que hemos implementado para nuestra aplicación web es un servidor de correo electrónico. Su función es enviar un email de bienvenida a los usuarios cuando se registran en nuestra página.
+
+Este servidor de correo se comunica con nuestra página mediante comunicación por sockets, una de las técnicas que nos explicaron en el tema 3 de la asignatura. Desde el cliente se envía un list con el nombre de usuario y su email y es el servidor el que envía el correo con nuestro mensaje.
+
+**Diagrama de clases y templates**
+
+En la siguiente imagen se puede apreciar el conjunto de clases que forman nuestra web, su tipo y las relaciones que existe entre ellas:
+
+![Diagrama](http://i.imgur.com/HijSInk.jpg "De clases")
+
+**Instrucciones para desplegar la aplicación en Azure**
