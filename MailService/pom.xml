@@ -23,18 +23,6 @@
 			<version>1.4.7</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
-			<version>1.4.5.RELEASE</version>
-		</dependency>
-
-		<!-- Spring framework -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>4.3.7.RELEASE</version>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -48,7 +36,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.0.2</version>
@@ -60,7 +48,7 @@
 						</manifest>
 					</archive>
 				</configuration>
-			</plugin> -->
+			</plugin>
 
 		</plugins>
 	</build>
