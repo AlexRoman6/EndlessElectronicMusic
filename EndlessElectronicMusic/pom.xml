@@ -23,22 +23,32 @@
 	</properties>
 
 	<build>
-	
+
+		<!-- <resources> -->
+		<!-- <resource> -->
+		<!-- <directory>src/main/webapp/</directory> -->
+		<!-- <includes> -->
+		<!-- <include>**/*.*</include> -->
+		<!-- </includes> -->
+		<!-- </resource> -->
+		<!-- <resource> -->
+		<!-- <directory>src/main/resources/</directory> -->
+		<!-- <includes> -->
+		<!-- <include>**/*.*</include> -->
+		<!-- </includes> -->
+		<!-- </resource> -->
+
+		<!-- </resources> -->
+
 		<resources>
 			<resource>
-				<directory>src/main/webapp/</directory>
-				<includes>
-					 <include>**/*.*</include>
-				</includes>
+				<directory>src/main/webapp</directory>
 			</resource>
 			<resource>
-				<directory>src/main/resources/</directory>
-				<includes>
-					 <include>**/*.*</include>
-				</includes>
+				<directory>src/main/resources</directory>
 			</resource>
 		</resources>
-		
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -48,6 +58,10 @@
 	</build>
 
 	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mustache</artifactId>

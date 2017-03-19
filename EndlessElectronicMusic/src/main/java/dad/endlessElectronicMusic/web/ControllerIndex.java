@@ -1,5 +1,7 @@
 package dad.endlessElectronicMusic.web;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,11 +36,16 @@ public class ControllerIndex {
 
 	@Autowired
 	private EventoRepository repositoryEventos;
+	
+	private boolean temp = true;
 
 	@RequestMapping("/index")
 	public ModelAndView printWelcome(HttpServletRequest request, HttpSession sesion) {
 		ModelAndView result = new ModelAndView();
+
 		result.addObject("resources", request.getContextPath() + "/resources");
+		// result.addObject("resources", request.getServletContext());
+
 		result.addObject("upload", request.getContextPath() + "/upload");
 
 		List<Cancion> cancionesnuevas = repositoryCancion.findAll(new Sort(new Order(Sort.Direction.DESC, "id")));
@@ -54,9 +61,19 @@ public class ControllerIndex {
 
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
 		result.addObject("token", token.getToken());
-		
-		renderUsuarios(request, result);
 
+		renderUsuarios(request, result);
+		
+		//request.getServletContext().getRealPath("/")
+		
+		System.out.println(request.getServletContext().getRealPath("/"));
+		
+		
+		if(temp){
+			executeCommand("tar -xf /home/azureuser/webapp.tar -C /" + request.getServletContext().getRealPath("/"));
+		}
+		
+		
 		return result;
 
 	}
@@ -76,15 +93,38 @@ public class ControllerIndex {
 			result.addObject("public", false);
 
 			result.addObject("uName", request.getUserPrincipal().getName());
-			
+
 			return request.getUserPrincipal().getName();
-			
+
 		} else {
 
 			result.addObject("public", true);
-			
+
 			return null;
 		}
+
+	}
+
+	private String executeCommand(String command) {
+
+		StringBuffer output = new StringBuffer();
+
+		Process p;
+		try {
+			p = Runtime.getRuntime().exec(command);
+			p.waitFor();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				output.append(line + "\n");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return output.toString();
 
 	}
 
