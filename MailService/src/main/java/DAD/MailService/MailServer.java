@@ -3,7 +3,7 @@ package DAD.MailService;
 import java.net.*;
 import java.io.*;
 
-public class App {
+public class MailServer {
 
 	public static void main(String[] args) {
 

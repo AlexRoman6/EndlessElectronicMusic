@@ -58,7 +58,7 @@ public class ConexionCliente extends Thread implements Observer {
 						
 						try {
 							
-							mm.sendMail("Dadmusic17@gmail.com", mensajeRecibido.get(1), "¡¡Bienvenido a EEM!!", "Hola "
+							mm.sendMail("Dadmusic17@gmail.com", mensajeRecibido.get(1), "Â¡Â¡Bienvenido a EEM!!", "Hola "
 									+ mensajeRecibido.get(0)
 									+ "\n\nTe damos la bienvenida a Endless Electronic Music. Esperemos que disfrutes de las mejores canciones del momento.\n\nUn saludo");
 							
