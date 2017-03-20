@@ -106,3 +106,12 @@ En la siguiente imagen se puede apreciar el conjunto de clases que forman nuestr
 ![Diagrama](http://i.imgur.com/HijSInk.jpg "De clases")
 
 **Instrucciones para desplegar la aplicación en Azure**
+
+Para que nuestra página funcione correctamente en Azure, hemos seguido los siguientes pasos:
+
+1. Generamos un certificado pem para poder acceder a la máquina y protegemos la clave privada.
+2. Creamos nuestra primera máquina virtual en Azure, accedemos a ella con un cliente ssh usando nuestra clave privada, le instalamos java 8 y mysql y generamos una imagen a partir de ella.
+3. Generamos el jar en nuestra aplicación con la opción mvn build... package.
+4. Desde la consola, vamos a la carpeta target de nuestro proyecto, donde se ha generado el jar, y lo subimos mediante un comando scp -i.
+5. Accedemos a la máquina virtual donde hemos subido el jar mediante el comando ssh -i e iniciamos la aplicación con java -jar.
+6. Accedemos a la aplicación via web. Antes de esto, habremos tenido que abrir el puerto para https 8443 y mapearlo al 8443 de nuestra máquina.
