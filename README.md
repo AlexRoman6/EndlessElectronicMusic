@@ -115,3 +115,14 @@ Para que nuestra página funcione correctamente en Azure, hemos seguido los sigu
 4. Desde la consola, vamos a la carpeta target de nuestro proyecto, donde se ha generado el jar, y lo subimos mediante un comando scp -i.
 5. Accedemos a la máquina virtual donde hemos subido el jar mediante el comando ssh -i e iniciamos la aplicación con java -jar.
 6. Accedemos a la aplicación via web. Antes de esto, habremos tenido que abrir el puerto para https 8443 y mapearlo al 8443 de nuestra máquina.
+
+**Comandos AZURE**
+ssh -i azureus.key -p 22 azureuser@dadeem.cloudapp.net
+
+scp -i azureus.key EndlessElectronicMusic-0.0.1-SNAPSHOT.jar azureuser@dadeem.cloudapp.net:/home/azureuser/
+
+scp -i azureus.key MailService-0.0.1-SNAPSHOT.jar azureuser@dadeem.cloudapp.net:/home/azureuser/
+
+
+ssh -i azureus.key -p 22 azureuser@dadeem.cloudapp.net java -jar EndlessElectronicMusic-0.0.1-SNAPSHOT.jar
+ssh -i azureus.key -p 22 azureuser@dadeem.cloudapp.net java -jar MailService-0.0.1-SNAPSHOT.jar
