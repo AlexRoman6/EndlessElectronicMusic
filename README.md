@@ -117,6 +117,7 @@ Para que nuestra página funcione correctamente en Azure, hemos seguido los sigu
 6. Accedemos a la aplicación via web. Antes de esto, habremos tenido que abrir el puerto para https 8443 y mapearlo al 8443 de nuestra máquina.
 
 **Comandos AZURE**
+
 ssh -i azureus.key -p 22 azureuser@dadeem.cloudapp.net
 
 scp -i azureus.key EndlessElectronicMusic-0.0.1-SNAPSHOT.jar azureuser@dadeem.cloudapp.net:/home/azureuser/
