@@ -26,6 +26,7 @@ public class MailRestController {
 	@GetMapping(value = "/user/{user}/mail/{nameM}/{server}/{ext}")
 	public ResponseEntity<String> getAnuncio(@PathVariable String user, @PathVariable String nameM, @PathVariable String server, @PathVariable String ext) {
 
+		System.out.println("Texto ="+ user + ": " + nameM + "@" + server + "." + ext);
 		try {
 
 			Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
@@ -64,7 +65,7 @@ public class MailRestController {
 			t.close();
 
 		} catch (MessagingException ex) {
-			System.out.println("Cliente Desconectado");
+			System.out.println(ex);
 		}
 
 		return new ResponseEntity<>("Correo Enviado Con éxito a "+ user + ": " + nameM + "@" + server + "." + ext, HttpStatus.OK);
