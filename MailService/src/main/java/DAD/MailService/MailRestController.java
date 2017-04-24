@@ -48,7 +48,7 @@ public class MailRestController {
 			final MimeMessage msg = new MimeMessage(session);
 
 			// -- Set the FROM and TO fields --
-			msg.setFrom(new InternetAddress("Dadmusic17@gmail.com"));
+			msg.setFrom(new InternetAddress("dadmusicmail@gmail.com"));
 			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(nameM + "@" + server + "." + ext, false));
 
 			msg.setSubject("¡¡Bienvenido a EEM!!");
@@ -60,7 +60,7 @@ public class MailRestController {
 
 			SMTPTransport t = (SMTPTransport) session.getTransport("smtps");
 
-			t.connect("smtp.gmail.com", "Dadmusic17@gmail.com", "endless2017");
+			t.connect("smtp.gmail.com", "dadmusicmail@gmail.com", "endless2017");
 			t.sendMessage(msg, msg.getAllRecipients());
 			t.close();
 
