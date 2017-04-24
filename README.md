@@ -124,6 +124,16 @@ scp -i azureus.key EndlessElectronicMusic-0.0.1-SNAPSHOT.jar azureuser@dadeem.cl
 
 scp -i azureus.key MailService-0.0.1-SNAPSHOT.jar azureuser@dadeem.cloudapp.net:/home/azureuser/
 
-
 ssh -i azureus.key -p 22 azureuser@dadeem.cloudapp.net java -jar EndlessElectronicMusic-0.0.1-SNAPSHOT.jar
 ssh -i azureus.key -p 22 azureuser@dadeem.cloudapp.net java -jar MailService-0.0.1-SNAPSHOT.jar
+
+## Fase 4 ##
+La primera tarea que hemos llevado a cabo en esta última fase, ha sido cambiar la forma en la que nuestra aplicación web se comunica con nuestro servicio interno de envío de correos electrónicos. Hemos pasado de una comunicación mediante sockets a una por API REST. Ahora el servicio está formado por tres clases: Application.java, tablonController.java y mailRestController.java.
+
+El diagrama de clases y templates ha variado ligeramente debido a los cambios en el servicio interno y a la implementación de que algunas consultas se puedan cachear. Este es el resultado final:
+
+![Diagrama](http://i.imgur.com/991HVqX.jpg "Clases y templates")
+
+En el siguiente diagrama se puede ver cómo hemos distribuido nuestra aplicación en Azure. Utilizamos 9 máquinas virtuales ditintas: 3 para los balanceadores de carga, 2 para el servicio web, 2 para el servicio interno y 2 para la base de datos. 
+
+![Diagrama](http://i.imgur.com/PPJUJT3.jpg "Azure")
