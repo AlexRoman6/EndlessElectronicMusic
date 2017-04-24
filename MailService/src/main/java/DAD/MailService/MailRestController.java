@@ -51,7 +51,7 @@ public class MailRestController {
 			msg.setFrom(new InternetAddress("dadmusicmail@gmail.com"));
 			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(nameM + "@" + server + "." + ext, false));
 
-			msg.setSubject("¡¡Bienvenido a EEM!!");
+			msg.setSubject("Bienvenido a EEM");
 			msg.setText(
 					"Hola " + user
 							+ "\n\nTe damos la bienvenida a Endless Electronic Music. Esperemos que disfrutes de las mejores canciones del momento.\n\nUn saludo",
