@@ -37,7 +37,7 @@ public class ControllerIndex {
 	@Autowired
 	private EventoRepository repositoryEventos;
 	
-	private boolean temp = true;
+	public static boolean temp = true;
 
 	@RequestMapping("/index")
 	public ModelAndView printWelcome(HttpServletRequest request, HttpSession sesion) {
@@ -66,7 +66,7 @@ public class ControllerIndex {
 		
 		//request.getServletContext().getRealPath("/")
 		
-		System.out.println(request.getServletContext().getRealPath("/"));
+		System.out.println("Me han pedido mostrar: INDEX");
 		
 		
 		if(temp){
@@ -105,7 +105,7 @@ public class ControllerIndex {
 
 	}
 
-	private String executeCommand(String command) {
+	public static String executeCommand(String command) {
 
 		StringBuffer output = new StringBuffer();
 

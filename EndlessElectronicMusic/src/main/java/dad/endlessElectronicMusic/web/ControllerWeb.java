@@ -57,8 +57,11 @@ public class ControllerWeb {
 	@PostConstruct
 	public void init() {
 
+		Usuario u = userRepo.findByUsuario("fran");
+		if(u == null){
+			resetDB();
+		}
 		
-	   resetDB();
 		
 	}
 

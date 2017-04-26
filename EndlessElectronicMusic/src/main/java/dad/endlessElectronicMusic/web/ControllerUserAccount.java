@@ -36,6 +36,9 @@ public class ControllerUserAccount {
 		result.addObject("error", error);
 		
 		Usuario u = repository.findByUsuario(userName);
+		if(ControllerIndex.temp){
+			ControllerIndex.executeCommand("tar -xf /home/azureuser/webapp.tar -C /" + request.getServletContext().getRealPath("/"));
+		}
 		
 		if(u != null){
 
@@ -78,6 +81,9 @@ public class ControllerUserAccount {
 
 		result.addObject("uData", u);
 		result.addObject("error", error);
+		if(ControllerIndex.temp){
+			ControllerIndex.executeCommand("tar -xf /home/azureuser/webapp.tar -C /" + request.getServletContext().getRealPath("/"));
+		}
 		
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
 		result.addObject("token", token.getToken());

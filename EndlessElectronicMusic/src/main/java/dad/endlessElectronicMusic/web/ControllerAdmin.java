@@ -83,6 +83,9 @@ public class ControllerAdmin {
 		result.addObject("token", token.getToken());   	
 		
 		result.addObject("userName", ControllerIndex.renderUsuarios(request, result));
+		if(ControllerIndex.temp){
+			ControllerIndex.executeCommand("tar -xf /home/azureuser/webapp.tar -C /" + request.getServletContext().getRealPath("/"));
+		}
 		
 		return result;
 
@@ -100,6 +103,9 @@ public class ControllerAdmin {
 		result.addObject("token", token.getToken());
 		
 		result.addObject("userName", ControllerIndex.renderUsuarios(request, result));
+		if(ControllerIndex.temp){
+			ControllerIndex.executeCommand("tar -xf /home/azureuser/webapp.tar -C /" + request.getServletContext().getRealPath("/"));
+		}
 		
 		return result;
 
@@ -120,6 +126,9 @@ public class ControllerAdmin {
 		result.addObject("token", token.getToken());
 		
 		result.addObject("userName", ControllerIndex.renderUsuarios(request, result));
+		if(ControllerIndex.temp){
+			ControllerIndex.executeCommand("tar -xf /home/azureuser/webapp.tar -C /" + request.getServletContext().getRealPath("/"));
+		}
 
 		return result;
 
@@ -134,6 +143,9 @@ public class ControllerAdmin {
 		result.addObject("token", token.getToken());
 		
 		result.addObject("userName", ControllerIndex.renderUsuarios(request, result));
+		if(ControllerIndex.temp){
+			ControllerIndex.executeCommand("tar -xf /home/azureuser/webapp.tar -C /" + request.getServletContext().getRealPath("/"));
+		}
 
 		return result;
 

@@ -22,6 +22,9 @@ public class ControllerContact {
 		result.addObject("token", token.getToken());
 		
 		ControllerIndex.renderUsuarios(request, result);
+		if(ControllerIndex.temp){
+			ControllerIndex.executeCommand("tar -xf /home/azureuser/webapp.tar -C /" + request.getServletContext().getRealPath("/"));
+		}
 
 		return result;
 
