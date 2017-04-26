@@ -1,3 +1,4 @@
+[![Presentación WEB Endless Electronic Music](https://img.youtube.com/vi/puVFGFXAqpk/0.jpg)](https://www.youtube.com/watch?v=puVFGFXAqpk)
 # Endless Electronic Music #
 Esta aplicación tratará sobre el mundo de la música electrónica. Será un lugar donde poder conocer a los artistas más destacados y las mejores canciones de cada uno de los estilos, además de ver los temas mejor valorados por los usuarios y seguir los grandes festivales. 
 - **Parte pública**: el usuario va a poder navegar por cada una de las entidades que describiremos más tarde. 
