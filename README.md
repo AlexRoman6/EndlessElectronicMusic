@@ -138,3 +138,69 @@ El diagrama de clases y templates ha variado ligeramente debido a los cambios en
 En el siguiente diagrama se puede ver cómo hemos distribuido nuestra aplicación en Azure. Utilizamos 9 máquinas virtuales ditintas: 3 para los balanceadores de carga, 2 para el servicio web, 2 para el servicio interno y 2 para la base de datos. 
 
 ![Diagrama](http://i.imgur.com/PPJUJT3.jpg "Azure")
+
+**Comandos Azure**
+////ARRANQUE////
+Cambiar el -p por el puerto de la maquina en cuestion
+
+app1 -> ssh -i azureus.key -p 22 azureuser@dadmusic.cloudapp.net
+app2 -> ssh -i azureus.key -p 59200 azureuser@dadmusic.cloudapp.net
+mail1 -> ssh -i azureus.key -p 65258 azureuser@dadmusic.cloudapp.net
+mail2 -> ssh -i azureus.key -p 65016 azureuser@dadmusic.cloudapp.net
+sql1 -> ssh -i azureus.key -p 51541 azureuser@dadmusic.cloudapp.net
+sql2 -> ssh -i azureus.key -p 59155 azureuser@dadmusic.cloudapp.net
+bal1 -> ssh -i azureus.key -p 50487 azureuser@dadmusic.cloudapp.net
+bal2 -> ssh -i azureus.key -p 53609 azureuser@dadmusic.cloudapp.net
+bal3 -> ssh -i azureus.key -p 51963 azureuser@dadmusic.cloudapp.net
+
+////COPIA ARCJIVOS////
+
+app1 -> scp -i azureus.key -P 22 EndlessElectronicMusic-0.0.1-SNAPSHOT.jar azureuser@dadmusic.cloudapp.net:/home/azureuser/
+app2 -> scp -i azureus.key -P 59200 EndlessElectronicMusic-0.0.1-SNAPSHOT.jar azureuser@dadmusic.cloudapp.net:/home/azureuser/
+
+mail1 -> scp -i azureus.key -P 65258 MailService-0.0.1-SNAPSHOT.jar azureuser@dadmusic.cloudapp.net:/home/azureuser/
+mail2 -> scp -i azureus.key -P 65016 MailService-0.0.1-SNAPSHOT.jar azureuser@dadmusic.cloudapp.net:/home/azureuser/
+
+
+////INICIO DE APPS////
+app1 -> ssh -i azureus.key -p 22 azureuser@dadmusic.cloudapp.net java -jar EndlessElectronicMusic-0.0.1-SNAPSHOT.jar
+app2 -> ssh -i azureus.key -p 59200 azureuser@dadmusic.cloudapp.net java -jar EndlessElectronicMusic-0.0.1-SNAPSHOT.jar --spring.jpa.hibernate.ddl-auto="none"
+
+mail1 -> ssh -i azureus.key -p 65258 azureuser@dadmusic.cloudapp.net java -jar MailService-0.0.1-SNAPSHOT.jar 
+mail2 -> ssh -i azureus.key -p 65016 azureuser@dadmusic.cloudapp.net java -jar MailService-0.0.1-SNAPSHOT.jar
+
+
+///Properties de la app///
+
+spring.datasource.url=jdbc:mysql://100.90.118.101/daddb
+spring.datasource.username=root
+spring.datasource.password=admin
+spring.datasource.driverClassName=com.mysql.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=create
+server.port = 8443
+server.ssl.key-store = classpath:keystore.jks
+server.ssl.key-store-password = dadmusic
+server.ssl.key-password = dadmusic
+
+#Variables accesibles por comandos
+dad.servicio.url = http://100.90.108.114:8081
+dad.ip.app1=100.90.94.102
+dad.ip.app2=100.90.60.41
+
+
+
+Cambiar ip escucha mySQL
+
+sudo pico /etc/mysql/mysql.conf.d/mysqld.cnf   bind_address
+sudo service mysql restart
+
+Creación uzer sql
+$ mysql -u root -p    (admin)
+
+mysql> use mysql
+
+mysql> GRANT ALL ON *.* to root@'100.90.66.67' IDENTIFIED BY 'admin'; 
+
+mysql> FLUSH PRIVILEGES;
+
+
