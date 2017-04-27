@@ -140,6 +140,8 @@ En el siguiente diagrama se puede ver cómo hemos distribuido nuestra aplicació
 ![Diagrama](http://i.imgur.com/PPJUJT3.jpg "Azure")
 
 **Comandos Azure**
+
+
 ////ARRANQUE////
 Cambiar el -p por el puerto de la maquina en cuestion
 
